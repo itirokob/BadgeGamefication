@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB3608D42003E5B700ED47A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3608D32003E5B700ED47A0 /* AppDelegate.swift */; };
+		CB3608D62003E5B700ED47A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3608D52003E5B700ED47A0 /* ViewController.swift */; };
+		CB3608D92003E5B700ED47A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3608D72003E5B700ED47A0 /* Main.storyboard */; };
+		CB3608DB2003E5B700ED47A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3608DA2003E5B700ED47A0 /* Assets.xcassets */; };
+		CB3608DE2003E5B700ED47A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3608DC2003E5B700ED47A0 /* LaunchScreen.storyboard */; };
+		CB3608E92003E5B700ED47A0 /* BadgeGamificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3608E82003E5B700ED47A0 /* BadgeGamificationTests.swift */; };
+		CB3608F42003E5B700ED47A0 /* BadgeGamificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3608F32003E5B700ED47A0 /* BadgeGamificationUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB3608E52003E5B700ED47A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB3608C82003E5B700ED47A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB3608CF2003E5B700ED47A0;
+			remoteInfo = BadgeGamification;
+		};
+		CB3608F02003E5B700ED47A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB3608C82003E5B700ED47A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB3608CF2003E5B700ED47A0;
+			remoteInfo = BadgeGamification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB3608D02003E5B700ED47A0 /* BadgeGamification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgeGamification.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3608D32003E5B700ED47A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB3608D52003E5B700ED47A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB3608D82003E5B700ED47A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB3608DA2003E5B700ED47A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB3608DD2003E5B700ED47A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB3608DF2003E5B700ED47A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB3608E42003E5B700ED47A0 /* BadgeGamificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgeGamificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3608E82003E5B700ED47A0 /* BadgeGamificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGamificationTests.swift; sourceTree = "<group>"; };
+		CB3608EA2003E5B700ED47A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB3608EF2003E5B700ED47A0 /* BadgeGamificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgeGamificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3608F32003E5B700ED47A0 /* BadgeGamificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeGamificationUITests.swift; sourceTree = "<group>"; };
+		CB3608F52003E5B700ED47A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB3608CD2003E5B700ED47A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3608E12003E5B700ED47A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3608EC2003E5B700ED47A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB3608C72003E5B700ED47A0 = {
+			isa = PBXGroup;
+			children = (
+				CB3608D22003E5B700ED47A0 /* BadgeGamification */,
+				CB3608E72003E5B700ED47A0 /* BadgeGamificationTests */,
+				CB3608F22003E5B700ED47A0 /* BadgeGamificationUITests */,
+				CB3608D12003E5B700ED47A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB3608D12003E5B700ED47A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB3608D02003E5B700ED47A0 /* BadgeGamification.app */,
+				CB3608E42003E5B700ED47A0 /* BadgeGamificationTests.xctest */,
+				CB3608EF2003E5B700ED47A0 /* BadgeGamificationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB3608D22003E5B700ED47A0 /* BadgeGamification */ = {
+			isa = PBXGroup;
+			children = (
+				CB3608D32003E5B700ED47A0 /* AppDelegate.swift */,
+				CB3608D52003E5B700ED47A0 /* ViewController.swift */,
+				CB3608D72003E5B700ED47A0 /* Main.storyboard */,
+				CB3608DA2003E5B700ED47A0 /* Assets.xcassets */,
+				CB3608DC2003E5B700ED47A0 /* LaunchScreen.storyboard */,
+				CB3608DF2003E5B700ED47A0 /* Info.plist */,
+			);
+			path = BadgeGamification;
+			sourceTree = "<group>";
+		};
+		CB3608E72003E5B700ED47A0 /* BadgeGamificationTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB3608E82003E5B700ED47A0 /* BadgeGamificationTests.swift */,
+				CB3608EA2003E5B700ED47A0 /* Info.plist */,
+			);
+			path = BadgeGamificationTests;
+			sourceTree = "<group>";
+		};
+		CB3608F22003E5B700ED47A0 /* BadgeGamificationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB3608F32003E5B700ED47A0 /* BadgeGamificationUITests.swift */,
+				CB3608F52003E5B700ED47A0 /* Info.plist */,
+			);
+			path = BadgeGamificationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB3608CF2003E5B700ED47A0 /* BadgeGamification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB3608F82003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamification" */;
+			buildPhases = (
+				CB3608CC2003E5B700ED47A0 /* Sources */,
+				CB3608CD2003E5B700ED47A0 /* Frameworks */,
+				CB3608CE2003E5B700ED47A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BadgeGamification;
+			productName = BadgeGamification;
+			productReference = CB3608D02003E5B700ED47A0 /* BadgeGamification.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB3608E32003E5B700ED47A0 /* BadgeGamificationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB3608FB2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationTests" */;
+			buildPhases = (
+				CB3608E02003E5B700ED47A0 /* Sources */,
+				CB3608E12003E5B700ED47A0 /* Frameworks */,
+				CB3608E22003E5B700ED47A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB3608E62003E5B700ED47A0 /* PBXTargetDependency */,
+			);
+			name = BadgeGamificationTests;
+			productName = BadgeGamificationTests;
+			productReference = CB3608E42003E5B700ED47A0 /* BadgeGamificationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB3608EE2003E5B700ED47A0 /* BadgeGamificationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB3608FE2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationUITests" */;
+			buildPhases = (
+				CB3608EB2003E5B700ED47A0 /* Sources */,
+				CB3608EC2003E5B700ED47A0 /* Frameworks */,
+				CB3608ED2003E5B700ED47A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB3608F12003E5B700ED47A0 /* PBXTargetDependency */,
+			);
+			name = BadgeGamificationUITests;
+			productName = BadgeGamificationUITests;
+			productReference = CB3608EF2003E5B700ED47A0 /* BadgeGamificationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB3608C82003E5B700ED47A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Bianca Itiroko";
+				TargetAttributes = {
+					CB3608CF2003E5B700ED47A0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					CB3608E32003E5B700ED47A0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CB3608CF2003E5B700ED47A0;
+					};
+					CB3608EE2003E5B700ED47A0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CB3608CF2003E5B700ED47A0;
+					};
+				};
+			};
+			buildConfigurationList = CB3608CB2003E5B700ED47A0 /* Build configuration list for PBXProject "BadgeGamification" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB3608C72003E5B700ED47A0;
+			productRefGroup = CB3608D12003E5B700ED47A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB3608CF2003E5B700ED47A0 /* BadgeGamification */,
+				CB3608E32003E5B700ED47A0 /* BadgeGamificationTests */,
+				CB3608EE2003E5B700ED47A0 /* BadgeGamificationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB3608CE2003E5B700ED47A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3608DE2003E5B700ED47A0 /* LaunchScreen.storyboard in Resources */,
+				CB3608DB2003E5B700ED47A0 /* Assets.xcassets in Resources */,
+				CB3608D92003E5B700ED47A0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3608E22003E5B700ED47A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3608ED2003E5B700ED47A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB3608CC2003E5B700ED47A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3608D62003E5B700ED47A0 /* ViewController.swift in Sources */,
+				CB3608D42003E5B700ED47A0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3608E02003E5B700ED47A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3608E92003E5B700ED47A0 /* BadgeGamificationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3608EB2003E5B700ED47A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3608F42003E5B700ED47A0 /* BadgeGamificationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB3608E62003E5B700ED47A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB3608CF2003E5B700ED47A0 /* BadgeGamification */;
+			targetProxy = CB3608E52003E5B700ED47A0 /* PBXContainerItemProxy */;
+		};
+		CB3608F12003E5B700ED47A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB3608CF2003E5B700ED47A0 /* BadgeGamification */;
+			targetProxy = CB3608F02003E5B700ED47A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB3608D72003E5B700ED47A0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB3608D82003E5B700ED47A0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB3608DC2003E5B700ED47A0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB3608DD2003E5B700ED47A0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB3608F62003E5B700ED47A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB3608F72003E5B700ED47A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB3608F92003E5B700ED47A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
+				INFOPLIST_FILE = BadgeGamification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB3608FA2003E5B700ED47A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
+				INFOPLIST_FILE = BadgeGamification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB3608FC2003E5B700ED47A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
+				INFOPLIST_FILE = BadgeGamificationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BadgeGamification.app/BadgeGamification";
+			};
+			name = Debug;
+		};
+		CB3608FD2003E5B700ED47A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
+				INFOPLIST_FILE = BadgeGamificationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BadgeGamification.app/BadgeGamification";
+			};
+			name = Release;
+		};
+		CB3608FF2003E5B700ED47A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
+				INFOPLIST_FILE = BadgeGamificationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BadgeGamification;
+			};
+			name = Debug;
+		};
+		CB3609002003E5B700ED47A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
+				INFOPLIST_FILE = BadgeGamificationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BadgeGamification;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB3608CB2003E5B700ED47A0 /* Build configuration list for PBXProject "BadgeGamification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB3608F62003E5B700ED47A0 /* Debug */,
+				CB3608F72003E5B700ED47A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB3608F82003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB3608F92003E5B700ED47A0 /* Debug */,
+				CB3608FA2003E5B700ED47A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB3608FB2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB3608FC2003E5B700ED47A0 /* Debug */,
+				CB3608FD2003E5B700ED47A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB3608FE2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB3608FF2003E5B700ED47A0 /* Debug */,
+				CB3609002003E5B700ED47A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB3608C82003E5B700ED47A0 /* Project object */;
+}
