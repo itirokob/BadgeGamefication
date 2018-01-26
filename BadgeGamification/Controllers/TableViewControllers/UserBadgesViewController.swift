@@ -37,7 +37,7 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
         self.userImage.layer.cornerRadius = 0.5 * self.userImage.frame.size.width
         self.userImage.clipsToBounds = true
         
-        self.changeSignOutButtonTitle()
+//        self.changeSignOutButtonTitle()
         
     }
     

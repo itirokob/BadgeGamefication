@@ -18,7 +18,7 @@ class AvailableBadgesViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.changeSignOutButtonTitle()
+//        self.changeSignOutButtonTitle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +34,15 @@ class AvailableBadgesViewController: UIViewController, UITableViewDataSource, UI
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 105
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.badges.count

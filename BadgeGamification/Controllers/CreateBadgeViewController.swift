@@ -20,22 +20,36 @@ class CreateBadgeViewController: UIViewController {
     let badgeIcons = [#imageLiteral(resourceName: "icon1"), #imageLiteral(resourceName: "icon2"), #imageLiteral(resourceName: "icon3"), #imageLiteral(resourceName: "icon4"), #imageLiteral(resourceName: "icon5"), #imageLiteral(resourceName: "icon6")]
     
     var teamName:String?
-    var selectedIcon:String = "icon1"
+    var selectedIcon:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
+        self.numPointsTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
     }
     
-    @IBAction func saveAction(_ sender: Any) {
-        if let name = nameTextField.text, let description = descriptionTextField.text, let numPoints = numPointsTextField.text {
+    @objc func addTapped(){
+        if (nameTextField.text == "") && (numPointsTextField.text == "") && (descriptionTextField.text == "") && (selectedIcon == "") {
+            alert(message: "Please fill all the information to create this badge", completionHandler: {_ in})
+        } else if(nameTextField.text == ""){
+            alert(message: "Missing badge's name", completionHandler: {_ in})
+        } else if (numPointsTextField.text == ""){
+            alert(message: "Missing badge's number of points", completionHandler: {_ in})
+        } else if (descriptionTextField.text == "") {
+            alert(message: "Missing badge's description", completionHandler: {_ in})
+        } else if (selectedIcon == "") {
+            alert(message: "Select a icon to your new badge", completionHandler: {_ in})
+        } else if let name = nameTextField.text, let description = descriptionTextField.text, let numPoints = numPointsTextField.text {
             badgeManager.createBadge(name: name, description: description, numPoints: Int(numPoints)!, teamName: self.teamName!, badgeIcon: selectedIcon)
             //badgeManager.createBadge(name: "nome", description: "descricao", numPoints: 20)
             
             performSegue(withIdentifier: "unwindToExistantBadges", sender: self)
         }
+        
     }
+    
+   
     
     @IBAction func cancelAction(_ sender: Any) {
         performSegue(withIdentifier: "unwindToExistantBadges", sender: self)

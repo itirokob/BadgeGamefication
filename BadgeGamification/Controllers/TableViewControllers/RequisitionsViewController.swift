@@ -28,7 +28,8 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         mode = checkSegmented()
-        self.changeSignOutButtonTitle()
+//        self.changeSignOutButtonTitle()
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     @IBAction func signOut(_ sender: Any) {
@@ -81,8 +82,8 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 105
+    func tableView(_ tableView: UITableView, estimatedheightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 135
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,7 +97,11 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
             
             cell.badgeName.text = req.badge.name
             cell.employeeEmail.text = req.userEmail
-            cell.explanation.text = req.explanation
+            
+//            cell.explanation.text = req.explanation
+            cell.explanation.text = "kajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasd"
+            cell.explanation.sizeToFit()
+            
             cell.approveButton.tag = indexPath.row
             cell.denyButton.tag = indexPath.row
             cell.badgeOrEmployeeImage.image = self.selectBadgeIcon(badgeIcon: req.badge.badgeIcon)

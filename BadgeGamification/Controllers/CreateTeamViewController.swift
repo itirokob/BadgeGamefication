@@ -31,7 +31,9 @@ class CreateTeamViewController: UIViewController {
 //    }
     
     @IBAction func createTeam(_ sender: Any) {
-        if let teamName = self.teamNameField.text, let adminID = Auth.auth().currentUser?.uid,  let adminName = self.adminName{
+        if self.teamNameField.text == "" {
+            alert(message: "Missing team's name", completionHandler: {_ in})
+        } else if let teamName = self.teamNameField.text, let adminID = Auth.auth().currentUser?.uid,  let adminName = self.adminName{
             
             teamDatabaseManager.teamExists(teamName: teamName, completionHandler: { (teamExists) in
                 if teamExists{

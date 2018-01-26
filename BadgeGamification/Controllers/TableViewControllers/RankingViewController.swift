@@ -41,7 +41,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
-        self.changeSignOutButtonTitle()
+//        self.changeSignOutButtonTitle()
     }
     
     @IBAction func signOut(_ sender: Any) {

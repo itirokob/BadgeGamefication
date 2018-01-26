@@ -52,17 +52,21 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
     }
 
     @IBAction func sendRequisition(_ sender: Any) {
-        self.userEmail = (Auth.auth().currentUser?.email)!
-        let userID = (Auth.auth().currentUser?.uid)!
+        if let explanation = explanationTextInput.text{
+            self.userEmail = (Auth.auth().currentUser?.email)!
+            let userID = (Auth.auth().currentUser?.uid)!
 
-        if let explanation = explanationTextInput.text, let currBadge = self.badge {
-            reqManager.createBadgeRequisition(teamName: currBadge.teamName, userEmail: self.userEmail, badgeName: currBadge.name, explanation: explanation, userID: userID, badgeNumPoints: currBadge.numPoints, badgeDescription: currBadge.descript, badgeID: currBadge.id, badgeIcon: currBadge.badgeIcon)
-            
-            alert(message: "Badge requisition done! Wait for admin approval", completionHandler: { _ in
-                self.performSegue(withIdentifier: "unwindToUserBadges", sender: self)
-            })
+            if let currBadge = self.badge {
+                reqManager.createBadgeRequisition(teamName: currBadge.teamName, userEmail: self.userEmail, badgeName: currBadge.name, explanation: explanation, userID: userID, badgeNumPoints: currBadge.numPoints, badgeDescription: currBadge.descript, badgeID: currBadge.id, badgeIcon: currBadge.badgeIcon)
+                
+                alert(message: "Badge requisition done! Wait for admin approval", completionHandler: { _ in
+                    self.performSegue(withIdentifier: "unwindToUserBadges", sender: self)
+                })
+            } else {
+                print("No badge to request")
+            }
         } else {
-            print("No badge to request")
+            alert(message: "Missing explanation to get the badge!", completionHandler: {_ in})
         }
     }
     
