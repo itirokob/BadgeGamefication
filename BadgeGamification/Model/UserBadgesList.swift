@@ -9,5 +9,5 @@
 import UIKit
 
 class UserBadgesList: NSObject {
-
+    var badges:[Badge] = []
 }

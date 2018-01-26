@@ -10,6 +10,13 @@ import UIKit
 
 class BadgeReqTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var employeeEmail: UILabel!
+    @IBOutlet weak var badgeName: UILabel!
+    @IBOutlet weak var explanation: UILabel!
+    @IBOutlet weak var badgeOrEmployeeImage: UIImageView!
+    @IBOutlet weak var denyButton: UIButton!
+    @IBOutlet weak var approveButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

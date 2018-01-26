@@ -10,4 +10,14 @@ import UIKit
 
 class BadgeIconCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var badgeImage: UIImageView!
+    
+    var opacity = 1
+    
+    override var isSelected: Bool {
+        didSet {
+            self.badgeImage.alpha = isSelected ? 0.4 : 1.0
+        }
+    }
 }
+

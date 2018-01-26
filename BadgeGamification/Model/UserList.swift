@@ -9,5 +9,9 @@
 import UIKit
 
 class UserList: NSObject {
-
+    var id:String
+    
+    init(id:String) {
+        self.id = id
+    }
 }

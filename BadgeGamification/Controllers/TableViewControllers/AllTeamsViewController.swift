@@ -7,29 +7,79 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class AllTeamsViewController: UIViewController {
+class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var userName:String?
+    
+    var teams:[Team] = []
+    
+    let teamDatabaseManager = TeamDatabaseManager.shared
+    let userDatabaseManager = UserDatabaseManager.getInstance()
+    let registerReqDatabaseManager = RegisterReqDatabaseManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        retrieveAllTeams()
+        
+        self.hideKeyboardWhenTappedAround()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func retrieveAllTeams(){
+        teamDatabaseManager.retrieveAllTeams { (teams) in
+            if let allTeams = teams{
+                self.teams = allTeams
+                self.tableView.reloadData()
+            }
+        }
     }
-    */
+    
+    @IBAction func joinAction(_ sender: UIButton) {
+        let team = teams[sender.tag]
+        let userEmail = Auth.auth().currentUser?.email
+        let userID = Auth.auth().currentUser?.uid
+        
+        //Criar requisicao
+        registerReqDatabaseManager.createRegisterRequisition(userEmail: userEmail!, teamName: team.teamName, userID: userID!)
+        createUser(teamName: team.teamName)
+        
+        self.alert(message: "Requisition done! Wait for admin approval"){_ in
+            self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+        }
+    }
+    
+//    func alertRequisitionDone(completionHandler: @escaping (UIAlertAction) -> (Void)){
+//        let alert = UIAlertController(title: "", message: "Requisition done! Wait for admin approval", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: completionHandler))
+//        self.present(alert, animated: true, completion: nil)
+//    }
+    
+    func createUser(teamName:String){
+        let userID = Auth.auth().currentUser?.uid
+        
+        if let userName = self.userName {
+            self.userDatabaseManager.createUser(name: userName, userID: userID!, isAdmin: "false", teamName: teamName, status: "PA")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.teams.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") as! TeamTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
 
+        cell.teamName.text = teams[indexPath.row].teamName
+        cell.adminName.text = teams[indexPath.row].adminName
+        cell.joinButton.tag = indexPath.row
+        
+        return cell
+    }
+    
 }

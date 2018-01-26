@@ -9,7 +9,9 @@
 import UIKit
 
 class AvailableBadgesTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var badgeName: UILabel!
+    
+    @IBOutlet weak var badgeIcon: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
