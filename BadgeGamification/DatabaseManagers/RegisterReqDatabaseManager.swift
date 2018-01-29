@@ -47,14 +47,16 @@ class RegisterReqDatabaseManager:NSObject {
                     for key in registerReqs.keys {
                         let registerReqDict = registerReqs[key] as? [String:Any]
                         
-                        let newReq = RegisterRequistion(
-                            userEmail: registerReqDict!["userEmail"] as! String,
-                            id: registerReqDict!["id"] as! String,
-                            status: registerReqDict!["status"] as! String,
-                            teamName: registerReqDict!["teamName"] as! String,
-                            userID: registerReqDict!["userID"] as! String)
+                        if registerReqDict!["status"] as? String == "PA"{
+                            let newReq = RegisterRequistion(
+                                userEmail: registerReqDict!["userEmail"] as! String,
+                                id: registerReqDict!["id"] as! String,
+                                status: registerReqDict!["status"] as! String,
+                                teamName: registerReqDict!["teamName"] as! String,
+                                userID: registerReqDict!["userID"] as! String)
                         
-                        allReq.append(newReq)
+                            allReq.append(newReq)
+                        }
                     }
                     
                     completionHandler(allReq)

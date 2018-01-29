@@ -18,4 +18,6 @@ class FirstViewAdminViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func unwindNewAdmin(segue: UIStoryboardSegue){}
 }

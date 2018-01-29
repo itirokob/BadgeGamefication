@@ -176,7 +176,8 @@ class UserDatabaseManager:NSObject {
             "isAdmin": updatedUser.isAdmin,
             "teamName": updatedUser.teamName,
             "status": updatedUser.status,
-            "profileImageURL": updatedUser.profileImageURL
+            "profileImageURL": updatedUser.profileImageURL,
+            "id" : userID
         ]
         
         let childUpdates = [

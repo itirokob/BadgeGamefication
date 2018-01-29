@@ -9,77 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BadgeGamification/Controllers/TableViewControllers/RankingViewController.swift"
-            timestampString = "538684024.042022"
+            filePath = "BadgeGamification/Controllers/CreateTeamViewController.swift"
+            timestampString = "538951009.110786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "signOut(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BadgeGamification/DatabaseManagers/UserDatabaseManager.swift"
-            timestampString = "538928264.5070291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "retrieveUsersFromTeam(teamName:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BadgeGamification.UserDatabaseManager.retrieveUsersFromTeam(teamName: Swift.String, completionHandler: (Swift.Optional&lt;Swift.Array&lt;BadgeGamification.User&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "BadgeGamification"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/biancaitiroko/Documents/BEPiD-2/BadgeGamification/BadgeGamification/DatabaseManagers/UserDatabaseManager.swift"
-                  timestampString = "538928181.498155"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "200">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in BadgeGamification.UserDatabaseManager.retrieveUsersFromTeam(teamName: Swift.String, completionHandler: (Swift.Optional&lt;Swift.Array&lt;BadgeGamification.User&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "BadgeGamification"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/biancaitiroko/Documents/BEPiD-2/BadgeGamification/BadgeGamification/DatabaseManagers/UserDatabaseManager.swift"
-                  timestampString = "538928181.500144"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BadgeGamification/DatabaseManagers/UserDatabaseManager.swift"
-            timestampString = "538928264.507093"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "retrieveUsersFromTeam(teamName:completionHandler:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

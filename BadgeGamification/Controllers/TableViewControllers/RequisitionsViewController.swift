@@ -143,6 +143,7 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
                     self.requisitions.remove(at: indexPath)
                     DispatchQueue.main.async{
                         self.tableView.deleteRows(at: [IndexPath(item: indexPath, section: 0)], with: .fade)
+                        self.tableView.reloadData()
                     }
                     print("Requisicao atualizada!")
                 }else{
@@ -155,7 +156,7 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
                     self.registerRequisitions.remove(at: indexPath)
                     DispatchQueue.main.async {
                         self.tableView.deleteRows(at:  [IndexPath(item: indexPath, section: 0)], with: .fade)
-                        
+                        self.tableView.reloadData()
                         self.userManager.updateStatus(userID: userID, status: "A")
 
                     }
@@ -179,11 +180,11 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
         
         self.updateReqStatus(userID: req.userID, id: req.id, status: "A", indexPath: sender.tag)
         userBadgesManager.addBadgeToUser(teamName: teamName!, userID: req.userID, badge: req.badge, acquisitionDateString: dateToString(format: "dd-MM-yyyy"))
-    
+
     }
     
     @IBAction func denyBadge(_ sender: UIButton) {
-        let req = registerRequisitions[sender.tag]
+        let req = requisitions[sender.tag]
         self.updateReqStatus(userID: req.userID, id: req.id, status: "R", indexPath: sender.tag)
                 //MyTODO: adicionar um feedback para o usuário. Talvez não um pop, mas só uma mensagem que apareça na parte inferior do app
     }
@@ -192,7 +193,7 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
         let req = registerRequisitions[sender.tag]
         self.updateReqStatus(userID: req.userID, id: req.id, status: "A", indexPath: sender.tag)
         self.userListsManager.createUserInList(teamName: self.teamName!, userID: req.userID)
-        
+
     }
     
     @IBAction func denyRegister(_ sender: UIButton) {

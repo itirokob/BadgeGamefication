@@ -86,6 +86,7 @@
 		CB31C235200CD8050065D3F9 /* AllTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeamsViewController.swift; sourceTree = "<group>"; };
 		CB31C237200CD9D40065D3F9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		CB31C239200CEA330065D3F9 /* FirstViewAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewAdminViewController.swift; sourceTree = "<group>"; };
+		CB35C116201FC25800E10B3F /* BadgeGamification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadgeGamification.entitlements; sourceTree = "<group>"; };
 		CB3608D02003E5B700ED47A0 /* BadgeGamification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgeGamification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3608D32003E5B700ED47A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3608D82003E5B700ED47A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 		CB3608D22003E5B700ED47A0 /* BadgeGamification */ = {
 			isa = PBXGroup;
 			children = (
+				CB35C116201FC25800E10B3F /* BadgeGamification.entitlements */,
 				CB3608D32003E5B700ED47A0 /* AppDelegate.swift */,
 				CBA46CA020052D6A0044CD08 /* Model */,
 				CB36090B20051B8F00ED47A0 /* DatabaseManagers */,
@@ -360,6 +362,11 @@
 					CB3608CF2003E5B700ED47A0 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					CB3608E32003E5B700ED47A0 = {
 						CreatedOnToolsVersion = 9.2;

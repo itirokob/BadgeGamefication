@@ -48,24 +48,26 @@ class RequisitionsDatabaseManager:NSObject {
                     for key in badgeReqs.keys {
                         let badgeReqDict = badgeReqs[key] as? [String:Any]
                         
-                        let badge = Badge(
-                            name: badgeReqDict!["badgeName"] as! String,
-                            description: badgeReqDict!["badgeDescription"] as! String,
-                            numPoints: badgeReqDict!["badgeNumPoints"] as! Int,
-                            id: badgeReqDict!["badgeID"] as! String,
-                            teamName: badgeReqDict!["teamName"] as! String,
-                            badgeIcon: badgeReqDict!["badgeIcon"] as! String)
+                        if badgeReqDict!["status"] as! String == "PA"{
+                            let badge = Badge(
+                                name: badgeReqDict!["badgeName"] as! String,
+                                description: badgeReqDict!["badgeDescription"] as! String,
+                                numPoints: badgeReqDict!["badgeNumPoints"] as! Int,
+                                id: badgeReqDict!["badgeID"] as! String,
+                                teamName: badgeReqDict!["teamName"] as! String,
+                                badgeIcon: badgeReqDict!["badgeIcon"] as! String)
                         
-                        let badgeReq = BadgeRequisition(
-                            userEmail: badgeReqDict!["userEmail"] as! String,
-                            explanation: badgeReqDict!["explanation"] as! String,
-                            status: badgeReqDict!["status"] as! String,
-                            id: badgeReqDict!["id"] as! String,
-                            userID: badgeReqDict!["userID"] as! String,
-                            badge: badge,
-                            teamName: badgeReqDict!["teamName"] as! String)
+                            let badgeReq = BadgeRequisition(
+                                userEmail: badgeReqDict!["userEmail"] as! String,
+                                explanation: badgeReqDict!["explanation"] as! String,
+                                status: badgeReqDict!["status"] as! String,
+                                id: badgeReqDict!["id"] as! String,
+                                userID: badgeReqDict!["userID"] as! String,
+                                badge: badge,
+                                teamName: badgeReqDict!["teamName"] as! String)
                         
-                        allReq.append(badgeReq)
+                            allReq.append(badgeReq)
+                        }
                     }
                     
                     completionHandler(allReq)

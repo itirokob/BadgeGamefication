@@ -32,7 +32,12 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.userManager.retrieveUsersFromTeam(teamName: teamName!) { (users) in
             if let allUsers = users {
                 self.teamUsers = allUsers
@@ -40,8 +45,6 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.getUsersScore()
             }
         }
-        
-//        self.changeSignOutButtonTitle()
     }
     
     @IBAction func signOut(_ sender: Any) {
@@ -122,6 +125,8 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.employeeName.text = teamUsers[indexPath.row].name
             cell.rankPosition.text = String(indexPath.row + 1)
 
+            cell.selectionStyle = .none
+            
             cell.employeeImage.layer.cornerRadius = 0.5 * cell.employeeImage.frame.size.width
             cell.employeeImage.clipsToBounds = true
             

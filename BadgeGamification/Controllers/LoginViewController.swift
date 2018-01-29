@@ -32,6 +32,12 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        haveAccount = true
+
+    }
+    
     func updateMode(){
         signInOrUp.text = self.haveAccount ? "Sign in" : "Sign up"
         loginRegisterButton.setTitle(self.haveAccount ? "Login" : "Register", for: .normal)

@@ -45,23 +45,20 @@ class CreateTeamViewController: UIViewController {
                     
                     self.userDatabaseManager.update(updatedUser: updatedUser, userID: adminID)
 
-                    self.performSegue(withIdentifier: "adminLogin", sender: nil)
+                    self.performSegue(withIdentifier: "unwindToLoginWithSegue", sender: self)
                 }
             })
             
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let teamName = teamNameField.text {
-            if segue.identifier == "adminLogin" {
-                if let nextView = segue.destination as? UITabBarController{
-                    //O viewControllers[0] é o ranking
-                    let destination = nextView.viewControllers![1] as! RequisitionsViewController
-                    destination.teamName = teamName
-                    
-                    let destination2 = nextView.viewControllers![2] as! ExistantBadgesViewController
-                    destination2.teamName = teamName
+            if segue.identifier == "unwindToLoginWithSegue" {
+                if let nextView = segue.destination as? LoginViewController{
+                    nextView.haveAccount = true
+                    nextView.updateMode()
                 }
             }
         }
