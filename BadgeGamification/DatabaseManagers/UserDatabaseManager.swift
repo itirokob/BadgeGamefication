@@ -48,31 +48,54 @@ class UserDatabaseManager:NSObject {
 //        path?.child("status").setValue(status)
 //        path?.child("profileImageURL").setValue(" ")
     }
-    
+
     func retrieveUsers(completionHandler: @escaping ([User]?)-> ()){
-        var allUsers:[User] = []
+        var totalUsers:[User] = []
         
-        ref?.child("Users").observe(.value, with: { (snapshot) in
-            let user = snapshot.value as? NSDictionary
-            
-            if let currUser = user {
-                let jsonUser = JSON(currUser)
-                let newUser = User(name: jsonUser["name"].string!,
-                                   isAdmin: jsonUser["isAdmin"].string!,
-                                   teamName: jsonUser["teamName"].string!,
-                                   status: jsonUser["status"].string!,
-                                   profileImageURL: jsonUser["profileImageURL"].string!,
-                                   id: jsonUser["id"].string!)
-                allUsers.append(newUser)
-                completionHandler(allUsers)
+        ref?.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let allUsers = snapshot.value as? [String:Any] {
+                for key in allUsers.keys {
+                    let currUser = allUsers[key] as? [String:Any]
+                    
+                    let newUser = User(name: currUser!["name"] as! String,
+                                       isAdmin: currUser!["isAdmin"] as! String,
+                                       teamName: currUser!["teamName"] as! String,
+                                       status: currUser!["status"] as! String,
+                                       profileImageURL: currUser!["profileImageURL"] as! String,
+                                       id: currUser!["id"] as! String)
+                    totalUsers.append(newUser)
+                }
+                completionHandler(totalUsers)
             } else {
                 completionHandler(nil)
             }
         })
     }
     
+//    func retrieveUsers(completionHandler: @escaping ([User]?)-> ()){
+//        var allUsers:[User] = []
+//
+//        ref?.child("Users").observe(.value, with: { (snapshot) in
+//            let user = snapshot.value as? NSDictionary
+//
+//            if let currUser = user {
+//                let jsonUser = JSON(currUser)
+//                let newUser = User(name: jsonUser["name"].string!,
+//                                   isAdmin: jsonUser["isAdmin"].string!,
+//                                   teamName: jsonUser["teamName"].string!,
+//                                   status: jsonUser["status"].string!,
+//                                   profileImageURL: jsonUser["profileImageURL"].string!,
+//                                   id: jsonUser["id"].string!)
+//                allUsers.append(newUser)
+//                completionHandler(allUsers)
+//            } else {
+//                completionHandler(nil)
+//            }
+//        })
+//    }
+    
     func retrieveUser(userID:String, completionHandler: @escaping (User)->()){
-        ref?.child("Users/\(userID)").observe(.value, with: { (snapshot) in
+        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
             let user = snapshot.value as? NSDictionary
             
             if let actualUser = user {
@@ -89,30 +112,56 @@ class UserDatabaseManager:NSObject {
     }
     
     func retrieveUsersFromTeam(teamName:String, completionHandler: @escaping ([User]?)->()){
-        var allUsers:[User] = []
+        var totalUsers:[User] = []
         
-        ref?.child("Users").observe(.value, with: { (snapshot) in
-            let user = snapshot.value as? NSDictionary
-            
-            if let actualUser = user {
-                let json = JSON(actualUser).dictionaryValue
-                
-                for jsonUser in json{
-                    if jsonUser.value["teamName"].string! == teamName && jsonUser.value["isAdmin"].string! == "false" {
-                        let newUser = User(name: jsonUser.value["name"].string!,
-                                           isAdmin: jsonUser.value["isAdmin"].string!,
-                                           teamName: jsonUser.value["teamName"].string!,
-                                           status: jsonUser.value["status"].string!,
-                                           profileImageURL: jsonUser.value["profileImageURL"].string!,
-                                           id: jsonUser.value["id"].string!)
-                        allUsers.append(newUser)
-                        completionHandler(allUsers)
+        ref?.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let allUsers = snapshot.value as? [String:Any] {
+                for key in allUsers.keys {
+                    let currUser = allUsers[key] as? [String:Any]
+                    
+                    if currUser!["teamName"] as! String == teamName && currUser!["isAdmin"] as! String == "false" {
+
+                        let newUser = User(name: currUser!["name"] as! String,
+                                           isAdmin: currUser!["isAdmin"] as! String,
+                                           teamName: currUser!["teamName"] as! String,
+                                           status: currUser!["status"] as! String,
+                                           profileImageURL: currUser!["profileImageURL"] as! String,
+                                           id: currUser!["id"] as! String)
+                        totalUsers.append(newUser)
                     }
                 }
+                completionHandler(totalUsers)
             } else {
                 completionHandler(nil)
             }
         })
+        
+        
+        
+//        var allUsers:[User] = []
+//        
+//        ref?.child("Users").observe(.value, with: { (snapshot) in
+//            let user = snapshot.value as? NSDictionary
+//            
+//            if let actualUser = user {
+//                let json = JSON(actualUser).dictionaryValue
+//                
+//                for jsonUser in json{
+//                    if jsonUser.value["teamName"].string! == teamName && jsonUser.value["isAdmin"].string! == "false" {
+//                        let newUser = User(name: jsonUser.value["name"].string!,
+//                                           isAdmin: jsonUser.value["isAdmin"].string!,
+//                                           teamName: jsonUser.value["teamName"].string!,
+//                                           status: jsonUser.value["status"].string!,
+//                                           profileImageURL: jsonUser.value["profileImageURL"].string!,
+//                                           id: jsonUser.value["id"].string!)
+//                        allUsers.append(newUser)
+//                        completionHandler(allUsers)
+//                    }
+//                }
+//            } else {
+//                completionHandler(nil)
+//            }
+//        })
     }
     
     func updateStatus(userID:String, status:String){

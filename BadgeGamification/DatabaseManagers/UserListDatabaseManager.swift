@@ -28,15 +28,20 @@ class UserListDatabaseManager: NSObject {
     func retrieveUsersFromList(teamName:String, completionHandler: @escaping ([String]?)->()){
         var allUsersIDs:[String] = []
         
-        ref?.child("Teams/\(teamName)/UsersList").observe(.childAdded, with: { (snapshot) in
-            let user = snapshot.value as? NSDictionary
+        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            if let currUser = user{
-                allUsersIDs.append(currUser.value(forKey: "userID") as! String)
-                
-                completionHandler(allUsersIDs)
-            } else {
-                completionHandler(nil)
+            if let team = snapshot.value as? [String:Any]{
+                if let usersList = team["UsersList"] as? [String:Any]{
+                    for key in usersList.keys {
+                        let usersListDict = usersList[key] as? [String:Any]
+                        
+                        allUsersIDs.append(usersListDict!["userID"] as! String)
+                    }
+                    
+                    completionHandler(allUsersIDs)
+                } else {
+                    completionHandler(nil)
+                }
             }
         })
     }

@@ -30,16 +30,32 @@ class TeamDatabaseManager: NSObject {
     func retrieveAllTeams(completionHandler: @escaping ([Team]?)->()){
         var allTeams:[Team] = []
         
-        ref?.child("Teams").observe(.childAdded, with: { (snapshot) in
-            let team = snapshot.value as? NSDictionary
+        ref?.child("Teams").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            if let actualTeam = team {
-                let newTeam = Team(teamName: actualTeam.value(forKey: "teamName") as! String, adminID: actualTeam.value(forKey: "adminID") as! String, adminName: actualTeam.value(forKey: "adminName") as! String)
-                allTeams.append(newTeam)
+            if let team = snapshot.value as? [String:Any]{
+                for key in team.keys {
+                    let currTeam = team[key] as? [String:Any]
+                    
+                    let newTeam = Team(teamName: currTeam!["teamName"] as! String,
+                                       adminID: currTeam!["adminID"] as! String,
+                                       adminName: currTeam!["adminName"] as! String)
+                    
+                    allTeams.append(newTeam)
+                }
                 completionHandler(allTeams)
             } else {
                 completionHandler(nil)
             }
+            
+//            let team = snapshot.value as? NSDictionary
+//            
+//            if let actualTeam = team {
+//                let newTeam = Team(teamName: actualTeam.value(forKey: "teamName") as! String, adminID: actualTeam.value(forKey: "adminID") as! String, adminName: actualTeam.value(forKey: "adminName") as! String)
+//                allTeams.append(newTeam)
+//                completionHandler(allTeams)
+//            } else {
+//                completionHandler(nil)
+//            }
         })
     }
     

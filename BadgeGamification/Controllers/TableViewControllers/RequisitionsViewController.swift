@@ -99,8 +99,8 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
             cell.badgeName.text = req.badge.name
             cell.employeeEmail.text = req.userEmail
             
-//            cell.explanation.text = req.explanation
-            cell.explanation.text = "kajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasdkajdkjsdhjashdksjahdkasd"
+            cell.explanation.text = req.explanation
+            
             cell.explanation.sizeToFit()
             
             cell.approveButton.tag = indexPath.row

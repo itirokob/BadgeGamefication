@@ -28,7 +28,10 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
         
         if let currBadge = self.badge{
             self.badgeDescription.text = currBadge.descript
+            
             self.badgeName.text = currBadge.name
+            
+            
         } else {
             print("No badge to load")
         }
@@ -40,19 +43,21 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
         self.badgeIcon.image = selectBadgeIcon(badgeIcon: (self.badge?.badgeIcon)!)
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.text = nil
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Placeholder"
-            textView.textColor = UIColor.lightGray
-        }
-    }
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        textView.text = nil
+//    }
+//
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        if textView.text.isEmpty {
+//            textView.text = "Placeholder"
+//            textView.textColor = UIColor.lightGray
+//        }
+//    }
 
     @IBAction func sendRequisition(_ sender: Any) {
-        if let explanation = explanationTextInput.text{
+        if explanationTextInput.text == ""{
+            alert(message: "Missing explanation to get the badge!", completionHandler: {_ in})
+        } else if let explanation = explanationTextInput.text{
             self.userEmail = (Auth.auth().currentUser?.email)!
             let userID = (Auth.auth().currentUser?.uid)!
 
@@ -65,8 +70,6 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
             } else {
                 print("No badge to request")
             }
-        } else {
-            alert(message: "Missing explanation to get the badge!", completionHandler: {_ in})
         }
     }
     
@@ -85,9 +88,4 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
         return true
     }
     
-//    func alertRequisitionDone(completionHandler: @escaping (UIAlertAction) -> (Void)){
-//        let alert = UIAlertController(title: "", message: "Badge requisition done! Wait for admin approval", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: completionHandler))
-//        self.present(alert, animated: true, completion: nil)
-//    }
 }

@@ -53,24 +53,55 @@ class UserBadgesDatabaseManager:NSObject {
     
     func retrieveAllBadgesFromUser(teamName:String, userID:String, completionHandler: @escaping ([Badge])->()){
         var allBadges:[Badge] = []
-        let path = "Teams/\(teamName)/UserBadgeList/\(userID)"
-
-        ref?.child("\(path)").observe(.childAdded, with: { (snapshot) in
-            let badge = snapshot.value as? NSDictionary
-            
-            if let actualBadge = badge {
-                let newBadge = Badge(
-                    name: actualBadge.value(forKey: "name") as! String,
-                    description: actualBadge.value(forKey: "description") as! String,
-                    numPoints: actualBadge.value(forKey: "numPoints") as! Int,
-                    id: actualBadge.value(forKey: "id") as! String,
-                    teamName: actualBadge.value(forKey: "teamName") as! String,
-                    badgeIcon: actualBadge.value(forKey: "badgeIcon") as! String,
-                    acquisitionDate: self.stringToDate(dateString:
-                        actualBadge.value(forKey: "acquisitionDate") as! String))
-                allBadges.append(newBadge)
-                completionHandler(allBadges)
+        let path = "Teams/\(teamName)/UserBadgeList"
+        
+        ref?.child("\(path)").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let userBadgesList = snapshot.value as? [String: Any] {
+                if let userList = userBadgesList[userID] as? [String:Any]{
+                    
+                    for key in userList.keys {
+                        let badge = userList[key] as? [String:Any]
+                        
+                        let newBadge = Badge(name: badge!["name"] as! String,
+                                             description: badge!["description"] as! String,
+                                             numPoints: badge!["numPoints"] as! Int,
+                                             id: badge!["id"] as! String,
+                                             teamName: badge!["teamName"] as! String,
+                                             badgeIcon: badge!["badgeIcon"] as! String,
+                                             acquisitionDate: self.stringToDate(dateString:
+                                                badge!["acquisitionDate"] as! String))
+                        
+                        allBadges.append(newBadge)
+                    }
+                    
+                    completionHandler(allBadges)
+                }
+                
             }
         })
     }
+
+    
+//    func retrieveAllBadgesFromUser(teamName:String, userID:String, completionHandler: @escaping ([Badge])->()){
+//        var allBadges:[Badge] = []
+//        let path = "Teams/\(teamName)/UserBadgeList/\(userID)"
+//
+//        ref?.child("\(path)").observe(.childAdded, with: { (snapshot) in
+//            let badge = snapshot.value as? NSDictionary
+//
+//            if let actualBadge = badge {
+//                let newBadge = Badge(
+//                    name: actualBadge.value(forKey: "name") as! String,
+//                    description: actualBadge.value(forKey: "description") as! String,
+//                    numPoints: actualBadge.value(forKey: "numPoints") as! Int,
+//                    id: actualBadge.value(forKey: "id") as! String,
+//                    teamName: actualBadge.value(forKey: "teamName") as! String,
+//                    badgeIcon: actualBadge.value(forKey: "badgeIcon") as! String,
+//                    acquisitionDate: self.stringToDate(dateString:
+//                        actualBadge.value(forKey: "acquisitionDate") as! String))
+//                allBadges.append(newBadge)
+//                completionHandler(allBadges)
+//            }
+//        })
+//    }
 }

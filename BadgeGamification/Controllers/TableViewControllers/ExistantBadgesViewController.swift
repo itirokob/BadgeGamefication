@@ -61,6 +61,8 @@ class ExistantBadgesViewController: UIViewController, UITableViewDelegate, UITab
 
         cell.badgeName.text = currBadge.name
         cell.badgeDescription.text = currBadge.descript
+     
+        
         cell.badgeNumPoints.text = String(currBadge.numPoints)
         cell.badgeIcon.image = selectBadgeIcon(badgeIcon: currBadge.badgeIcon)
         
