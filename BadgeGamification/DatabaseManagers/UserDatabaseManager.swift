@@ -119,7 +119,7 @@ class UserDatabaseManager:NSObject {
                 for key in allUsers.keys {
                     let currUser = allUsers[key] as? [String:Any]
                     
-                    if currUser!["teamName"] as! String == teamName && currUser!["isAdmin"] as! String == "false" {
+                    if currUser!["teamName"] as! String == teamName && currUser!["isAdmin"] as! String == "false" &&  currUser!["status"] as! String == "A"{
 
                         let newUser = User(name: currUser!["name"] as! String,
                                            isAdmin: currUser!["isAdmin"] as! String,

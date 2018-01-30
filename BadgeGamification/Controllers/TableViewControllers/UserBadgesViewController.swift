@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Photos
 
 class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -53,16 +54,20 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
         let userID = Auth.auth().currentUser?.uid
         
         userBadgesManager.retrieveAllBadgesFromUser(teamName: teamName!, userID: userID!) { (badges) in
-            self.badges = badges
-            self.tableView.reloadData()
             
-            self.totalPoints = 0
+            if let badges = badges{
+                self.badges = badges
+                self.tableView.reloadData()
             
-            for badge in self.badges {
-                self.totalPoints += badge.numPoints
+                self.totalPoints = 0
+            
+                for badge in self.badges {
+                    self.totalPoints += badge.numPoints
+                }
+            
+                self.userPoints.text = String(self.totalPoints) + " points"
+                
             }
-            
-            self.userPoints.text = String(self.totalPoints) + " pontos"
         }
     }
     
@@ -104,7 +109,7 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         
-        return "Adquirido em \(day)/\(month)/\(year)"
+        return "Owned in \(day)/\(month)/\(year)"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -137,12 +142,23 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
 extension UserBadgesViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @objc func handleSelectProfileImage(){
-        let picker = UIImagePickerController()
+        let photos = PHPhotoLibrary.authorizationStatus()
+        if photos == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({status in
+                if status == .authorized{
+                    let picker = UIImagePickerController()
+                    
+                    picker.delegate = self
+                    picker.allowsEditing = true
+                    
+                    self.present(picker, animated: true, completion: nil)
+                } else {
+                    self.alert(message: "No permission to access photo library"){_ in }
+                }
+            })
+        }
         
-        picker.delegate = self
-        picker.allowsEditing = true
         
-        present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

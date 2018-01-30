@@ -19,6 +19,10 @@ class UserBadgesDatabaseManager:NSObject {
         ref = Database.database().reference()
     }
     
+    func initializeUserBadgeList(userID:String, teamName:String){
+        ref?.child("Teams/\(teamName)/UserBadgeList/\(userID)")
+    }
+    
     func addBadgeToUser(teamName: String, userID:String, badge:Badge, acquisitionDateString:String){
         let path = "Teams/\(teamName)/UserBadgeList/\(userID)/\(badge.id)"
         
@@ -51,7 +55,7 @@ class UserBadgesDatabaseManager:NSObject {
         return date
     }
     
-    func retrieveAllBadgesFromUser(teamName:String, userID:String, completionHandler: @escaping ([Badge])->()){
+    func retrieveAllBadgesFromUser(teamName:String, userID:String, completionHandler: @escaping ([Badge]?)->()){
         var allBadges:[Badge] = []
         let path = "Teams/\(teamName)/UserBadgeList"
         
@@ -75,6 +79,8 @@ class UserBadgesDatabaseManager:NSObject {
                     }
                     
                     completionHandler(allBadges)
+                } else {
+                    completionHandler(nil)
                 }
                 
             }

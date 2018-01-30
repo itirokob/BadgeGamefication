@@ -19,6 +19,7 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
     
     let teamDatabaseManager = TeamDatabaseManager.shared
     let userDatabaseManager = UserDatabaseManager.getInstance()
+    let userBadgeManager = UserBadgesDatabaseManager.shared
     let registerReqDatabaseManager = RegisterReqDatabaseManager.shared
     
     override func viewDidLoad() {
@@ -64,6 +65,8 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
         
         if let userName = self.userName {
             self.userDatabaseManager.createUser(name: userName, userID: userID!, isAdmin: "false", teamName: teamName, status: "PA")
+            
+            self.userBadgeManager.initializeUserBadgeList(userID: userID!, teamName: teamName)
         }
     }
     

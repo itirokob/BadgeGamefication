@@ -139,20 +139,19 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Sa8-Fp-1eB">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="186"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="186"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3eN-Kc-p6b">
-                                            <rect key="frame" x="367" y="21.666666666666671" width="290" height="143.33333333333331"/>
+                                            <rect key="frame" x="57" y="21.666666666666671" width="300" height="143.33333333333331"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hdU-dQ-Uee">
-                                                    <rect key="frame" x="101.66666666666669" y="0.0" width="87" height="87"/>
-                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genericUserWhite" translatesAutoresizingMaskIntoConstraints="NO" id="hdU-dQ-Uee">
+                                                    <rect key="frame" x="105" y="0.0" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hdU-dQ-Uee" secondAttribute="height" multiplier="1:1" id="kDS-30-tsi"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-0R-yqZ">
-                                                    <rect key="frame" x="0.0" y="97" width="290" height="16"/>
+                                                    <rect key="frame" x="0.0" y="100" width="300" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="ffE-Ny-pmA"/>
                                                     </constraints>
@@ -161,7 +160,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="0 pontos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uJ-W4-YBj">
-                                                    <rect key="frame" x="0.0" y="122.99999999999999" width="290" height="20.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="125.99999999999999" width="300" height="17.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -189,7 +188,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userBadgeCell" rowHeight="103" id="OWf-cV-mrt" customClass="UserBadgesTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userBadgeCell" rowHeight="103" id="OWf-cV-mrt" customClass="UserBadgesTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="214" width="414" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OWf-cV-mrt" id="sel-k0-smv">
@@ -197,16 +196,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="A9x-yJ-9KP">
-                                                    <rect key="frame" x="113" y="31" width="187" height="41"/>
+                                                    <rect key="frame" x="112.99999999999999" y="30.333333333333332" width="157.66666666666663" height="42.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do badge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mS-jL-k7A">
-                                                            <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="20.666666666666668"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mS-jL-k7A">
+                                                            <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="21.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <color key="textColor" red="0.12941176469999999" green="0.81568627449999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adquirido em 18/01/2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-fY-v3d">
-                                                            <rect key="frame" x="0.0" y="20.666666666666664" width="187" height="20.333333333333336"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owned in 18/01/2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-fY-v3d">
+                                                            <rect key="frame" x="0.0" y="21.333333333333332" width="157.66666666666666" height="20.999999999999996"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -282,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="4175.1999999999998" y="-1786.9565217391305"/>
         </scene>
-        <!--Badges disponíveis-->
+        <!--Available badges-->
         <scene sceneID="zd0-i3-cbi">
             <objects>
-                <viewController title="Badges disponíveis" id="Mvb-t8-B7x" customClass="AvailableBadgesViewController" customModule="BadgeGamification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Available badges" id="Mvb-t8-B7x" customClass="AvailableBadgesViewController" customModule="BadgeGamification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8XA-nx-xpj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,8 +308,8 @@
                                                         <constraint firstAttribute="height" constant="75" id="jZR-nh-lhH"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do badge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFO-NW-obh">
-                                                    <rect key="frame" x="103.66666666666669" y="39.666666666666664" width="649" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFO-NW-obh">
+                                                    <rect key="frame" x="103.66666666666667" y="39.666666666666664" width="255.33333333333331" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.12941176469999999" green="0.81568627449999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -375,14 +374,14 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wws-PU-fzd">
                                         <rect key="frame" x="0.0" y="391" width="414" height="30"/>
-                                        <state key="normal" title="Enviar requisição">
+                                        <state key="normal" title="Send requisition">
                                             <color key="titleColor" red="0.12941176469999999" green="0.81568627449999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="sendRequisition:" destination="a8x-iY-L02" eventType="touchUpInside" id="fBw-Rg-4XS"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dê uma breve justificativa :D" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CDS-mb-PYF">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Why should you win this badge? :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CDS-mb-PYF">
                                         <rect key="frame" x="20" y="243" width="385.33333333333331" height="117"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -393,7 +392,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENO-gf-bsS">
-                                        <rect key="frame" x="113" y="84" width="301" height="77"/>
+                                        <rect key="frame" x="113" y="84" width="280.33333333333331" height="77"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -409,7 +408,7 @@
                                 <constraints>
                                     <constraint firstItem="GgE-dl-WR5" firstAttribute="top" secondItem="9mz-Pd-pHJ" secondAttribute="bottom" constant="38" id="5Ig-Bf-Pkt"/>
                                     <constraint firstItem="CDS-mb-PYF" firstAttribute="top" secondItem="GgE-dl-WR5" secondAttribute="bottom" constant="84" id="EZq-qW-46o"/>
-                                    <constraint firstItem="ENO-gf-bsS" firstAttribute="trailing" secondItem="wws-PU-fzd" secondAttribute="trailing" id="EfE-SD-QOB"/>
+                                    <constraint firstItem="ENO-gf-bsS" firstAttribute="trailing" secondItem="wws-PU-fzd" secondAttribute="trailing" multiplier="0.95" id="EfE-SD-QOB"/>
                                     <constraint firstItem="wws-PU-fzd" firstAttribute="leading" secondItem="lc6-6k-UBs" secondAttribute="leading" id="IhN-iu-uSy"/>
                                     <constraint firstItem="CDS-mb-PYF" firstAttribute="width" secondItem="lc6-6k-UBs" secondAttribute="width" multiplier="0.93" id="Lbg-U0-TbI"/>
                                     <constraint firstAttribute="bottom" secondItem="wws-PU-fzd" secondAttribute="bottom" constant="199" id="O6J-JA-34X"/>
@@ -590,7 +589,7 @@
                                 <rect key="frame" x="0.0" y="116" width="414" height="620"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" rowHeight="76" id="0cL-dA-coQ" customClass="TeamTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" rowHeight="76" id="0cL-dA-coQ" customClass="TeamTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0cL-dA-coQ" id="sS8-sA-mUB">
@@ -717,7 +716,7 @@
             </objects>
             <point key="canvasLocation" x="3289" y="-561"/>
         </scene>
-        <!--Badges disponíveis-->
+        <!--Available badges-->
         <scene sceneID="ixl-0i-SVC">
             <objects>
                 <viewController id="CAy-Ot-v8A" customClass="ExistantBadgesViewController" customModule="BadgeGamification" customModuleProvider="target" sceneMemberID="viewController">
@@ -729,7 +728,7 @@
                                 <rect key="frame" x="0.0" y="116" width="414" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="102" id="phv-vp-Uoa" customClass="BadgeTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="102" id="phv-vp-Uoa" customClass="BadgeTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="phv-vp-Uoa" id="gNA-Hj-qSj">
@@ -803,7 +802,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vD0-gr-isX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Badges disponíveis" id="bga-7t-u45">
+                    <navigationItem key="navigationItem" title="Available badges" id="bga-7t-u45">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="yOQ-Lm-ngU">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Slu-UD-XIn">
                                 <rect key="frame" x="20" y="7" width="83" height="30"/>
@@ -829,10 +828,10 @@
             </objects>
             <point key="canvasLocation" x="5190" y="640"/>
         </scene>
-        <!--Adicionar badge-->
+        <!--Add badge-->
         <scene sceneID="7AG-AM-SLd">
             <objects>
-                <viewController title="Adicionar badge" id="Yk4-ka-u52" customClass="CreateBadgeViewController" customModule="BadgeGamification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add badge" id="Yk4-ka-u52" customClass="CreateBadgeViewController" customModule="BadgeGamification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nwy-Jt-huo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -935,7 +934,7 @@
             </objects>
             <point key="canvasLocation" x="5957.6000000000004" y="640.92953523238384"/>
         </scene>
-        <!--Requisições-->
+        <!--Requisitions-->
         <scene sceneID="eqq-Py-W4d">
             <objects>
                 <viewController id="lNA-qM-pAO" customClass="RequisitionsViewController" customModule="BadgeGamification" customModuleProvider="target" sceneMemberID="viewController">
@@ -947,7 +946,7 @@
                                 <rect key="frame" x="103.66666666666669" y="139" width="207" height="29"/>
                                 <segments>
                                     <segment title="Badges"/>
-                                    <segment title="Cadastros"/>
+                                    <segment title="Registers"/>
                                 </segments>
                                 <color key="tintColor" red="0.12941176470588234" green="0.81568627450980391" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -958,7 +957,7 @@
                                 <rect key="frame" x="0.0" y="177.66666666666669" width="414" height="558.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reqCell" rowHeight="105" id="7QJ-Ja-wLv" customClass="BadgeReqTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reqCell" rowHeight="105" id="7QJ-Ja-wLv" customClass="BadgeReqTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7QJ-Ja-wLv" id="QhG-Ft-gH1">
@@ -1045,7 +1044,7 @@
                                             <outlet property="explanation" destination="JaW-6q-p0Q" id="zDJ-dj-lGd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="regCell" rowHeight="105" id="mO1-F3-5Vh" customClass="RegisterReqTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="regCell" rowHeight="105" id="mO1-F3-5Vh" customClass="RegisterReqTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="133" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mO1-F3-5Vh" id="cdy-HV-Zis">
@@ -1122,7 +1121,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fnj-MD-vvK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Requisições" id="L08-Ae-6fN">
+                    <navigationItem key="navigationItem" title="Requisitions" id="L08-Ae-6fN">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="CuU-T2-qTq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jBJ-s4-zFN">
                                 <rect key="frame" x="20" y="7" width="83" height="30"/>
@@ -1156,7 +1155,7 @@
                                 <rect key="frame" x="0.0" y="116" width="414" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankingCell" rowHeight="98" id="PeN-3P-VY8" customClass="RankingTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankingCell" rowHeight="98" id="PeN-3P-VY8" customClass="RankingTableViewCell" customModule="BadgeGamification" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PeN-3P-VY8" id="2RR-s0-9ot">
@@ -1406,6 +1405,7 @@
     </scenes>
     <resources>
         <image name="background" width="375" height="186"/>
+        <image name="genericUserWhite" width="512" height="512"/>
         <image name="icon1" width="512" height="512"/>
         <image name="icon4" width="512" height="512"/>
         <image name="icon5" width="512" height="512"/>

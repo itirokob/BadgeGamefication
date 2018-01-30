@@ -69,16 +69,20 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func retrieveUserBadgesList(completionHandler: @escaping ([String:Int])->() ){
         var userWithPoints:[String:Int] = [:]
+        
         for user in teamUsers {
             self.userBadgesManager.retrieveAllBadgesFromUser(teamName: self.teamName!, userID: user.id, completionHandler: { (badgeList) in
+                if let badgeList = badgeList{
+                    let totalPoints = badgeList.reduce(0, { (result:Int, badge:Badge) -> Int in
+                        return result + badge.numPoints
+                    })
                 
-                let totalPoints = badgeList.reduce(0, { (result:Int, badge:Badge) -> Int in
-                    return result + badge.numPoints
-                })
+                    userWithPoints[user.id] = totalPoints
                 
-                userWithPoints[user.id] = totalPoints
-                
-                completionHandler(userWithPoints)
+                    completionHandler(userWithPoints)
+                } else {
+                    userWithPoints[user.id] = 0
+                }
             })
         }
     }
@@ -114,7 +118,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teamUsers.count
+        return usersScore.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
