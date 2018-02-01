@@ -51,6 +51,9 @@
 		CBF67A7A2005307200D1331E /* ExistantBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF67A792005307200D1331E /* ExistantBadgesViewController.swift */; };
 		CBF67A7C200566E300D1331E /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF67A7B200566E300D1331E /* BadgeTableViewCell.swift */; };
 		CBF88F5620164D3100E6DCB5 /* UserImageDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF88F5520164D3100E6DCB5 /* UserImageDatabaseManager.swift */; };
+		CBFB8256202331B80005FD8C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB8255202331B80005FD8C /* AuthService.swift */; };
+		CBFB825920236A670005FD8C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB825820236A670005FD8C /* UserService.swift */; };
+		CBFB825B20236B490005FD8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB825A20236B490005FD8C /* Extensions.swift */; };
 		D9BA825E52A629FD9700C1CC /* Pods_BadgeGamification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5A850D9EF1087F070E0349 /* Pods_BadgeGamification.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +89,6 @@
 		CB31C235200CD8050065D3F9 /* AllTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeamsViewController.swift; sourceTree = "<group>"; };
 		CB31C237200CD9D40065D3F9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		CB31C239200CEA330065D3F9 /* FirstViewAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewAdminViewController.swift; sourceTree = "<group>"; };
-		CB35C116201FC25800E10B3F /* BadgeGamification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadgeGamification.entitlements; sourceTree = "<group>"; };
 		CB3608D02003E5B700ED47A0 /* BadgeGamification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgeGamification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3608D32003E5B700ED47A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3608D82003E5B700ED47A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,9 @@
 		CBF67A792005307200D1331E /* ExistantBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistantBadgesViewController.swift; sourceTree = "<group>"; };
 		CBF67A7B200566E300D1331E /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
 		CBF88F5520164D3100E6DCB5 /* UserImageDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageDatabaseManager.swift; sourceTree = "<group>"; };
+		CBFB8255202331B80005FD8C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CBFB825820236A670005FD8C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CBFB825A20236B490005FD8C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD5A850D9EF1087F070E0349 /* Pods_BadgeGamification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadgeGamification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,8 +197,9 @@
 		CB3608D22003E5B700ED47A0 /* BadgeGamification */ = {
 			isa = PBXGroup;
 			children = (
-				CB35C116201FC25800E10B3F /* BadgeGamification.entitlements */,
 				CB3608D32003E5B700ED47A0 /* AppDelegate.swift */,
+				CBFB825A20236B490005FD8C /* Extensions.swift */,
+				CBFB8257202331BD0005FD8C /* Services */,
 				CBA46CA020052D6A0044CD08 /* Model */,
 				CB36090B20051B8F00ED47A0 /* DatabaseManagers */,
 				CB3609062003EC7400ED47A0 /* Controllers */,
@@ -208,6 +214,7 @@
 		CB3609052003EC6400ED47A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBF67A7D200566E600D1331E /* Cells */,
 				CB3608D72003E5B700ED47A0 /* Main.storyboard */,
 				CB3608DC2003E5B700ED47A0 /* LaunchScreen.storyboard */,
 			);
@@ -257,7 +264,6 @@
 				CBDDFB7820161DAE0045ED5C /* Variables.swift */,
 				CB2F6A98201900C6001EAC85 /* UserList.swift */,
 				CB2F6A962018F835001EAC85 /* UserBadgesList.swift */,
-				CBF67A7D200566E600D1331E /* Cells */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +294,15 @@
 				CB2F6A942018EC70001EAC85 /* RankingTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CBFB8257202331BD0005FD8C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB8255202331B80005FD8C /* AuthService.swift */,
+				CBFB825820236A670005FD8C /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,10 +524,12 @@
 				CBEB9E63200636DA002C6FE6 /* BadgeRequisitionViewController.swift in Sources */,
 				CBCE67962017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift in Sources */,
 				CBDDFB7920161DAE0045ED5C /* Variables.swift in Sources */,
+				CBFB825920236A670005FD8C /* UserService.swift in Sources */,
 				CB7A3BB52007B5B5001E63AA /* AvailableBadgesTableViewCell.swift in Sources */,
 				CB7A3BB32007B53D001E63AA /* AvailableBadgesViewController.swift in Sources */,
 				CB7A3BBF2008CAAA001E63AA /* CreateTeamViewController.swift in Sources */,
 				CB3609152005237A00ED47A0 /* CreateBadgeViewController.swift in Sources */,
+				CBFB825B20236B490005FD8C /* Extensions.swift in Sources */,
 				CB7A3BB92007E308001E63AA /* User.swift in Sources */,
 				CBEB9E6D20067853002C6FE6 /* RegisterReqDatabaseManager.swift in Sources */,
 				CB7A3BBD2008C854001E63AA /* Team.swift in Sources */,
@@ -531,6 +548,7 @@
 				CB7A3BC12008D455001E63AA /* EnterOrCreateTeamViewController.swift in Sources */,
 				CBEB9E672006408F002C6FE6 /* RequisitionsViewController.swift in Sources */,
 				CBF88F5620164D3100E6DCB5 /* UserImageDatabaseManager.swift in Sources */,
+				CBFB8256202331B80005FD8C /* AuthService.swift in Sources */,
 				CB1210202018DF24004572F8 /* RegisterReqTableViewCell.swift in Sources */,
 				CB36090D20051BBD00ED47A0 /* AuthDatabaseManager.swift in Sources */,
 				CBDDFB7B20161FBC0045ED5C /* UserBadge.swift in Sources */,

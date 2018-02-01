@@ -75,26 +75,28 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
         let userID = Auth.auth().currentUser?.uid
         
         userManager.retrieveUser(userID: userID!) { (user) in
-            self.userName.text = user.name
+            if let user = user{
+                self.userName.text = user.name
             
-            if let cachedImage = self.imageCache.object(forKey: user.profileImageURL as AnyObject ) as? UIImage {
-                self.userImage.image = cachedImage
-                return
-            }
+                if let cachedImage = self.imageCache.object(forKey: user.profileImageURL as AnyObject ) as? UIImage {
+                    self.userImage.image = cachedImage
+                    return
+                }
             
-            if user.profileImageURL != " " {
-                let url = URL(string: user.profileImageURL)
-                let request = URLRequest(url: url!)
-                URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-                    if error == nil{
-                        DispatchQueue.main.async {
-                            if let downloadedImage = UIImage(data: data!){
-                                self.imageCache.setObject(downloadedImage, forKey: user.profileImageURL as AnyObject )
-                                self.userImage.image = UIImage(data: data!)
+                if user.profileImageURL != " " {
+                    let url = URL(string: user.profileImageURL)
+                    let request = URLRequest(url: url!)
+                    URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
+                        if error == nil{
+                            DispatchQueue.main.async {
+                                if let downloadedImage = UIImage(data: data!){
+                                    self.imageCache.setObject(downloadedImage, forKey: user.profileImageURL as AnyObject )
+                                    self.userImage.image = UIImage(data: data!)
+                                }
                             }
                         }
-                    }
-                }).resume()
+                    }).resume()
+                }
             }
         }
     }

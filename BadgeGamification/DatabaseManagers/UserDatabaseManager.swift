@@ -94,7 +94,7 @@ class UserDatabaseManager:NSObject {
 //        })
 //    }
     
-    func retrieveUser(userID:String, completionHandler: @escaping (User)->()){
+    func retrieveUser(userID:String, completionHandler: @escaping (User?)->()){
         ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
             let user = snapshot.value as? NSDictionary
             
@@ -107,6 +107,8 @@ class UserDatabaseManager:NSObject {
                                    profileImageURL: jsonUser["profileImageURL"].string!,
                                    id: jsonUser["id"].string!)
                 completionHandler(newUser)
+            } else {
+                completionHandler(nil)
             }
         })
     }
