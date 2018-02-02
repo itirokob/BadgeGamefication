@@ -11,8 +11,8 @@ import FirebaseDatabase
 import Firebase
 import SwiftyJSON
 
-class BadgeDatabaseManager: DAO{
-    static let shared = BadgeDatabaseManager()
+class BadgeDAO: DAO{
+    static let shared = BadgeDAO()
 
     override init(){
         super.init()

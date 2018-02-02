@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class FirstViewAdminViewController: UITabBarController {
 
-    let userManager = UserDatabaseManager.getInstance()
+    let userManager = UserDAO.getInstance()
     
     var teamName:String = ""
     

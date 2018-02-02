@@ -18,9 +18,9 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var teamName:String?
     
-    let userManager = UserDatabaseManager.getInstance()
+    let userManager = UserDAO.getInstance()
     let userListManager = UserListDatabaseManager.shared
-    let userBadgesManager = UserBadgesDatabaseManager.shared
+    let userBadgesManager = UserBadgeDAO.shared
     let authManager = AuthDatabaseManager.shared
     
     var IDs:[String] = []

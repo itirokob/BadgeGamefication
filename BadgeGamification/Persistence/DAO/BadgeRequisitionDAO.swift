@@ -9,8 +9,8 @@
 import Foundation
 import FirebaseDatabase
 
-class RequisitionsDatabaseManager:DAO{
-    static let shared = RequisitionsDatabaseManager()
+class BadgeRequisitionDAO:DAO{
+    static let shared = BadgeRequisitionDAO()
     
     private override init(){
         super.init()

@@ -10,16 +10,16 @@ import Foundation
 import FirebaseDatabase
 import SwiftyJSON
 
-class UserDatabaseManager:DAO {
+class UserDAO:DAO {
     private override init(){
         super.init()
     }
     
-    private static var instance:UserDatabaseManager?
+    private static var instance:UserDAO?
     
-    static func getInstance() -> UserDatabaseManager{
+    static func getInstance() -> UserDAO{
         if self.instance == nil{
-            self.instance = UserDatabaseManager()
+            self.instance = UserDAO()
         }
         return self.instance!
     }

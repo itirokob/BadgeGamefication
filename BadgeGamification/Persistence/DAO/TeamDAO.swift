@@ -9,8 +9,8 @@
 import UIKit
 import FirebaseDatabase
 
-class TeamDatabaseManager: DAO {
-    static let shared = TeamDatabaseManager()
+class TeamDAO: DAO {
+    static let shared = TeamDAO()
     
     private override init(){
         super.init()

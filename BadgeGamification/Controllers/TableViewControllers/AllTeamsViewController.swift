@@ -17,10 +17,10 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var teams:[Team] = []
     
-    let teamDatabaseManager = TeamDatabaseManager.shared
-    let userDatabaseManager = UserDatabaseManager.getInstance()
-    let userBadgeManager = UserBadgesDatabaseManager.shared
-    let registerReqDatabaseManager = RegisterReqDatabaseManager.shared
+    let teamDatabaseManager = TeamDAO.shared
+    let userDatabaseManager = UserDAO.getInstance()
+    let userBadgeManager = UserBadgeDAO.shared
+    let registerReqDatabaseManager = RegisterRequisitionDAO.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

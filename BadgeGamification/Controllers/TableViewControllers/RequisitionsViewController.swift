@@ -13,10 +13,10 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    let reqManager = RequisitionsDatabaseManager.shared
-    let registerManager = RegisterReqDatabaseManager.shared
-    let userBadgesManager = UserBadgesDatabaseManager.shared
-    let userManager = UserDatabaseManager.getInstance()
+    let reqManager = BadgeRequisitionDAO.shared
+    let registerManager = RegisterRequisitionDAO.shared
+    let userBadgesManager = UserBadgeDAO.shared
+    let userManager = UserDAO.getInstance()
     let userListsManager = UserListDatabaseManager.shared
     let authManager = AuthDatabaseManager.shared
     

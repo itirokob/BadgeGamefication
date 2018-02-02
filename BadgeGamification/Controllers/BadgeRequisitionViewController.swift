@@ -12,9 +12,9 @@ import FirebaseAuth
 class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
     
     var userEmail:String = ""
-    let badgeManager = BadgeDatabaseManager.shared
-    let reqManager = RequisitionsDatabaseManager.shared
-    let userManager = UserDatabaseManager.getInstance()
+    let badgeManager = BadgeDAO.shared
+    let reqManager = BadgeRequisitionDAO.shared
+    let userManager = UserDAO.getInstance()
     
     var badge:Badge?
     

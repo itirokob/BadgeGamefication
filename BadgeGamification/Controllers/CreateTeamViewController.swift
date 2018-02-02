@@ -16,8 +16,8 @@ class CreateTeamViewController: UIViewController {
     var adminName:String?
 //    var teamID:String?
     
-    let teamDatabaseManager = TeamDatabaseManager.shared
-    let userDatabaseManager = UserDatabaseManager.getInstance()
+    let teamDatabaseManager = TeamDAO.shared
+    let userDatabaseManager = UserDAO.getInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()

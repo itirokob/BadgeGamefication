@@ -21,8 +21,8 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
     var teamName:String?
     var totalPoints = 0
     
-    let userBadgesManager = UserBadgesDatabaseManager.shared
-    let userManager = UserDatabaseManager.getInstance()
+    let userBadgesManager = UserBadgeDAO.shared
+    let userManager = UserDAO.getInstance()
     let userImageManager = UserImageDatabaseManager.shared
     let authManager = AuthDatabaseManager.shared
     

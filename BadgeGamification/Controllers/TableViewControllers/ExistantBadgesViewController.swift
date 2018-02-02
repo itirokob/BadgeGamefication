@@ -9,7 +9,7 @@
 import UIKit
 
 class ExistantBadgesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let badgeDatabaseManager = BadgeDatabaseManager.shared
+    let badgeDatabaseManager = BadgeDAO.shared
     var badges:[Badge] = []
     var teamName:String?
     

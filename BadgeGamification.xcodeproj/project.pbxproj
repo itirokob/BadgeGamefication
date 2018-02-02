@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB1210202018DF24004572F8 /* RegisterReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12101F2018DF24004572F8 /* RegisterReqTableViewCell.swift */; };
-		CB219003200789C500A0095D /* UserBadgesDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB219002200789C500A0095D /* UserBadgesDatabaseManager.swift */; };
+		CB219003200789C500A0095D /* UserBadgeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB219002200789C500A0095D /* UserBadgeDAO.swift */; };
 		CB21900520079CBB00A0095D /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21900420079CBB00A0095D /* UserBadgesViewController.swift */; };
 		CB21900720079E6F00A0095D /* UserBadgesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21900620079E6F00A0095D /* UserBadgesTableViewCell.swift */; };
 		CB2F6A932018EC24001EAC85 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2F6A922018EC24001EAC85 /* RankingViewController.swift */; };
@@ -24,13 +24,13 @@
 		CB3609022003E72100ED47A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3609012003E72100ED47A0 /* GoogleService-Info.plist */; };
 		CB3609042003EB3000ED47A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3609032003EB3000ED47A0 /* LoginViewController.swift */; };
 		CB36090D20051BBD00ED47A0 /* AuthDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB36090C20051BBC00ED47A0 /* AuthDatabaseManager.swift */; };
-		CB36090F20051BE900ED47A0 /* BadgeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB36090E20051BE900ED47A0 /* BadgeDatabaseManager.swift */; };
+		CB36090F20051BE900ED47A0 /* BadgeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB36090E20051BE900ED47A0 /* BadgeDAO.swift */; };
 		CB3609152005237A00ED47A0 /* CreateBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3609142005237A00ED47A0 /* CreateBadgeViewController.swift */; };
 		CB7A3BB32007B53D001E63AA /* AvailableBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB22007B53D001E63AA /* AvailableBadgesViewController.swift */; };
 		CB7A3BB52007B5B5001E63AA /* AvailableBadgesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB42007B5B5001E63AA /* AvailableBadgesTableViewCell.swift */; };
-		CB7A3BB72007DFF4001E63AA /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB62007DFF4001E63AA /* UserDatabaseManager.swift */; };
+		CB7A3BB72007DFF4001E63AA /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB62007DFF4001E63AA /* UserDAO.swift */; };
 		CB7A3BB92007E308001E63AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB82007E308001E63AA /* User.swift */; };
-		CB7A3BBB2008C834001E63AA /* TeamDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BBA2008C834001E63AA /* TeamDatabaseManager.swift */; };
+		CB7A3BBB2008C834001E63AA /* TeamDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BBA2008C834001E63AA /* TeamDAO.swift */; };
 		CB7A3BBD2008C854001E63AA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BBC2008C854001E63AA /* Team.swift */; };
 		CB7A3BBF2008CAAA001E63AA /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BBE2008CAAA001E63AA /* CreateTeamViewController.swift */; };
 		CB7A3BC12008D455001E63AA /* EnterOrCreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BC02008D455001E63AA /* EnterOrCreateTeamViewController.swift */; };
@@ -38,12 +38,12 @@
 		CBCE67962017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE67952017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift */; };
 		CBDDFB7920161DAE0045ED5C /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDFB7820161DAE0045ED5C /* Variables.swift */; };
 		CBDDFB7D201623A80045ED5C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDFB7C201623A80045ED5C /* DAO.swift */; };
-		CBEB9E5E2006327D002C6FE6 /* RequisitionsDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E5D2006327D002C6FE6 /* RequisitionsDatabaseManager.swift */; };
+		CBEB9E5E2006327D002C6FE6 /* BadgeRequisitionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E5D2006327D002C6FE6 /* BadgeRequisitionDAO.swift */; };
 		CBEB9E6020063449002C6FE6 /* BadgeRequisition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E5F20063449002C6FE6 /* BadgeRequisition.swift */; };
 		CBEB9E63200636DA002C6FE6 /* BadgeRequisitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E62200636DA002C6FE6 /* BadgeRequisitionViewController.swift */; };
 		CBEB9E672006408F002C6FE6 /* RequisitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E662006408F002C6FE6 /* RequisitionsViewController.swift */; };
 		CBEB9E6920064132002C6FE6 /* BadgeReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E6820064132002C6FE6 /* BadgeReqTableViewCell.swift */; };
-		CBEB9E6D20067853002C6FE6 /* RegisterReqDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E6C20067853002C6FE6 /* RegisterReqDatabaseManager.swift */; };
+		CBEB9E6D20067853002C6FE6 /* RegisterRequisitionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E6C20067853002C6FE6 /* RegisterRequisitionDAO.swift */; };
 		CBEB9E6F20067A2B002C6FE6 /* RegisterRequistion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB9E6E20067A2B002C6FE6 /* RegisterRequistion.swift */; };
 		CBF67A7A2005307200D1331E /* ExistantBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF67A792005307200D1331E /* ExistantBadgesViewController.swift */; };
 		CBF67A7C200566E300D1331E /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF67A7B200566E300D1331E /* BadgeTableViewCell.swift */; };
@@ -76,7 +76,7 @@
 		715732A22B34D15884539DD9 /* Pods-BadgeGamification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeGamification.release.xcconfig"; path = "Pods/Target Support Files/Pods-BadgeGamification/Pods-BadgeGamification.release.xcconfig"; sourceTree = "<group>"; };
 		BE357F94812DDCD20A7AAE0F /* Pods-BadgeGamification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeGamification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BadgeGamification/Pods-BadgeGamification.debug.xcconfig"; sourceTree = "<group>"; };
 		CB12101F2018DF24004572F8 /* RegisterReqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReqTableViewCell.swift; sourceTree = "<group>"; };
-		CB219002200789C500A0095D /* UserBadgesDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBadgesDatabaseManager.swift; sourceTree = "<group>"; };
+		CB219002200789C500A0095D /* UserBadgeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBadgeDAO.swift; sourceTree = "<group>"; };
 		CB21900420079CBB00A0095D /* UserBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBadgesViewController.swift; sourceTree = "<group>"; };
 		CB21900620079E6F00A0095D /* UserBadgesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBadgesTableViewCell.swift; sourceTree = "<group>"; };
 		CB2F6A922018EC24001EAC85 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -96,13 +96,13 @@
 		CB3609012003E72100ED47A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB3609032003EB3000ED47A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB36090C20051BBC00ED47A0 /* AuthDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDatabaseManager.swift; sourceTree = "<group>"; };
-		CB36090E20051BE900ED47A0 /* BadgeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDatabaseManager.swift; sourceTree = "<group>"; };
+		CB36090E20051BE900ED47A0 /* BadgeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDAO.swift; sourceTree = "<group>"; };
 		CB3609142005237A00ED47A0 /* CreateBadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBadgeViewController.swift; sourceTree = "<group>"; };
 		CB7A3BB22007B53D001E63AA /* AvailableBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesViewController.swift; sourceTree = "<group>"; };
 		CB7A3BB42007B5B5001E63AA /* AvailableBadgesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesTableViewCell.swift; sourceTree = "<group>"; };
-		CB7A3BB62007DFF4001E63AA /* UserDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
+		CB7A3BB62007DFF4001E63AA /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		CB7A3BB82007E308001E63AA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CB7A3BBA2008C834001E63AA /* TeamDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDatabaseManager.swift; sourceTree = "<group>"; };
+		CB7A3BBA2008C834001E63AA /* TeamDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDAO.swift; sourceTree = "<group>"; };
 		CB7A3BBC2008C854001E63AA /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CB7A3BBE2008CAAA001E63AA /* CreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
 		CB7A3BC02008D455001E63AA /* EnterOrCreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterOrCreateTeamViewController.swift; sourceTree = "<group>"; };
@@ -110,12 +110,12 @@
 		CBCE67952017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBDDFB7820161DAE0045ED5C /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		CBDDFB7C201623A80045ED5C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
-		CBEB9E5D2006327D002C6FE6 /* RequisitionsDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequisitionsDatabaseManager.swift; sourceTree = "<group>"; };
+		CBEB9E5D2006327D002C6FE6 /* BadgeRequisitionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequisitionDAO.swift; sourceTree = "<group>"; };
 		CBEB9E5F20063449002C6FE6 /* BadgeRequisition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequisition.swift; sourceTree = "<group>"; };
 		CBEB9E62200636DA002C6FE6 /* BadgeRequisitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequisitionViewController.swift; sourceTree = "<group>"; };
 		CBEB9E662006408F002C6FE6 /* RequisitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequisitionsViewController.swift; sourceTree = "<group>"; };
 		CBEB9E6820064132002C6FE6 /* BadgeReqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeReqTableViewCell.swift; sourceTree = "<group>"; };
-		CBEB9E6C20067853002C6FE6 /* RegisterReqDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReqDatabaseManager.swift; sourceTree = "<group>"; };
+		CBEB9E6C20067853002C6FE6 /* RegisterRequisitionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequisitionDAO.swift; sourceTree = "<group>"; };
 		CBEB9E6E20067A2B002C6FE6 /* RegisterRequistion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequistion.swift; sourceTree = "<group>"; };
 		CBF67A792005307200D1331E /* ExistantBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistantBadgesViewController.swift; sourceTree = "<group>"; };
 		CBF67A7B200566E300D1331E /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
@@ -246,12 +246,12 @@
 		CB9C4B5F2024EC6F00D4641A /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				CB36090E20051BE900ED47A0 /* BadgeDatabaseManager.swift */,
-				CBEB9E5D2006327D002C6FE6 /* RequisitionsDatabaseManager.swift */,
-				CBEB9E6C20067853002C6FE6 /* RegisterReqDatabaseManager.swift */,
-				CB219002200789C500A0095D /* UserBadgesDatabaseManager.swift */,
-				CB7A3BB62007DFF4001E63AA /* UserDatabaseManager.swift */,
-				CB7A3BBA2008C834001E63AA /* TeamDatabaseManager.swift */,
+				CB36090E20051BE900ED47A0 /* BadgeDAO.swift */,
+				CBEB9E5D2006327D002C6FE6 /* BadgeRequisitionDAO.swift */,
+				CBEB9E6C20067853002C6FE6 /* RegisterRequisitionDAO.swift */,
+				CB219002200789C500A0095D /* UserBadgeDAO.swift */,
+				CB7A3BB62007DFF4001E63AA /* UserDAO.swift */,
+				CB7A3BBA2008C834001E63AA /* TeamDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -512,8 +512,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB219003200789C500A0095D /* UserBadgesDatabaseManager.swift in Sources */,
-				CB36090F20051BE900ED47A0 /* BadgeDatabaseManager.swift in Sources */,
+				CB219003200789C500A0095D /* UserBadgeDAO.swift in Sources */,
+				CB36090F20051BE900ED47A0 /* BadgeDAO.swift in Sources */,
 				CB2F6A952018EC70001EAC85 /* RankingTableViewCell.swift in Sources */,
 				CB21900720079E6F00A0095D /* UserBadgesTableViewCell.swift in Sources */,
 				CB31C23A200CEA330065D3F9 /* FirstViewAdminViewController.swift in Sources */,
@@ -531,20 +531,20 @@
 				CB3609152005237A00ED47A0 /* CreateBadgeViewController.swift in Sources */,
 				CBFB825B20236B490005FD8C /* Extensions.swift in Sources */,
 				CB7A3BB92007E308001E63AA /* User.swift in Sources */,
-				CBEB9E6D20067853002C6FE6 /* RegisterReqDatabaseManager.swift in Sources */,
+				CBEB9E6D20067853002C6FE6 /* RegisterRequisitionDAO.swift in Sources */,
 				CB7A3BBD2008C854001E63AA /* Team.swift in Sources */,
-				CB7A3BB72007DFF4001E63AA /* UserDatabaseManager.swift in Sources */,
+				CB7A3BB72007DFF4001E63AA /* UserDAO.swift in Sources */,
 				CB3609042003EB3000ED47A0 /* LoginViewController.swift in Sources */,
 				CBFB825D20236F630005FD8C /* BadgeService.swift in Sources */,
 				CB21900520079CBB00A0095D /* UserBadgesViewController.swift in Sources */,
-				CBEB9E5E2006327D002C6FE6 /* RequisitionsDatabaseManager.swift in Sources */,
+				CBEB9E5E2006327D002C6FE6 /* BadgeRequisitionDAO.swift in Sources */,
 				CB31C236200CD8050065D3F9 /* AllTeamsViewController.swift in Sources */,
 				CBF67A7A2005307200D1331E /* ExistantBadgesViewController.swift in Sources */,
 				CB2F6A9B2019010D001EAC85 /* UserListDatabaseManager.swift in Sources */,
 				CB3608D42003E5B700ED47A0 /* AppDelegate.swift in Sources */,
 				CBDDFB7D201623A80045ED5C /* DAO.swift in Sources */,
 				CBEB9E6920064132002C6FE6 /* BadgeReqTableViewCell.swift in Sources */,
-				CB7A3BBB2008C834001E63AA /* TeamDatabaseManager.swift in Sources */,
+				CB7A3BBB2008C834001E63AA /* TeamDAO.swift in Sources */,
 				CBEB9E6F20067A2B002C6FE6 /* RegisterRequistion.swift in Sources */,
 				CB7A3BC12008D455001E63AA /* EnterOrCreateTeamViewController.swift in Sources */,
 				CBEB9E672006408F002C6FE6 /* RequisitionsViewController.swift in Sources */,

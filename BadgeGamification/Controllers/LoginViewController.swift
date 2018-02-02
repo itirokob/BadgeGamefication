@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    fileprivate func logIn(_ id: String, _ userManager: UserDatabaseManager) {
+    fileprivate func logIn(_ id: String, _ userManager: UserDAO) {
         userManager.retrieveUser(userID: id, completionHandler: { (user) in
             if let user = user{
                 self.teamName = user.teamName
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
         })
     }
     
-    fileprivate func userHaveAccount(_ email: String, _ pass: String, _ userManager: UserDatabaseManager) {
+    fileprivate func userHaveAccount(_ email: String, _ pass: String, _ userManager: UserDAO) {
         authManager.signIn(email: email, password: pass, completionHandler: { (success, idOrErrorMessage) in
             if success {
                 self.logIn(idOrErrorMessage, userManager)
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
         })
     }
     
-    fileprivate func registerUser(_ email: String, _ pass: String, _ userManager: UserDatabaseManager, _ name: String) {
+    fileprivate func registerUser(_ email: String, _ pass: String, _ userManager: UserDAO, _ name: String) {
         authManager.register(email: email, password: pass, completionHandler:  { (success, idOrErrorMessage) in
             if success {
                 userManager.createUser(name: name, userID: idOrErrorMessage, isAdmin: "false", teamName: "", status: "")
@@ -98,7 +98,7 @@ class LoginViewController: UIViewController {
         })
     }
     @IBAction func adminLogin(_ sender: Any) {
-        let userManager = UserDatabaseManager.getInstance()
+        let userManager = UserDAO.getInstance()
         
         authManager.signIn(email: "admin@admin.com", password: "123456", completionHandler: { (success, idOrErrorMessage) in
             if success {
@@ -110,7 +110,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func userLogin(_ sender: Any) {
-        let userManager = UserDatabaseManager.getInstance()
+        let userManager = UserDAO.getInstance()
         
         authManager.signIn(email: "user@user.com", password: "123456", completionHandler: { (success, idOrErrorMessage) in
             if success {
@@ -122,7 +122,7 @@ class LoginViewController: UIViewController {
         
     }
     @IBAction func loginAction(_ sender: Any) {
-        let userManager = UserDatabaseManager.getInstance()
+        let userManager = UserDAO.getInstance()
         
         if haveAccount {
             if let email = emailTextField.text, let pass = passwordTextField.text {

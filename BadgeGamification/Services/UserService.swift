@@ -15,7 +15,7 @@ class UserService: NSObject {
         super.init()
     }
     
-    let userManager = UserDatabaseManager.getInstance()
+    let userManager = UserDAO.getInstance()
     
     func retrieveUser(userID:String, completionHandler: @escaping (User?)->()) {
         userManager.retrieveUser(userID: userID) { (user) in

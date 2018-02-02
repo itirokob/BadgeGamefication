@@ -9,8 +9,8 @@
 import Foundation
 import FirebaseDatabase
 
-class RegisterReqDatabaseManager:DAO {
-    static let shared = RegisterReqDatabaseManager()
+class RegisterRequisitionDAO:DAO {
+    static let shared = RegisterRequisitionDAO()
     
     private override init(){
         super.init()

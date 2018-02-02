@@ -12,7 +12,7 @@ class AvailableBadgesViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var tableView: UITableView!
     
     var badges:[Badge] = []
-    let badgeManager = BadgeDatabaseManager.shared
+    let badgeManager = BadgeDAO.shared
     var teamName:String?
     
     override func viewDidLoad() {
