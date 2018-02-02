@@ -26,17 +26,21 @@ class UserBadgesDatabaseManager:DAO {
     }
     
     func addBadgeToUser(teamName: String, userID:String, badge:Badge, acquisitionDateString:String){
-        let path = "Teams/\(teamName)/UserBadgeList/\(userID)/\(badge.id)"
+        let path = "Teams/\(teamName)/UserBadgeList/\(userID)"
+       
+        badge.dictInfo["acquisitionDate"] = acquisitionDateString
         
-        ref?.child("\(path)").setValue([
-            "name": badge.name,
-            "description": badge.descript,
-            "numPoints": badge.numPoints,
-            "id": badge.id,
-            "teamName": teamName,
-            "acquisitionDate": acquisitionDateString,
-            "badgeIcon": badge.badgeIcon
-        ])
+        self.create(dump: Badge.self, object: badge, path: path, newObjectID: badge.id)
+        
+//        ref?.child("\(path)").setValue([
+//            "name": badge.name,
+//            "description": badge.descript,
+//            "numPoints": badge.numPoints,
+//            "id": badge.id,
+//            "teamName": teamName,
+//            "acquisitionDate": acquisitionDateString,
+//            "badgeIcon": badge.badgeIcon
+//        ])
         
     }
     

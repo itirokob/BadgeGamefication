@@ -34,6 +34,9 @@ class Team: NSObject, PersistenceObject {
         
         self.dictInfo = dictionary
     }
+    func getDictInfo() -> [AnyHashable:Any]{
+        return self.dictInfo
+    }
     
     
 }

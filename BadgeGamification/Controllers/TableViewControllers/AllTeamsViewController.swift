@@ -46,7 +46,14 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
         let userID = Auth.auth().currentUser?.uid
         
         //Criar requisicao
-        registerReqDatabaseManager.createRegisterRequisition(userEmail: userEmail!, teamName: team.teamName, userID: userID!)
+        let newRegisterReq = RegisterRequistion(dictionary: [
+            "userEmail": userEmail!,
+            "id": " ",
+            "teamName": team.teamName,
+            "userID": userID!,
+            "status": "PA" //Pendent Approval
+        ])
+        registerReqDatabaseManager.createRegisterRequisition(teamName: team.teamName, newRegisterReq:newRegisterReq)
         createUser(teamName: team.teamName)
         
         self.alert(message: "Requisition done! Wait for admin approval"){_ in

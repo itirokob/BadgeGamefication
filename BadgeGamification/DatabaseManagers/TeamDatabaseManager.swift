@@ -20,11 +20,19 @@ class TeamDatabaseManager: DAO {
     }
     
     func createTeam(teamName:String, adminID:String, adminName:String) {
-        let path = ref?.child("Teams").child(teamName)
-
-        path?.child("teamName").setValue(teamName)
-        path?.child("adminID").setValue(adminID)
-        path?.child("adminName").setValue(adminName)
+        let newTeam = Team(dictionary: [
+            "teamName": teamName,
+            "adminID": adminID,
+            "adminName": adminName
+        ])
+        
+        self.create(dump: Team.self, object: newTeam, path: "Teams", newObjectID: teamName)
+//
+//        let path = ref?.child("Teams").child(teamName)
+//
+//        path?.child("teamName").setValue(teamName)
+//        path?.child("adminID").setValue(adminID)
+//        path?.child("adminName").setValue(adminName)
     }
     
     func retrieveAllTeams(completionHandler: @escaping ([Team]?)->()){

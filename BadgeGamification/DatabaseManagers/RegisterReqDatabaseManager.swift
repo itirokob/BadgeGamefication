@@ -21,23 +21,21 @@ class RegisterReqDatabaseManager:DAO {
     
     let objectName = "RegisterRequisitions"
     
-    func createRegisterRequisition(userEmail:String, teamName:String, userID:String){
-        let registerID = ref?.child("Teams/\(teamName)/RegisterRequisitions").childByAutoId().key
-        let path = ref?.child("Teams/\(teamName)/RegisterRequisitions").child(registerID!)
-        
-        path?.setValue([
-            "userEmail": userEmail,
-            "id": registerID,
-            "teamName": teamName,
-            "userID": userID,
-            "status": "PA" //Pendent Approval
-        ])
-//        
-//        path?.child("userEmail").setValue(userEmail)
-//        path?.child("id").setValue(registerID)
-//        path?.child("teamName").setValue(teamName)
-//        path?.child("userID").setValue(userID)
-//        path?.child("status").setValue("PA") //PA = Pendent Approval
+    func createRegisterRequisition(teamName:String, newRegisterReq:RegisterRequistion){
+        let path = "Teams/\(teamName)/RegisterRequisitions"
+
+        self.create(dump: RegisterRequistion.self, object: newRegisterReq, path: path, newObjectID: nil)
+//
+//        let registerID = ref?.child("Teams/\(teamName)/RegisterRequisitions").childByAutoId().key
+//        let path = ref?.child("Teams/\(teamName)/RegisterRequisitions").child(registerID!)
+//
+//        path?.setValue([
+//            "userEmail": userEmail,
+//            "id": registerID,
+//            "teamName": teamName,
+//            "userID": userID,
+//            "status": "PA" //Pendent Approval
+//        ])
     }
 
     func retrievePendentRegisterRequisitions(teamName:String, completionHandler: @escaping ([RegisterRequistion]?) -> ()){

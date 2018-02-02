@@ -42,7 +42,16 @@ class CreateBadgeViewController: UIViewController {
             alert(message: "Select a icon to your new badge", completionHandler: {_ in})
         } else if let name = nameTextField.text, let description = descriptionTextField.text, let numPoints = numPointsTextField.text {
             
-            badgeManager.createBadge(name: name, description: description, numPoints: Int(numPoints)!, teamName: self.teamName!, badgeIcon: selectedIcon)
+            let newBadge = Badge(dictionary: [
+                "name" : name,
+                "numPoints" : Int(numPoints)!,
+                "description" : description,
+                "teamName" : self.teamName!,
+                "id" : " ",
+                "badgeIcon" : selectedIcon
+                ])
+            
+            badgeManager.createBadge(newBadge: newBadge, teamName: self.teamName!)
             
             performSegue(withIdentifier: "unwindToExistantBadges", sender: self)
         }

@@ -39,7 +39,9 @@ class RegisterRequistion: NSObject, PersistenceObject{
         self.userID = dictionary["userID"] as! String
         
         self.dictInfo = dictionary
-        
-        
+    }
+    
+    func getDictInfo() -> [AnyHashable:Any]{
+        return self.dictInfo
     }
 }

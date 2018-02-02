@@ -30,9 +30,7 @@ class UserDatabaseManager:DAO {
     }
     
     func createUser(name:String, userID:String, isAdmin:String, teamName:String, status:String){
-        let path = ref?.child("Users").child(userID)
-        
-        path?.setValue([
+        let newUser = User(dictionary: [
             "name":name,
             "isAdmin":isAdmin,
             "teamName": teamName,
@@ -41,12 +39,21 @@ class UserDatabaseManager:DAO {
             "id" : userID
         ])
         
-//        path?.child("name").setValue(name)
-//        path?.child("isAdmin").setValue(isAdmin)
-////        path?.child("teamID").setValue(teamID)
-//        path?.child("teamName").setValue(teamName)
-//        path?.child("status").setValue(status)
-//        path?.child("profileImageURL").setValue(" ")
+        let path = "Users"
+        
+        self.create(dump: User.self, object: newUser, path: path, newObjectID: userID)
+//
+//
+//        let path = ref?.child("Users").child(userID)
+//
+//        path?.setValue([
+//            "name":name,
+//            "isAdmin":isAdmin,
+//            "teamName": teamName,
+//            "status": status,
+//            "profileImageURL": " ",
+//            "id" : userID
+//        ])
     }
 
 //    func retrieveUsers(completionHandler: @escaping ([User]?)-> ()){

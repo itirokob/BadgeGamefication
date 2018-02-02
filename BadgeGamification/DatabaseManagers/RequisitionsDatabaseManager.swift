@@ -21,30 +21,35 @@ class RequisitionsDatabaseManager:DAO{
     
     let objectName = "BadgeRequisitions"
     
-    func createBadgeRequisition(teamName:String, userEmail:String, badgeName:String, explanation:String, userID:String, badgeNumPoints:Int, badgeDescription:String, badgeID:String, badgeIcon:String){
+    func createBadgeRequisition(teamName:String, newBadgeReq:BadgeRequisition){
         
-        let requisitionID = ref?.child("Teams/\(teamName)/BadgeRequisitions").childByAutoId().key
-        let path = ref?.child("Teams/\(teamName)/BadgeRequisitions").child(requisitionID!)
+        let path = "Teams/\(teamName)/BadgeRequisitions"
         
-        path?.setValue([
-            "userEmail": userEmail,
-            "explanation": explanation,
-            "id":requisitionID,
-            "userID": userID,
-            "status": "PA",
-            "teamName": teamName,
-            "badgeName": badgeName,
-            "badgeNumPoints":badgeNumPoints,
-            "badgeDescription": badgeDescription,
-            "badgeID": badgeID,
-            "badgeIcon": badgeIcon
-        ])
+        self.create(dump: BadgeRequisition.self, object: newBadgeReq, path: path, newObjectID: nil)
+//
+//
+//        let requisitionID = ref?.child("Teams/\(teamName)/BadgeRequisitions").childByAutoId().key
+//        let path = ref?.child("Teams/\(teamName)/BadgeRequisitions").child(requisitionID!)
+//
+//        path?.setValue([
+//            "userEmail": userEmail,
+//            "explanation": explanation,
+//            "id":requisitionID,
+//            "userID": userID,
+//            "status": "PA",
+//            "teamName": teamName,
+//            "badgeName": badgeName,
+//            "badgeNumPoints":badgeNumPoints,
+//            "badgeDescription": badgeDescription,
+//            "badgeID": badgeID,
+//            "badgeIcon": badgeIcon
+//        ])
     }
     
     func retrievePendentBadgeRequisitions(teamName:String, completionHandler: @escaping ([BadgeRequisition]?)->()){
         var allReq:[BadgeRequisition] = []
 
-        let path = "Team/\(teamName)/BadgeRequisitions"
+        let path = "Teams/\(teamName)/BadgeRequisitions"
         
         self.retrieveAll(dump: BadgeRequisition.self, path: path) { (badgeRequisitions) in
             if let badgeReq = badgeRequisitions {

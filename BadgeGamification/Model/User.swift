@@ -43,4 +43,8 @@ class User: NSObject, PersistenceObject{
             "id" : id
         ]
     }
+    
+    func getDictInfo() -> [AnyHashable:Any]{
+        return self.dictInfo
+    }
 }

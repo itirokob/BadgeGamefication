@@ -62,7 +62,21 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
             let userID = (Auth.auth().currentUser?.uid)!
 
             if let currBadge = self.badge {
-                reqManager.createBadgeRequisition(teamName: currBadge.teamName, userEmail: self.userEmail, badgeName: currBadge.name, explanation: explanation, userID: userID, badgeNumPoints: currBadge.numPoints, badgeDescription: currBadge.descript, badgeID: currBadge.id, badgeIcon: currBadge.badgeIcon)
+                let newBadgeReq = BadgeRequisition(dictionary:[
+                    "userEmail": userEmail,
+                    "explanation": explanation,
+                    "id":"",
+                    "userID": userID,
+                    "status": "PA",
+                    "teamName": currBadge.teamName,
+                    "badgeName": currBadge.name,
+                    "badgeNumPoints":currBadge.numPoints,
+                    "badgeDescription": currBadge.descript,
+                    "badgeID": currBadge.id,
+                    "badgeIcon": currBadge.badgeIcon
+                ])
+
+                reqManager.createBadgeRequisition(teamName: currBadge.teamName, newBadgeReq:newBadgeReq)
                 
                 alert(message: "Badge requisition done! Wait for admin approval", completionHandler: { _ in
                     self.performSegue(withIdentifier: "unwindToUserBadges", sender: self)

@@ -49,7 +49,7 @@ class Badge: NSObject, PersistenceObject {
         self.dictInfo = [
             "name" : name,
             "numPoints" : numPoints,
-            "descript" : description,
+            "description" : description,
             "id" : id,
             "teamName" : teamName,
             "badgeIcon" : badgeIcon
@@ -68,7 +68,7 @@ class Badge: NSObject, PersistenceObject {
         self.dictInfo = [
             "name" : name,
             "numPoints" : numPoints,
-            "descript" : description,
+            "description" : description,
             "id" : id,
             "teamName" : teamName,
             "badgeIcon" : badgeIcon,
@@ -87,4 +87,7 @@ class Badge: NSObject, PersistenceObject {
         return date
     }
 
+    func getDictInfo() -> [AnyHashable:Any]{
+        return self.dictInfo
+    }
 }

@@ -49,12 +49,15 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func signOut(_ sender: Any) {
         authManager.signOut()
-
     }
+    
     fileprivate func sortRanking() {
         if self.teamUsers.count > 0 && self.usersScore.count > 1{
             self.teamUsers.sort(by: { (user1, user2) -> Bool in
-                return self.usersScore[user1.id]! > self.usersScore[user2.id]!
+                if let userScore1 = self.usersScore[user1.id], let userScore2 = self.usersScore[user2.id]{
+                    return userScore1 > userScore2
+                }
+                return false
             })
         }
     }

@@ -20,28 +20,31 @@ class BadgeDatabaseManager: DAO{
 //        super.init()
 //        ref = Database.database().reference()
 //    }
-    let objectName = "Badges"
     
     override init(){
         super.init()
     }
     
-    func createBadge(name:String, description:String, numPoints:Int, teamName:String, badgeIcon:String){
-        let badgeID = ref?.child("Teams/\(teamName)/Badges").childByAutoId().key
-        let path = ref?.child("Teams/\(teamName)/Badges").child(badgeID!)
+    func createBadge(newBadge:Badge, teamName:String){
+//        let newBadge = Badge(name: name, description: description, numPoints: numPoints, id: "", teamName: teamName, badgeIcon: badgeIcon)
+        let path = "Teams/\(teamName)/Badges"
+        self.create(dump: Badge.self, object: newBadge, path:path, newObjectID: nil)
         
-        path?.setValue([
-            "teamName": teamName,
-            "name": name,
-            "description":description,
-            "numPoints": numPoints,
-            "badgeIcon": badgeIcon,
-            "id": badgeID!
-        ])
+//        let badgeID = ref?.child("Teams/\(teamName)/Badges").childByAutoId().key
+//        let path = ref?.child("Teams/\(teamName)/Badges").child(badgeID!)
+//
+//        path?.setValue([
+//            "teamName": teamName,
+//            "name": name,
+//            "description":description,
+//            "numPoints": numPoints,
+//            "badgeIcon": badgeIcon,
+//            "id": badgeID!
+//        ])
     }
 
     func retrieveAllBadges(teamName:String, completionHandler: @escaping ([Badge]?)->()){
-        let path = "Team/\(teamName)/Badges"
+        let path = "Teams/\(teamName)/Badges"
 
         self.retrieveAll(dump: Badge.self, path: path) { (badges) in
             if let badges = badges{
@@ -72,7 +75,7 @@ class BadgeDatabaseManager: DAO{
     }
     
     func retrieveBadge(badgeID:String, teamName:String, completionHandler: @escaping (Badge?)->()){
-        let path = "Team/\(teamName)/Badges/\(badgeID)"
+        let path = "Teams/\(teamName)/Badges/\(badgeID)"
         
         self.retrieveAll(dump: Badge.self, path : path) { (badge) in
             if let badge = badge {

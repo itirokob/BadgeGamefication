@@ -25,24 +25,24 @@ class UserListDatabaseManager: NSObject {
         ])
     }
     
-    func retrieveUsersFromList(teamName:String, completionHandler: @escaping ([String]?)->()){
-        var allUsersIDs:[String] = []
-        
-        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let team = snapshot.value as? [String:Any]{
-                if let usersList = team["UsersList"] as? [String:Any]{
-                    for key in usersList.keys {
-                        let usersListDict = usersList[key] as? [String:Any]
-                        
-                        allUsersIDs.append(usersListDict!["userID"] as! String)
-                    }
-                    
-                    completionHandler(allUsersIDs)
-                } else {
-                    completionHandler(nil)
-                }
-            }
-        })
-    }
+//    func retrieveUsersFromList(teamName:String, completionHandler: @escaping ([String]?)->()){
+//        var allUsersIDs:[String] = []
+//
+//        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            if let team = snapshot.value as? [String:Any]{
+//                if let usersList = team["UsersList"] as? [String:Any]{
+//                    for key in usersList.keys {
+//                        let usersListDict = usersList[key] as? [String:Any]
+//
+//                        allUsersIDs.append(usersListDict!["userID"] as! String)
+//                    }
+//
+//                    completionHandler(allUsersIDs)
+//                } else {
+//                    completionHandler(nil)
+//                }
+//            }
+//        })
+//    }
 }

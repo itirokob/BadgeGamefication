@@ -9,6 +9,8 @@
 import UIKit
 
 class BadgeRequisition: NSObject, PersistenceObject {
+    
+    
     var userEmail:String
     var userID:String
     var badge:Badge
@@ -72,6 +74,10 @@ class BadgeRequisition: NSObject, PersistenceObject {
         self.badge = Badge(name: badgeName, description: badgeDescription, numPoints: badgeNumPoints, id: badgeID, teamName: teamName, badgeIcon: badgeIcon)
         
         self.dictInfo = dictionary
+    }
+    
+    func getDictInfo() -> [AnyHashable:Any]{
+        return self.dictInfo
     }
     
 }
