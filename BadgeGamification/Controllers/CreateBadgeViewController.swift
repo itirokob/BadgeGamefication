@@ -41,15 +41,13 @@ class CreateBadgeViewController: UIViewController {
         } else if (selectedIcon == "") {
             alert(message: "Select a icon to your new badge", completionHandler: {_ in})
         } else if let name = nameTextField.text, let description = descriptionTextField.text, let numPoints = numPointsTextField.text {
+            
             badgeManager.createBadge(name: name, description: description, numPoints: Int(numPoints)!, teamName: self.teamName!, badgeIcon: selectedIcon)
-            //badgeManager.createBadge(name: "nome", description: "descricao", numPoints: 20)
             
             performSegue(withIdentifier: "unwindToExistantBadges", sender: self)
         }
         
     }
-    
-   
     
     @IBAction func cancelAction(_ sender: Any) {
         performSegue(withIdentifier: "unwindToExistantBadges", sender: self)
@@ -67,9 +65,6 @@ extension CreateBadgeViewController: UICollectionViewDelegate, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! BadgeIconCollectionViewCell
         
         cell.badgeImage.image = self.badgeIcons[indexPath.row]
-//        cell.badgeImage.alpha = CGFloat(self.badgeIcons[indexPath.row].alpha)
-//        cell.badgeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectBadgeIcon)))
-//        cell.badgeImage.isUserInteractionEnabled = true
         
         return cell
     }
@@ -98,8 +93,5 @@ extension CreateBadgeViewController: UICollectionViewDelegate, UICollectionViewD
             return
         }
     }
-    
-    @objc func handleSelectBadgeIcon(){
-        
-    }
 }
+

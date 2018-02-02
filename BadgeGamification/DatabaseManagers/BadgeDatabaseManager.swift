@@ -11,14 +11,19 @@ import FirebaseDatabase
 import Firebase
 import SwiftyJSON
 
-class BadgeDatabaseManager:NSObject {
+class BadgeDatabaseManager: DAO{
     static let shared = BadgeDatabaseManager()
     
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
 
-    private override init(){
+//    private override init(){
+//        super.init()
+//        ref = Database.database().reference()
+//    }
+    let objectName = "Badges"
+    
+    override init(){
         super.init()
-        ref = Database.database().reference()
     }
     
     func createBadge(name:String, description:String, numPoints:Int, teamName:String, badgeIcon:String){
@@ -36,68 +41,64 @@ class BadgeDatabaseManager:NSObject {
     }
 
     func retrieveAllBadges(teamName:String, completionHandler: @escaping ([Badge]?)->()){
-        
-        var allBadges:[Badge] = []
-        
-        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let team = snapshot.value as? [String : Any] {
-                
-                if let badges = team["Badges"] as? [String : Any] {
-                    
-                    for key in badges.keys {
-                        
-                        let badgeDict = badges[key] as? [String : Any]
-                        
-                        let badge = Badge(name: badgeDict!["name"] as! String, description: badgeDict!["description"] as! String, numPoints: badgeDict!["numPoints"] as! Int, id: badgeDict!["id"] as! String, teamName: badgeDict!["teamName"] as! String, badgeIcon: badgeDict!["badgeIcon"] as! String)
-                        
-                        allBadges.append(badge)
-                        completionHandler(allBadges)
-                    }
-                }
+        let path = "Team/\(teamName)/Badges"
+
+        self.retrieveAll(dump: Badge.self, path: path) { (badges) in
+            if let badges = badges{
+                completionHandler(badges)
+            } else {
+                completionHandler(nil)
             }
-        })
-    }
-    
-//    func retrieveAllBadges(teamName:String, completionHandler: @escaping ([Badge]?)->()){
+        }
 //        var allBadges:[Badge] = []
 //
+//        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let team = snapshot.value as? [String : Any] {
 //
-//        ref?.child("Teams/\(teamName)/Badges").observe(.childAdded, with: { (snapshot) in
+//                if let badges = team["Badges"] as? [String : Any] {
+//
+//                    for key in badges.keys {
+//
+//                        let badgeDict = badges[key] as? [String : Any]
+//
+//                        let badge = Badge(name: badgeDict!["name"] as! String, description: badgeDict!["description"] as! String, numPoints: badgeDict!["numPoints"] as! Int, id: badgeDict!["id"] as! String, teamName: badgeDict!["teamName"] as! String, badgeIcon: badgeDict!["badgeIcon"] as! String)
+//
+//                        allBadges.append(badge)
+//                        completionHandler(allBadges)
+//                    }
+//                }
+//            }
+//        })
+    }
+    
+    func retrieveBadge(badgeID:String, teamName:String, completionHandler: @escaping (Badge?)->()){
+        let path = "Team/\(teamName)/Badges/\(badgeID)"
+        
+        self.retrieveAll(dump: Badge.self, path : path) { (badge) in
+            if let badge = badge {
+                completionHandler(badge.first)
+            } else {
+                completionHandler(nil)
+            }
+        }
+        
+        //        ref?.child("Teams/\(teamName)/Badges").child(badgeID).observeSingleEvent(of: .childAdded, with: { (snapshot) in
 //            let badge = snapshot.value as? NSDictionary
 //
 //            if let actualBadge = badge {
 //                let jsonBadge = JSON(actualBadge)
-//                let newBadge = Badge(name: jsonBadge["name"].string!,
-//                                     description: jsonBadge["description"].string!,
-//                                     numPoints: jsonBadge["numPoints"].int!,
-//                                     id: jsonBadge["id"].string!,
-//                                     teamName: jsonBadge["teamName"].string!, badgeIcon: jsonBadge["badgeIcon"].string!)
-//                allBadges.append(newBadge)
-//                completionHandler(allBadges)
+//                completionHandler(
+//                    Badge(name: jsonBadge["name"].string!,
+//                          description: jsonBadge["description"].string!,
+//                          numPoints: jsonBadge["numPoints"].int!,
+//                          id: jsonBadge["id"].string!,
+//                          teamName: jsonBadge["teamName"].string!,
+//                          badgeIcon: jsonBadge["badgeIcon"].string!)
+//                )
 //            } else {
 //                completionHandler(nil)
 //            }
 //        })
-//    }
-    
-    func retrieveBadge(badgeID:String, teamName:String, completionHandler: @escaping (Badge?)->()){
-        ref?.child("Teams/\(teamName)/Badges").child(badgeID).observeSingleEvent(of: .childAdded, with: { (snapshot) in
-            let badge = snapshot.value as? NSDictionary
-            
-            if let actualBadge = badge {
-                let jsonBadge = JSON(actualBadge)
-                completionHandler(
-                    Badge(name: jsonBadge["name"].string!,
-                          description: jsonBadge["description"].string!,
-                          numPoints: jsonBadge["numPoints"].int!,
-                          id: jsonBadge["id"].string!,
-                          teamName: jsonBadge["teamName"].string!,
-                          badgeIcon: jsonBadge["badgeIcon"].string!)
-                )
-            } else {
-                completionHandler(nil)
-            }
-        })
         
     }
 }

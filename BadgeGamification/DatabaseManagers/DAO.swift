@@ -9,27 +9,62 @@
 import UIKit
 import FirebaseDatabase
 
+protocol PersistenceObject {
+    init(dictionary: [AnyHashable:Any])
+}
+
 class DAO: NSObject {
-    let variables = Variables.shared
-    static let shared = DAO()
-    
     var ref: DatabaseReference!
     
-    private override init(){
+    override init(){
         super.init()
         ref = Database.database().reference()
     }
     
-    func create(teamName:String, parameters:[String], type:String){
-        let vars = variables.getVariables(type: type)
+//    func retrieveAll<T:PersistenceObject>(dump: T.Type, teamName:String, objectName:String, userID:String?, completionHandler: @escaping ([T]?) -> ()){
+//        var allObjects:[T] = []
+//        let path:String = (userID == nil) ? "Teams/\(teamName)/\(objectName)" :  "Teams/\(teamName)/\(objectName)/\(String(describing: userID))"
+//
+//        ref?.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let dictionary = snapshot.value as? [String:Any]{
+//
+//                for key in dictionary.keys {
+//                    let objectDict = dictionary[key] as? [String:Any]
+//
+//                    let newObj = T(dictionary: objectDict!)
+//
+//                    allObjects.append(newObj)
+//                }
+//
+//                completionHandler(allObjects)
+//            } else {
+//                completionHandler(nil)
+//            }
+//        })
+//    }
+    
+    func retrieveAll<T:PersistenceObject>(dump: T.Type, path:String, completionHandler: @escaping ([T]?) -> ()){
+        var allObjects:[T] = []
+//        let path:String = (userID == nil) ? "Teams/\(teamName)/\(objectName)" :  "Teams/\(teamName)/\(objectName)/\(String(describing: userID))"
         
-        let URL = variables.getPath(teamName: teamName, type: type)
-        let newItemID = ref?.child(URL).childByAutoId().key
-        let path = ref?.child(URL).child(newItemID!)
-        
-        for i in 0...vars.count {
-            path?.child(vars[i]).setValue(parameters[i])
-        }
+        ref?.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.value != nil{
+                if let dictionary = snapshot.value as? [String:Any]{
+                    
+                    for key in dictionary.keys {
+                        let objectDict = dictionary[key] as? [String:Any]
+                        
+                        let newObj = T(dictionary: objectDict!)
+                        
+                        allObjects.append(newObj)
+                    }
+                    
+                    completionHandler(allObjects)
+                } else {
+                    completionHandler(nil)
+                }
+            }
+        })
     }
     
     

@@ -9,15 +9,17 @@
 import Foundation
 import FirebaseDatabase
 
-class RegisterReqDatabaseManager:NSObject {
+class RegisterReqDatabaseManager:DAO {
     static let shared = RegisterReqDatabaseManager()
     
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
     
     private override init(){
         super.init()
-        ref = Database.database().reference()
+//        ref = Database.database().reference()
     }
+    
+    let objectName = "RegisterRequisitions"
     
     func createRegisterRequisition(userEmail:String, teamName:String, userID:String){
         let registerID = ref?.child("Teams/\(teamName)/RegisterRequisitions").childByAutoId().key
@@ -41,54 +43,48 @@ class RegisterReqDatabaseManager:NSObject {
     func retrievePendentRegisterRequisitions(teamName:String, completionHandler: @escaping ([RegisterRequistion]?) -> ()){
         var allReq:[RegisterRequistion] = []
         
-        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let team = snapshot.value as? [String: Any] {
-                if let registerReqs = team["RegisterRequisitions"] as? [String:Any]{
-                    for key in registerReqs.keys {
-                        let registerReqDict = registerReqs[key] as? [String:Any]
-                        
-                        if registerReqDict!["status"] as? String == "PA"{
-                            let newReq = RegisterRequistion(
-                                userEmail: registerReqDict!["userEmail"] as! String,
-                                id: registerReqDict!["id"] as! String,
-                                status: registerReqDict!["status"] as! String,
-                                teamName: registerReqDict!["teamName"] as! String,
-                                userID: registerReqDict!["userID"] as! String)
-                        
-                            allReq.append(newReq)
-                        }
+        let path = "Teams/\(teamName)/RegisterRequisitions"
+        
+        self.retrieveAll(dump: RegisterRequistion.self, path: path) { (requisitions) in
+            if let registerReq = requisitions {
+                for req in registerReq {
+                    if req.status == "PA"{
+                        allReq.append(req)
                     }
-                    
-                    completionHandler(allReq)
-                } else {
-                    print("Error on retrieving pendent requisitions")
-                    completionHandler(nil)
                 }
+                completionHandler(allReq)
+            } else {
+                completionHandler(nil)
             }
-        })
-    }
-    
-//    func retrievePendentRegisterRequisitions(teamName:String, completionHandler: @escaping ([RegisterRequistion]?) -> ()){
-//        var allReq:[RegisterRequistion] = []
+        }
+        
+//        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let team = snapshot.value as? [String: Any] {
+//                if let registerReqs = team["RegisterRequisitions"] as? [String:Any]{
+//                    for key in registerReqs.keys {
+//                        let registerReqDict = registerReqs[key] as? [String:Any]
 //
-//        ref?.child("Teams/\(teamName)/RegisterRequisitions").observe(.childAdded, with: { (snapshot) in
-//            let req = snapshot.value as? NSDictionary
+//                        if registerReqDict!["status"] as? String == "PA"{
+//                            let newReq = RegisterRequistion(
+//                                userEmail: registerReqDict!["userEmail"] as! String,
+//                                id: registerReqDict!["id"] as! String,
+//                                status: registerReqDict!["status"] as! String,
+//                                teamName: registerReqDict!["teamName"] as! String,
+//                                userID: registerReqDict!["userID"] as! String)
 //
-//            if let actualReq = req {
+//                            allReq.append(newReq)
+//                        }
+//                    }
 //
-//                if actualReq.value(forKey: "status") as! String == "PA"{
-//                    let newReq = RegisterRequistion(userEmail: actualReq.value(forKey: "userEmail") as! String, id: actualReq.value(forKey: "id") as! String, status: actualReq.value(forKey: "status") as! String, teamName: actualReq.value(forKey: "teamName") as! String, userID: actualReq.value(forKey: "userID") as! String)
-//                    allReq.append(newReq)
+//                    completionHandler(allReq)
+//                } else {
+//                    print("Error on retrieving pendent requisitions")
+//                    completionHandler(nil)
 //                }
-//
-//                completionHandler(allReq)
-//            } else {
-//                print("Error on retrieving pendent requisitions")
-//                completionHandler(nil)
 //            }
 //        })
-//    }
-//
+    }
+    
     func updateReqStatus(teamName:String, reqID:String, status:String, completionHandler: @escaping (Bool) -> ()){
         let childUpdate = ["Teams/\(teamName)/RegisterRequisitions/\(reqID)/status" : status]
         self.ref.updateChildValues(childUpdate)

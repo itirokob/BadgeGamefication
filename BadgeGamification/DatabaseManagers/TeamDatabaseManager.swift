@@ -9,14 +9,14 @@
 import UIKit
 import FirebaseDatabase
 
-class TeamDatabaseManager: NSObject {
+class TeamDatabaseManager: DAO {
     static let shared = TeamDatabaseManager()
     
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
     
     private override init(){
         super.init()
-        ref = Database.database().reference()
+//        ref = Database.database().reference()
     }
     
     func createTeam(teamName:String, adminID:String, adminName:String) {
@@ -28,38 +28,48 @@ class TeamDatabaseManager: NSObject {
     }
     
     func retrieveAllTeams(completionHandler: @escaping ([Team]?)->()){
-        var allTeams:[Team] = []
-        
-        ref?.child("Teams").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let team = snapshot.value as? [String:Any]{
-                for key in team.keys {
-                    let currTeam = team[key] as? [String:Any]
-                    
-                    let newTeam = Team(teamName: currTeam!["teamName"] as! String,
-                                       adminID: currTeam!["adminID"] as! String,
-                                       adminName: currTeam!["adminName"] as! String)
-                    
-                    allTeams.append(newTeam)
-                }
-                completionHandler(allTeams)
+        self.retrieveAll(dump: Team.self, path: "Teams") { (teams) in
+            if let teams = teams{
+                completionHandler(teams)
             } else {
                 completionHandler(nil)
             }
-            
-//            let team = snapshot.value as? NSDictionary
-//            
-//            if let actualTeam = team {
-//                let newTeam = Team(teamName: actualTeam.value(forKey: "teamName") as! String, adminID: actualTeam.value(forKey: "adminID") as! String, adminName: actualTeam.value(forKey: "adminName") as! String)
-//                allTeams.append(newTeam)
+        }
+        
+//        var allTeams:[Team] = []
+//
+//        ref?.child("Teams").observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            if let team = snapshot.value as? [String:Any]{
+//                for key in team.keys {
+//                    let currTeam = team[key] as? [String:Any]
+//
+//                    let newTeam = Team(teamName: currTeam!["teamName"] as! String,
+//                                       adminID: currTeam!["adminID"] as! String,
+//                                       adminName: currTeam!["adminName"] as! String)
+//
+//                    allTeams.append(newTeam)
+//                }
 //                completionHandler(allTeams)
 //            } else {
 //                completionHandler(nil)
 //            }
-        })
+//        })
     }
     
     func teamExists(teamName:String, completionHandler: @escaping (Bool) -> ()){
+//        self.retrieveAllTeams { (teams) in
+//            if let teams = teams{
+//                for team in teams{
+//                    if team.teamName == teamName {
+//                        completionHandler(true)
+//                    } else {
+//                        completionHandler(false)
+//                    }
+//                }
+//            }
+//        }
+        
         ref?.child("Teams").observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.hasChild(teamName){
                 completionHandler(true)

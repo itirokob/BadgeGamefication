@@ -9,15 +9,17 @@
 import Foundation
 import FirebaseDatabase
 
-class UserBadgesDatabaseManager:NSObject {
+class UserBadgesDatabaseManager:DAO {
     static let shared = UserBadgesDatabaseManager()
     
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
     
     private override init(){
         super.init()
-        ref = Database.database().reference()
+//        ref = Database.database().reference()
     }
+    
+    let objectName = "UserBadgeList"
     
     func initializeUserBadgeList(userID:String, teamName:String){
         ref?.child("Teams/\(teamName)/UserBadgeList/\(userID)")
@@ -35,12 +37,6 @@ class UserBadgesDatabaseManager:NSObject {
             "acquisitionDate": acquisitionDateString,
             "badgeIcon": badge.badgeIcon
         ])
-//        ref?.child("\(path)/name").setValue(badge.name)
-//        ref?.child("\(path)/description").setValue(badge.descript)
-//        ref?.child("\(path)/numPoints").setValue(badge.numPoints)
-//        ref?.child("\(path)/id").setValue(badge.id)
-//        ref?.child("\(path)/teamName").setValue(teamName)
-//        ref?.child("\(path)/acquisitionDate").setValue(acquisitionDateString)
         
     }
     
@@ -56,58 +52,42 @@ class UserBadgesDatabaseManager:NSObject {
     }
     
     func retrieveAllBadgesFromUser(teamName:String, userID:String, completionHandler: @escaping ([Badge]?)->()){
-        var allBadges:[Badge] = []
-        let path = "Teams/\(teamName)/UserBadgeList"
+        let path = "Teams/\(teamName)/UserBadgeList/\(userID)"
         
-        ref?.child("\(path)").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let userBadgesList = snapshot.value as? [String: Any] {
-                if let userList = userBadgesList[userID] as? [String:Any]{
-                    
-                    for key in userList.keys {
-                        let badge = userList[key] as? [String:Any]
-                        
-                        let newBadge = Badge(name: badge!["name"] as! String,
-                                             description: badge!["description"] as! String,
-                                             numPoints: badge!["numPoints"] as! Int,
-                                             id: badge!["id"] as! String,
-                                             teamName: badge!["teamName"] as! String,
-                                             badgeIcon: badge!["badgeIcon"] as! String,
-                                             acquisitionDate: self.stringToDate(dateString:
-                                                badge!["acquisitionDate"] as! String))
-                        
-                        allBadges.append(newBadge)
-                    }
-                    
-                    completionHandler(allBadges)
-                } else {
-                    completionHandler(nil)
-                }
-                
+        self.retrieveAll(dump: Badge.self, path: path) { (badges) in
+            if let badges = badges{
+                completionHandler(badges)
+            } else {
+                completionHandler(nil)
             }
-        })
-    }
-
-    
-//    func retrieveAllBadgesFromUser(teamName:String, userID:String, completionHandler: @escaping ([Badge])->()){
-//        var allBadges:[Badge] = []
-//        let path = "Teams/\(teamName)/UserBadgeList/\(userID)"
+        }
+//        let path = "Teams/\(teamName)/UserBadgeList"
 //
-//        ref?.child("\(path)").observe(.childAdded, with: { (snapshot) in
-//            let badge = snapshot.value as? NSDictionary
+//        ref?.child("\(path)").observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let userBadgesList = snapshot.value as? [String: Any] {
+//                if let userList = userBadgesList[userID] as? [String:Any]{
 //
-//            if let actualBadge = badge {
-//                let newBadge = Badge(
-//                    name: actualBadge.value(forKey: "name") as! String,
-//                    description: actualBadge.value(forKey: "description") as! String,
-//                    numPoints: actualBadge.value(forKey: "numPoints") as! Int,
-//                    id: actualBadge.value(forKey: "id") as! String,
-//                    teamName: actualBadge.value(forKey: "teamName") as! String,
-//                    badgeIcon: actualBadge.value(forKey: "badgeIcon") as! String,
-//                    acquisitionDate: self.stringToDate(dateString:
-//                        actualBadge.value(forKey: "acquisitionDate") as! String))
-//                allBadges.append(newBadge)
-//                completionHandler(allBadges)
+//                    for key in userList.keys {
+//                        let badge = userList[key] as? [String:Any]
+//
+//                        let newBadge = Badge(name: badge!["name"] as! String,
+//                                             description: badge!["description"] as! String,
+//                                             numPoints: badge!["numPoints"] as! Int,
+//                                             id: badge!["id"] as! String,
+//                                             teamName: badge!["teamName"] as! String,
+//                                             badgeIcon: badge!["badgeIcon"] as! String,
+//                                             acquisitionDate: self.stringToDate(dateString:
+//                                                badge!["acquisitionDate"] as! String))
+//
+//                        allBadges.append(newBadge)
+//                    }
+//
+//                    completionHandler(allBadges)
+//                } else {
+//                    completionHandler(nil)
+//                }
+//
 //            }
 //        })
-//    }
+    }
 }
