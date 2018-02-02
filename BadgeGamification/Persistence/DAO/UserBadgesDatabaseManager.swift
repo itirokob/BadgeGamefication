@@ -45,11 +45,12 @@ class UserBadgesDatabaseManager:DAO {
         let path = "Teams/\(teamName)/UserBadgeList/\(userID)"
         
         self.retrieveAll(dump: Badge.self, path: path) { (badges) in
-            if let badges = badges{
-                completionHandler(badges)
-            } else {
-                completionHandler(nil)
-            }
+            completionHandler(badges)
+//            if let badges = badges{
+//                completionHandler(badges)
+//            } else {
+//                completionHandler(nil)
+//            }
         }
     }
 }

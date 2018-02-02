@@ -21,18 +21,18 @@ class BadgeDatabaseManager: DAO{
     func createBadge(newBadge:Badge, teamName:String){
         let path = "Teams/\(teamName)/Badges"
         self.create(dump: Badge.self, object: newBadge, path:path, newObjectID: nil)
-        
     }
 
     func retrieveAllBadges(teamName:String, completionHandler: @escaping ([Badge]?)->()){
         let path = "Teams/\(teamName)/Badges"
 
         self.retrieveAll(dump: Badge.self, path: path) { (badges) in
-            if let badges = badges{
-                completionHandler(badges)
-            } else {
-                completionHandler(nil)
-            }
+            completionHandler(badges)
+//            if let badges = badges{
+//                completionHandler(badges)
+//            } else {
+//                completionHandler(nil)
+//            }
         }
     }
     
@@ -40,11 +40,12 @@ class BadgeDatabaseManager: DAO{
         let path = "Teams/\(teamName)/Badges/\(badgeID)"
         
         self.retrieveAll(dump: Badge.self, path : path) { (badge) in
-            if let badge = badge {
-                completionHandler(badge.first)
-            } else {
-                completionHandler(nil)
-            }
+            completionHandler(badge?.first)
+//            if let badge = badge {
+//                completionHandler(badge.first)
+//            } else {
+//                completionHandler(nil)
+//            }
         }
         
     }

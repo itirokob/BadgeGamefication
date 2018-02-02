@@ -197,7 +197,7 @@
 				CBFB825A20236B490005FD8C /* Extensions.swift */,
 				CBFB8257202331BD0005FD8C /* Services */,
 				CBA46CA020052D6A0044CD08 /* Model */,
-				CB36090B20051B8F00ED47A0 /* DAO */,
+				CB36090B20051B8F00ED47A0 /* Persistence */,
 				CB3609062003EC7400ED47A0 /* Controllers */,
 				CB3609052003EC6400ED47A0 /* View */,
 				CB3608DA2003E5B700ED47A0 /* Assets.xcassets */,
@@ -231,7 +231,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CB36090B20051B8F00ED47A0 /* DAO */ = {
+		CB36090B20051B8F00ED47A0 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
 				CBDDFB7C201623A80045ED5C /* DAO.swift */,
@@ -240,7 +240,7 @@
 				CB36090C20051BBC00ED47A0 /* AuthDatabaseManager.swift */,
 				CB2F6A9A2019010D001EAC85 /* UserListDatabaseManager.swift */,
 			);
-			path = DAO;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		CB9C4B5F2024EC6F00D4641A /* DAO */ = {
