@@ -12,11 +12,8 @@ import FirebaseDatabase
 class UserBadgesDatabaseManager:DAO {
     static let shared = UserBadgesDatabaseManager()
     
-//    var ref: DatabaseReference!
-    
     private override init(){
         super.init()
-//        ref = Database.database().reference()
     }
     
     let objectName = "UserBadgeList"
@@ -31,17 +28,6 @@ class UserBadgesDatabaseManager:DAO {
         badge.dictInfo["acquisitionDate"] = acquisitionDateString
         
         self.create(dump: Badge.self, object: badge, path: path, newObjectID: badge.id)
-        
-//        ref?.child("\(path)").setValue([
-//            "name": badge.name,
-//            "description": badge.descript,
-//            "numPoints": badge.numPoints,
-//            "id": badge.id,
-//            "teamName": teamName,
-//            "acquisitionDate": acquisitionDateString,
-//            "badgeIcon": badge.badgeIcon
-//        ])
-        
     }
     
     func stringToDate(dateString:String) -> Date{
@@ -65,33 +51,5 @@ class UserBadgesDatabaseManager:DAO {
                 completionHandler(nil)
             }
         }
-//        let path = "Teams/\(teamName)/UserBadgeList"
-//
-//        ref?.child("\(path)").observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let userBadgesList = snapshot.value as? [String: Any] {
-//                if let userList = userBadgesList[userID] as? [String:Any]{
-//
-//                    for key in userList.keys {
-//                        let badge = userList[key] as? [String:Any]
-//
-//                        let newBadge = Badge(name: badge!["name"] as! String,
-//                                             description: badge!["description"] as! String,
-//                                             numPoints: badge!["numPoints"] as! Int,
-//                                             id: badge!["id"] as! String,
-//                                             teamName: badge!["teamName"] as! String,
-//                                             badgeIcon: badge!["badgeIcon"] as! String,
-//                                             acquisitionDate: self.stringToDate(dateString:
-//                                                badge!["acquisitionDate"] as! String))
-//
-//                        allBadges.append(newBadge)
-//                    }
-//
-//                    completionHandler(allBadges)
-//                } else {
-//                    completionHandler(nil)
-//                }
-//
-//            }
-//        })
     }
 }

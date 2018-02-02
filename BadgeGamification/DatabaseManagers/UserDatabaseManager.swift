@@ -11,13 +11,8 @@ import FirebaseDatabase
 import SwiftyJSON
 
 class UserDatabaseManager:DAO {
-//    static let shared = UserDatabaseManager()
-    
-//    var ref: DatabaseReference!
-    
     private override init(){
         super.init()
-//        ref = Database.database().reference()
     }
     
     private static var instance:UserDatabaseManager?
@@ -42,96 +37,16 @@ class UserDatabaseManager:DAO {
         let path = "Users"
         
         self.create(dump: User.self, object: newUser, path: path, newObjectID: userID)
-//
-//
-//        let path = ref?.child("Users").child(userID)
-//
-//        path?.setValue([
-//            "name":name,
-//            "isAdmin":isAdmin,
-//            "teamName": teamName,
-//            "status": status,
-//            "profileImageURL": " ",
-//            "id" : userID
-//        ])
     }
-
-//    func retrieveUsers(completionHandler: @escaping ([User]?)-> ()){
-//        var totalUsers:[User] = []
-//        
-//        ref?.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let allUsers = snapshot.value as? [String:Any] {
-//                for key in allUsers.keys {
-//                    let currUser = allUsers[key] as? [String:Any]
-//                    
-//                    let newUser = User(dictionary: [
-//                        "name" : currUser!["name"] as! String,
-//                        "isAdmin" : currUser!["isAdmin"] as! String,
-//                        "teamName" : currUser!["teamName"] as! String,
-//                        "status" : currUser!["status"] as! String,
-//                        "profileImageURL" : currUser!["profileImageURL"] as! String,
-//                        "id": currUser!["id"] as! String
-//                    ])
-////                    let newUser = User(name: currUser!["name"] as! String,
-////                                       isAdmin: currUser!["isAdmin"] as! String,
-////                                       teamName: currUser!["teamName"] as! String,
-////                                       status: currUser!["status"] as! String,
-////                                       profileImageURL: currUser!["profileImageURL"] as! String,
-////                                       id: currUser!["id"] as! String)
-//                    totalUsers.append(newUser)
-//                }
-//                completionHandler(totalUsers)
-//            } else {
-//                completionHandler(nil)
-//            }
-//        })
-//    }
-    
-//    func retrieveUsers(completionHandler: @escaping ([User]?)-> ()){
-//        var allUsers:[User] = []
-//
-//        ref?.child("Users").observe(.value, with: { (snapshot) in
-//            let user = snapshot.value as? NSDictionary
-//
-//            if let currUser = user {
-//                let jsonUser = JSON(currUser)
-//                let newUser = User(name: jsonUser["name"].string!,
-//                                   isAdmin: jsonUser["isAdmin"].string!,
-//                                   teamName: jsonUser["teamName"].string!,
-//                                   status: jsonUser["status"].string!,
-//                                   profileImageURL: jsonUser["profileImageURL"].string!,
-//                                   id: jsonUser["id"].string!)
-//                allUsers.append(newUser)
-//                completionHandler(allUsers)
-//            } else {
-//                completionHandler(nil)
-//            }
-//        })
-//    }
     
     func retrieveUser(userID:String, completionHandler: @escaping (User?)->()){
-//        self.retrieveAll(dump: User.self, path: "Users/\(userID)") { (user) in
-//            if let user = user {
-//                completionHandler(user.first)
-//            } else {
-//                completionHandler(nil)
-//            }
-//        }
-        
         ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
             let user = snapshot.value as? NSDictionary
 
             if let actualUser = user {
-//                let jsonUser = JSON(actualUser)
 
                 let newUser = User(dictionary: actualUser as! [AnyHashable : Any])
 
-//                let newUser = User(name: jsonUser["name"].string!,
-//                                   isAdmin: jsonUser["isAdmin"].string!,
-//                                   teamName: jsonUser["teamName"].string!,
-//                                   status: jsonUser["status"].string!,
-//                                   profileImageURL: jsonUser["profileImageURL"].string!,
-//                                   id: jsonUser["id"].string!)
                 completionHandler(newUser)
             } else {
                 completionHandler(nil)
@@ -155,29 +70,6 @@ class UserDatabaseManager:DAO {
                 completionHandler(nil)
             }
         }
-        
-        
-//        ref?.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let allUsers = snapshot.value as? [String:Any] {
-//                for key in allUsers.keys {
-//                    let currUser = allUsers[key] as? [String:Any]
-//
-//                    if currUser!["teamName"] as! String == teamName && currUser!["isAdmin"] as! String == "false" &&  currUser!["status"] as! String == "A"{
-//
-//                        let newUser = User(name: currUser!["name"] as! String,
-//                                           isAdmin: currUser!["isAdmin"] as! String,
-//                                           teamName: currUser!["teamName"] as! String,
-//                                           status: currUser!["status"] as! String,
-//                                           profileImageURL: currUser!["profileImageURL"] as! String,
-//                                           id: currUser!["id"] as! String)
-//                        totalUsers.append(newUser)
-//                    }
-//                }
-//                completionHandler(totalUsers)
-//            } else {
-//                completionHandler(nil)
-//            }
-//        })
     }
     
     func updateStatus(userID:String, status:String){

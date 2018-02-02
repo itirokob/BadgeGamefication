@@ -13,34 +13,15 @@ import SwiftyJSON
 
 class BadgeDatabaseManager: DAO{
     static let shared = BadgeDatabaseManager()
-    
-//    var ref: DatabaseReference!
 
-//    private override init(){
-//        super.init()
-//        ref = Database.database().reference()
-//    }
-    
     override init(){
         super.init()
     }
     
     func createBadge(newBadge:Badge, teamName:String){
-//        let newBadge = Badge(name: name, description: description, numPoints: numPoints, id: "", teamName: teamName, badgeIcon: badgeIcon)
         let path = "Teams/\(teamName)/Badges"
         self.create(dump: Badge.self, object: newBadge, path:path, newObjectID: nil)
         
-//        let badgeID = ref?.child("Teams/\(teamName)/Badges").childByAutoId().key
-//        let path = ref?.child("Teams/\(teamName)/Badges").child(badgeID!)
-//
-//        path?.setValue([
-//            "teamName": teamName,
-//            "name": name,
-//            "description":description,
-//            "numPoints": numPoints,
-//            "badgeIcon": badgeIcon,
-//            "id": badgeID!
-//        ])
     }
 
     func retrieveAllBadges(teamName:String, completionHandler: @escaping ([Badge]?)->()){
@@ -53,25 +34,6 @@ class BadgeDatabaseManager: DAO{
                 completionHandler(nil)
             }
         }
-//        var allBadges:[Badge] = []
-//
-//        ref?.child("Teams/\(teamName)").observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let team = snapshot.value as? [String : Any] {
-//
-//                if let badges = team["Badges"] as? [String : Any] {
-//
-//                    for key in badges.keys {
-//
-//                        let badgeDict = badges[key] as? [String : Any]
-//
-//                        let badge = Badge(name: badgeDict!["name"] as! String, description: badgeDict!["description"] as! String, numPoints: badgeDict!["numPoints"] as! Int, id: badgeDict!["id"] as! String, teamName: badgeDict!["teamName"] as! String, badgeIcon: badgeDict!["badgeIcon"] as! String)
-//
-//                        allBadges.append(badge)
-//                        completionHandler(allBadges)
-//                    }
-//                }
-//            }
-//        })
     }
     
     func retrieveBadge(badgeID:String, teamName:String, completionHandler: @escaping (Badge?)->()){
@@ -84,24 +46,6 @@ class BadgeDatabaseManager: DAO{
                 completionHandler(nil)
             }
         }
-        
-        //        ref?.child("Teams/\(teamName)/Badges").child(badgeID).observeSingleEvent(of: .childAdded, with: { (snapshot) in
-//            let badge = snapshot.value as? NSDictionary
-//
-//            if let actualBadge = badge {
-//                let jsonBadge = JSON(actualBadge)
-//                completionHandler(
-//                    Badge(name: jsonBadge["name"].string!,
-//                          description: jsonBadge["description"].string!,
-//                          numPoints: jsonBadge["numPoints"].int!,
-//                          id: jsonBadge["id"].string!,
-//                          teamName: jsonBadge["teamName"].string!,
-//                          badgeIcon: jsonBadge["badgeIcon"].string!)
-//                )
-//            } else {
-//                completionHandler(nil)
-//            }
-//        })
         
     }
 }
