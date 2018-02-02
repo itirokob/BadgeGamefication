@@ -22,28 +22,6 @@ class DAO: NSObject {
         ref = Database.database().reference()
     }
     
-//    func retrieveAll<T:PersistenceObject>(dump: T.Type, teamName:String, objectName:String, userID:String?, completionHandler: @escaping ([T]?) -> ()){
-//        var allObjects:[T] = []
-//        let path:String = (userID == nil) ? "Teams/\(teamName)/\(objectName)" :  "Teams/\(teamName)/\(objectName)/\(String(describing: userID))"
-//
-//        ref?.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let dictionary = snapshot.value as? [String:Any]{
-//
-//                for key in dictionary.keys {
-//                    let objectDict = dictionary[key] as? [String:Any]
-//
-//                    let newObj = T(dictionary: objectDict!)
-//
-//                    allObjects.append(newObj)
-//                }
-//
-//                completionHandler(allObjects)
-//            } else {
-//                completionHandler(nil)
-//            }
-//        })
-//    }
-    
     func retrieveAll<T:PersistenceObject>(dump: T.Type, path:String, completionHandler: @escaping ([T]?) -> ()){
         var allObjects:[T] = []
         

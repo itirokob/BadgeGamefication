@@ -197,7 +197,7 @@
 				CBFB825A20236B490005FD8C /* Extensions.swift */,
 				CBFB8257202331BD0005FD8C /* Services */,
 				CBA46CA020052D6A0044CD08 /* Model */,
-				CB36090B20051B8F00ED47A0 /* DatabaseManagers */,
+				CB36090B20051B8F00ED47A0 /* DAO */,
 				CB3609062003EC7400ED47A0 /* Controllers */,
 				CB3609052003EC6400ED47A0 /* View */,
 				CB3608DA2003E5B700ED47A0 /* Assets.xcassets */,
@@ -231,21 +231,29 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CB36090B20051B8F00ED47A0 /* DatabaseManagers */ = {
+		CB36090B20051B8F00ED47A0 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				CBDDFB7C201623A80045ED5C /* DAO.swift */,
+				CB9C4B5F2024EC6F00D4641A /* DAO */,
+				CBF88F5520164D3100E6DCB5 /* UserImageDatabaseManager.swift */,
 				CB36090C20051BBC00ED47A0 /* AuthDatabaseManager.swift */,
+				CB2F6A9A2019010D001EAC85 /* UserListDatabaseManager.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		CB9C4B5F2024EC6F00D4641A /* DAO */ = {
+			isa = PBXGroup;
+			children = (
 				CB36090E20051BE900ED47A0 /* BadgeDatabaseManager.swift */,
 				CBEB9E5D2006327D002C6FE6 /* RequisitionsDatabaseManager.swift */,
 				CBEB9E6C20067853002C6FE6 /* RegisterReqDatabaseManager.swift */,
 				CB219002200789C500A0095D /* UserBadgesDatabaseManager.swift */,
 				CB7A3BB62007DFF4001E63AA /* UserDatabaseManager.swift */,
 				CB7A3BBA2008C834001E63AA /* TeamDatabaseManager.swift */,
-				CBDDFB7C201623A80045ED5C /* DAO.swift */,
-				CBF88F5520164D3100E6DCB5 /* UserImageDatabaseManager.swift */,
-				CB2F6A9A2019010D001EAC85 /* UserListDatabaseManager.swift */,
 			);
-			path = DatabaseManagers;
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		CBA46CA020052D6A0044CD08 /* Model */ = {
