@@ -17,10 +17,10 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var teams:[Team] = []
     
-    let teamDatabaseManager = TeamDAO.shared
-    let userDatabaseManager = UserDAO.getInstance()
-    let userBadgeManager = UserBadgeDAO.shared
-    let registerReqDatabaseManager = RegisterRequisitionDAO.shared
+    let teamDatabaseManager = TeamService.shared
+    let userDatabaseManager = UserService.getInstance()
+    let userBadgeManager = UserBadgeService.shared
+    let registerReqDatabaseManager = RegisterRequisitionService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +60,6 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
             self.performSegue(withIdentifier: "unwindToLogin", sender: self)
         }
     }
-    
-//    func alertRequisitionDone(completionHandler: @escaping (UIAlertAction) -> (Void)){
-//        let alert = UIAlertController(title: "", message: "Requisition done! Wait for admin approval", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: completionHandler))
-//        self.present(alert, animated: true, completion: nil)
-//    }
     
     func createUser(teamName:String){
         let userID = Auth.auth().currentUser?.uid

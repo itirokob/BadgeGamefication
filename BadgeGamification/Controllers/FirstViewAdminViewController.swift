@@ -10,9 +10,6 @@ import UIKit
 import FirebaseAuth
 
 class FirstViewAdminViewController: UITabBarController {
-
-    let userManager = UserDAO.getInstance()
-    
     var teamName:String = ""
     
     override func viewDidLoad() {

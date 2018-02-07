@@ -30,16 +30,16 @@ class UserBadgeDAO:DAO {
         self.create(dump: Badge.self, object: badge, path: path, newObjectID: badge.id)
     }
     
-    func stringToDate(dateString:String) -> Date{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        
-        guard let date = dateFormatter.date(from: dateString) else {
-            fatalError("ERROR: Date conversion failed due to mismatched format.")
-        }
-        
-        return date
-    }
+//    func stringToDate(dateString:String) -> Date{
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd-MM-yyyy"
+//        
+//        guard let date = dateFormatter.date(from: dateString) else {
+//            fatalError("ERROR: Date conversion failed due to mismatched format.")
+//        }
+//        
+//        return date
+//    }
     
     func retrieveAllBadgesFromUser(teamName:String, userID:String, completionHandler: @escaping ([Badge]?)->()){
         let path = "Teams/\(teamName)/UserBadgeList/\(userID)"

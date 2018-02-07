@@ -12,13 +12,11 @@ class AvailableBadgesViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var tableView: UITableView!
     
     var badges:[Badge] = []
-    let badgeManager = BadgeDAO.shared
+    let badgeManager = BadgeService.shared
     var teamName:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.changeSignOutButtonTitle()
     }
     
     override func viewWillAppear(_ animated: Bool) {

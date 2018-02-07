@@ -21,10 +21,10 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
     var teamName:String?
     var totalPoints = 0
     
-    let userBadgesManager = UserBadgeDAO.shared
-    let userManager = UserDAO.getInstance()
+    let userBadgesManager = UserBadgeService.shared
+    let userManager = UserService.getInstance()
     let userImageManager = UserImageDatabaseManager.shared
-    let authManager = AuthDatabaseManager.shared
+    let authManager = AuthService.shared
     
     let imageCache = NSCache<AnyObject, AnyObject>()
     
@@ -37,8 +37,6 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
         self.userImage.contentMode = .scaleAspectFill
         self.userImage.layer.cornerRadius = 0.5 * self.userImage.frame.size.width
         self.userImage.clipsToBounds = true
-        
-//        self.changeSignOutButtonTitle()
         
     }
     

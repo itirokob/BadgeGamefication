@@ -12,9 +12,11 @@ import FirebaseAuth
 class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
     
     var userEmail:String = ""
-    let badgeManager = BadgeDAO.shared
-    let reqManager = BadgeRequisitionDAO.shared
-    let userManager = UserDAO.getInstance()
+    
+    
+    let badgeManager = BadgeService.shared
+    let reqManager = BadgeRequisitionService.shared
+    let userManager = UserService.getInstance()
     
     var badge:Badge?
     
@@ -43,17 +45,6 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
         self.badgeIcon.image = selectBadgeIcon(badgeIcon: (self.badge?.badgeIcon)!)
     }
     
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        textView.text = nil
-//    }
-//
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if textView.text.isEmpty {
-//            textView.text = "Placeholder"
-//            textView.textColor = UIColor.lightGray
-//        }
-//    }
-
     @IBAction func sendRequisition(_ sender: Any) {
         if explanationTextInput.text == ""{
             alert(message: "Missing explanation to get the badge!", completionHandler: {_ in})

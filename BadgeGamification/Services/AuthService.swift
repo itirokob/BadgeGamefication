@@ -17,7 +17,7 @@ class AuthService: NSObject {
     }
     
     let authManager = AuthDatabaseManager.shared
-    let userService = UserService.shared
+    let userService = UserService.getInstance()
     
     func login(email:String, password:String, completionHandler: @escaping (User?) -> ()){
         authManager.signIn(email: email, password: password) { (success, idOrErrorMessage) in

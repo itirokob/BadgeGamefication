@@ -16,7 +16,10 @@ class CreateBadgeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var descriptionTextField: UITextField!
     
-    let badgeManager = BadgeDAO.shared
+    //let badgeManager = BadgeDAO.shared
+    
+    let badgeManager = BadgeService.shared
+    
     let badgeIcons = [#imageLiteral(resourceName: "icon1"), #imageLiteral(resourceName: "icon2"), #imageLiteral(resourceName: "icon3"), #imageLiteral(resourceName: "icon4"), #imageLiteral(resourceName: "icon5"), #imageLiteral(resourceName: "icon6")]
     
     var teamName:String?
@@ -51,7 +54,7 @@ class CreateBadgeViewController: UIViewController {
                 "badgeIcon" : selectedIcon
                 ])
             
-            badgeManager.createBadge(newBadge: newBadge, teamName: self.teamName!)
+            badgeManager.createBadge(badge: newBadge, teamName: self.teamName!)
             
             performSegue(withIdentifier: "unwindToExistantBadges", sender: self)
         }

@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
     
-    let authManager = AuthDatabaseManager.shared
+    let authService = AuthService.shared
     
     var haveAccount:Bool = true
     
@@ -46,12 +46,6 @@ class LoginViewController: UIViewController {
         nameField.isHidden = self.haveAccount ? true : false
     }
     
-    //    func alertWaitForApproval(completionHandler: @escaping (UIAlertAction) -> (Void)){
-    //        let alert = UIAlertController(title: "", message: "Your account is not approved yet. Wait for admin approval!", preferredStyle: .alert)
-    //        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: completionHandler))
-    //        self.present(alert, animated: true, completion: nil)
-    //    }
-    
     fileprivate func treatUserStatus(_ user: (User)) {
         if user.status == "A" {
             self.performSegue(withIdentifier: "loginNotAdmin", sender: nil)
@@ -61,83 +55,104 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "register", sender: nil)
         }
     }
+//
+//    fileprivate func logIn(_ id: String, _ userManager: UserDAO) {
+//        userManager.retrieveUser(userID: id, completionHandler: { (user) in
+//            if let user = user{
+//                self.teamName = user.teamName
+//                if user.isAdmin == "true" {
+//                    self.performSegue(withIdentifier: "loginAdmin", sender: nil)
+//                } else {
+//                    self.treatUserStatus(user)
+//                }
+//            }
+//        })
+//    }
+//
+//    fileprivate func userHaveAccount(_ email: String, _ pass: String, _ userManager: UserDAO) {
+//        authManager.signIn(email: email, password: pass, completionHandler: { (success, idOrErrorMessage) in
+//            if success {
+//                self.logIn(idOrErrorMessage, userManager)
+//            } else {
+//                self.alert(message: idOrErrorMessage) {_ in}
+//            }
+//        })
+//    }
+//
+//    fileprivate func registerUser(_ email: String, _ pass: String, _ userManager: UserDAO, _ name: String) {
+//        authManager.register(email: email, password: pass, completionHandler:  { (success, idOrErrorMessage) in
+//            if success {
+//                userManager.createUser(name: name, userID: idOrErrorMessage, isAdmin: "false", teamName: "", status: "")
+//
+//                self.performSegue(withIdentifier: "register", sender: nil)
+//            } else {
+//
+//                self.alert(message: idOrErrorMessage){_ in}
+//            }
+//        })
+//    }
+
+    @IBAction func loginAction(_ sender: Any) {
+        if haveAccount {
+            self.handleHaveAccount()
+        } else {
+            self.handleNewUser()
+        }
+//        let userManager = UserDAO.getInstance()
+//
+//        if haveAccount {
+//            if let email = emailTextField.text, let pass = passwordTextField.text {
+//                userHaveAccount(email, pass, userManager)
+//            } else {
+//                alert(message: "Both email and password can't be empty"){_ in}
+//                print("Problemas no login")
+//            }
+//        } else {
+//            if let email = emailTextField.text, let pass = passwordTextField.text, let name = nameField.text {
+//                registerUser(email, pass, userManager, name)
+//            } else {
+//                alert(message: "Email, password and name can't be empty") {_ in}
+//                print("Problemas no registro")
+//            }
+//        }
+    }
     
-    fileprivate func logIn(_ id: String, _ userManager: UserDAO) {
-        userManager.retrieveUser(userID: id, completionHandler: { (user) in
-            if let user = user{
-                self.teamName = user.teamName
-                if user.isAdmin == "true" {
-                    self.performSegue(withIdentifier: "loginAdmin", sender: nil)
+    func handleHaveAccount (){
+        if let email = emailTextField.text, let pass = passwordTextField.text {
+            
+            authService.login(email: email, password: pass, completionHandler: { (user) in
+                if let user = user{
+                    self.teamName = user.teamName
+                    
+                    if user.isAdmin == "true" {
+                        self.performSegue(withIdentifier: "loginAdmin", sender: nil)
+                    } else {
+                        self.treatUserStatus(user)
+                    }
+                }
+            })
+            
+            //userHaveAccount(email, pass, userManager)
+        } else {
+            alert(message: "Both email and password can't be empty"){_ in}
+            print("Problemas no login")
+        }
+    }
+    
+    func handleNewUser(){
+        if let email = emailTextField.text, let pass = passwordTextField.text, let name = nameField.text {
+            
+            authService.register(email: email, password: pass, name: name) { (success, idOrErrorMessage) in
+                if success {
+                    self.performSegue(withIdentifier: "register", sender: nil)
                 } else {
-                    self.treatUserStatus(user)
+                    self.alert(message: idOrErrorMessage){_ in}
                 }
             }
-        })
-    }
-    
-    fileprivate func userHaveAccount(_ email: String, _ pass: String, _ userManager: UserDAO) {
-        authManager.signIn(email: email, password: pass, completionHandler: { (success, idOrErrorMessage) in
-            if success {
-                self.logIn(idOrErrorMessage, userManager)
-            } else {
-                self.alert(message: idOrErrorMessage) {_ in}
-            }
-        })
-    }
-    
-    fileprivate func registerUser(_ email: String, _ pass: String, _ userManager: UserDAO, _ name: String) {
-        authManager.register(email: email, password: pass, completionHandler:  { (success, idOrErrorMessage) in
-            if success {
-                userManager.createUser(name: name, userID: idOrErrorMessage, isAdmin: "false", teamName: "", status: "")
-                
-                self.performSegue(withIdentifier: "register", sender: nil)
-            } else {
-                
-                self.alert(message: idOrErrorMessage){_ in}
-            }
-        })
-    }
-    @IBAction func adminLogin(_ sender: Any) {
-        let userManager = UserDAO.getInstance()
-        
-        authManager.signIn(email: "admin@admin.com", password: "123456", completionHandler: { (success, idOrErrorMessage) in
-            if success {
-                self.logIn(idOrErrorMessage, userManager)
-            } else {
-                self.alert(message: idOrErrorMessage) {_ in}
-            }
-        })
-    }
-    
-    @IBAction func userLogin(_ sender: Any) {
-        let userManager = UserDAO.getInstance()
-        
-        authManager.signIn(email: "user@user.com", password: "123456", completionHandler: { (success, idOrErrorMessage) in
-            if success {
-                self.logIn(idOrErrorMessage, userManager)
-            } else {
-                self.alert(message: idOrErrorMessage) {_ in}
-            }
-        })
-        
-    }
-    @IBAction func loginAction(_ sender: Any) {
-        let userManager = UserDAO.getInstance()
-        
-        if haveAccount {
-            if let email = emailTextField.text, let pass = passwordTextField.text {
-                userHaveAccount(email, pass, userManager)
-            } else {
-                alert(message: "Both email and password can't be empty"){_ in}
-                print("Problemas no login")
-            }
+            //                registerUser(email, pass, userManager, name)
         } else {
-            if let email = emailTextField.text, let pass = passwordTextField.text, let name = nameField.text {
-                registerUser(email, pass, userManager, name)
-            } else {
-                alert(message: "Email, password and name can't be empty") {_ in}
-                print("Problemas no registro")
-            }
+            alert(message: "Email, password and name can't be empty") {_ in}
+            print("Problemas no registro")
         }
     }
     
@@ -185,7 +200,7 @@ class LoginViewController: UIViewController {
     @IBAction func unwindToLogin(segue: UIStoryboardSegue){}
     
     @IBAction func signOut(segue:UIStoryboardSegue){
-        authManager.signOut()
+        AuthDatabaseManager.shared.signOut()
     }
 }
 

@@ -13,12 +13,12 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    let reqManager = BadgeRequisitionDAO.shared
-    let registerManager = RegisterRequisitionDAO.shared
-    let userBadgesManager = UserBadgeDAO.shared
-    let userManager = UserDAO.getInstance()
+    let reqManager = BadgeRequisitionService.shared
+    let registerManager = RegisterRequisitionService.shared
+    let userBadgesManager = UserBadgeService.shared
+    let userManager = UserService.getInstance()
     let userListsManager = UserListDatabaseManager.shared
-    let authManager = AuthDatabaseManager.shared
+    let authManager = AuthService.shared
     
     var requisitions:[BadgeRequisition] = []
     var registerRequisitions:[RegisterRequistion] = []
@@ -84,7 +84,6 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, estimatedheightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
-        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
