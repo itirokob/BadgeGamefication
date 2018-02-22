@@ -22,7 +22,22 @@ class RegisterRequisitionService: NSObject {
     }
     
     func retrievePendentRegisterRequisitions(teamName:String, completionHandler: @escaping ([RegisterRequistion]?) -> ()){
-        registerReqManager.retrievePendentRegisterRequisitions(teamName: teamName, completionHandler: completionHandler)
+//        registerReqManager.retrievePendentRegisterRequisitions(teamName: teamName, completionHandler: completionHandler)
+        var allRegs:[RegisterRequistion] = []
+
+        registerReqManager.retrieveAllRegisterReqs(teamName: teamName) { (registers) in
+            if let registers = registers{
+                for register in registers {
+                    if register.status == "PA" {
+                        allRegs.append(register)
+                    }
+                }
+                
+                completionHandler(allRegs)
+            } else {
+                completionHandler(nil)
+            }
+        }
     }
     
     func updateReqStatus(teamName:String, reqID:String, status:String, completionHandler: @escaping (Bool) -> ()){

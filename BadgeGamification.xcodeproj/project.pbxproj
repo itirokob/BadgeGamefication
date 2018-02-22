@@ -203,11 +203,9 @@
 			children = (
 				CB3608D32003E5B700ED47A0 /* AppDelegate.swift */,
 				CBFB825A20236B490005FD8C /* Extensions.swift */,
-				CBFB8257202331BD0005FD8C /* Services */,
 				CBA46CA020052D6A0044CD08 /* Model */,
-				CB36090B20051B8F00ED47A0 /* Persistence */,
-				CB3609062003EC7400ED47A0 /* Controllers */,
 				CB3609052003EC6400ED47A0 /* View */,
+				CB3609062003EC7400ED47A0 /* Controllers */,
 				CB3608DA2003E5B700ED47A0 /* Assets.xcassets */,
 				CB3608DF2003E5B700ED47A0 /* Info.plist */,
 				CB3609012003E72100ED47A0 /* GoogleService-Info.plist */,
@@ -267,6 +265,8 @@
 		CBA46CA020052D6A0044CD08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CBFB8257202331BD0005FD8C /* Services */,
+				CB36090B20051B8F00ED47A0 /* Persistence */,
 				CB7A3BB82007E308001E63AA /* User.swift */,
 				CBA46C9E20052D600044CD08 /* Badge.swift */,
 				CBEB9E5F20063449002C6FE6 /* BadgeRequisition.swift */,

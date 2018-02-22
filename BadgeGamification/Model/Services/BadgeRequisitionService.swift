@@ -22,7 +22,22 @@ class BadgeRequisitionService: NSObject {
     }
     
     func retrievePendentBadgeRequisitions(teamName:String, completionHandler: @escaping ([BadgeRequisition]?)->()){
-        badgeReqManager.retrievePendentBadgeRequisitions(teamName: teamName, completionHandler: completionHandler)
+//        badgeReqManager.retrievePendentBadgeRequisitions(teamName: teamName, completionHandler: completionHandler)
+        var allReq:[BadgeRequisition] = []
+
+        badgeReqManager.retrieveAllBadgeReqs(teamName: teamName) { (badges) in
+            if let badges = badges{
+                for badge in badges {
+                    if badge.status == "PA" {
+                        allReq.append(badge)
+                    }
+                }
+                
+                completionHandler(allReq)
+            } else {
+                completionHandler(nil)
+            }
+        }
     }
     
     func updateReqStatus(teamName:String, reqID:String, status:String, completionHandler: @escaping (Bool) -> ()){

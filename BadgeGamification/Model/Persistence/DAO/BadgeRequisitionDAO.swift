@@ -26,19 +26,36 @@ class BadgeRequisitionDAO:DAO{
 
     }
     
-    func retrievePendentBadgeRequisitions(teamName:String, completionHandler: @escaping ([BadgeRequisition]?)->()){
-        var allReq:[BadgeRequisition] = []
-
+//    func retrievePendentBadgeRequisitions(teamName:String, completionHandler: @escaping ([BadgeRequisition]?)->()){
+//        var allReq:[BadgeRequisition] = []
+//
+//        let path = "Teams/\(teamName)/BadgeRequisitions"
+//        
+//        self.retrieveAll(dump: BadgeRequisition.self, path: path) { (badgeRequisitions) in
+//            if let badgeReq = badgeRequisitions {
+//                for req in badgeReq {
+//                    if req.status == "PA"{
+//                        allReq.append(req)
+//                    }
+//                }
+//                completionHandler(allReq)
+//            } else {
+//                completionHandler(nil)
+//            }
+//        }
+//    }
+    
+    func retrieveAllBadgeReqs(teamName:String, completionHandler: @escaping ([BadgeRequisition]?) -> ()){
+//        var allReq:[BadgeRequisition] = []
+        
         let path = "Teams/\(teamName)/BadgeRequisitions"
         
         self.retrieveAll(dump: BadgeRequisition.self, path: path) { (badgeRequisitions) in
             if let badgeReq = badgeRequisitions {
-                for req in badgeReq {
-                    if req.status == "PA"{
-                        allReq.append(req)
-                    }
-                }
-                completionHandler(allReq)
+//                for req in badgeReq {
+//                    allReq.append(req)
+//                }
+                completionHandler(badgeReq)
             } else {
                 completionHandler(nil)
             }

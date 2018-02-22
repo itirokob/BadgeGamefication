@@ -24,19 +24,36 @@ class RegisterRequisitionDAO:DAO {
         self.create(dump: RegisterRequistion.self, object: newRegisterReq, path: path, newObjectID: nil)
     }
 
-    func retrievePendentRegisterRequisitions(teamName:String, completionHandler: @escaping ([RegisterRequistion]?) -> ()){
-        var allReq:[RegisterRequistion] = []
+//    func retrievePendentRegisterRequisitions(teamName:String, completionHandler: @escaping ([RegisterRequistion]?) -> ()){
+//        var allReq:[RegisterRequistion] = []
+//
+//        let path = "Teams/\(teamName)/RegisterRequisitions"
+//
+//        self.retrieveAll(dump: RegisterRequistion.self, path: path) { (requisitions) in
+//            if let registerReq = requisitions {
+//                for req in registerReq {
+//                    if req.status == "PA"{
+//                        allReq.append(req)
+//                    }
+//                }
+//                completionHandler(allReq)
+//            } else {
+//                completionHandler(nil)
+//            }
+//        }
+//    }
+    
+    func retrieveAllRegisterReqs(teamName:String, completionHandler: @escaping ([RegisterRequistion]?) -> ()){
+//        var allReq:[RegisterRequistion] = []
         
         let path = "Teams/\(teamName)/RegisterRequisitions"
         
         self.retrieveAll(dump: RegisterRequistion.self, path: path) { (requisitions) in
             if let registerReq = requisitions {
-                for req in registerReq {
-                    if req.status == "PA"{
-                        allReq.append(req)
-                    }
-                }
-                completionHandler(allReq)
+//                for req in registerReq {
+//                    allReq.append(req)
+//                }
+                completionHandler(registerReq)
             } else {
                 completionHandler(nil)
             }
