@@ -16,7 +16,7 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
     
     let badgeManager = BadgeService.shared
     let reqManager = BadgeRequisitionService.shared
-    let userManager = UserService.getInstance()
+    let userManager = UserService.shared
     
     var badge:Badge?
     

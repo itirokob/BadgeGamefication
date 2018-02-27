@@ -16,9 +16,9 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
     let reqManager = BadgeRequisitionService.shared
     let registerManager = RegisterRequisitionService.shared
     let userBadgesManager = UserBadgeService.shared
-    let userManager = UserService.getInstance()
+    let userManager = UserService.shared
     let userListsManager = UserListDatabaseManager.shared
-    let authManager = AuthService.shared
+    let authManager = AuthService.getInstance()
     
     var requisitions:[BadgeRequisition] = []
     var registerRequisitions:[RegisterRequistion] = []

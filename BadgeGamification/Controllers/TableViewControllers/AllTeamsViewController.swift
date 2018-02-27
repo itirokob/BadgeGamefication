@@ -18,7 +18,7 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
     var teams:[Team] = []
     
     let teamDatabaseManager = TeamService.shared
-    let userDatabaseManager = UserService.getInstance()
+    let userDatabaseManager = UserService.shared
     let userBadgeManager = UserBadgeService.shared
     let registerReqDatabaseManager = RegisterRequisitionService.shared
     

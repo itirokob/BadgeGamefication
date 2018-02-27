@@ -17,7 +17,7 @@ class CreateTeamViewController: UIViewController {
 //    var teamID:String?
     
     let teamService = TeamService.shared
-    let userService = UserService.getInstance()
+    let userService = UserService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

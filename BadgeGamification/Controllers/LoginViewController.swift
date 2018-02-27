@@ -19,17 +19,17 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
     
-    let authService = AuthService.shared
+    var authService: AuthService?
     
     var haveAccount:Bool = true
     
     var teamName:String = ""
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateMode()
         self.hideKeyboardWhenTappedAround()
+        authService = AuthService.getInstance()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,7 +120,7 @@ class LoginViewController: UIViewController {
     func handleHaveAccount (){
         if let email = emailTextField.text, let pass = passwordTextField.text {
             
-            authService.login(email: email, password: pass, completionHandler: { (user) in
+            authService?.login(email: email, password: pass, completionHandler: { (user) in
                 if let user = user{
                     self.teamName = user.teamName
                     
@@ -142,7 +142,7 @@ class LoginViewController: UIViewController {
     func handleNewUser(){
         if let email = emailTextField.text, let pass = passwordTextField.text, let name = nameField.text {
             
-            authService.register(email: email, password: pass, name: name) { (success, idOrErrorMessage) in
+            authService?.register(email: email, password: pass, name: name) { (success, idOrErrorMessage) in
                 if success {
                     self.performSegue(withIdentifier: "register", sender: nil)
                 } else {

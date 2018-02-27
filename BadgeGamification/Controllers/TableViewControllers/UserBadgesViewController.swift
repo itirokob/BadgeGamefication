@@ -22,9 +22,9 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
     var totalPoints = 0
     
     let userBadgesManager = UserBadgeService.shared
-    let userManager = UserService.getInstance()
+    let userManager = UserService.shared
     let userImageManager = UserImageDatabaseManager.shared
-    let authManager = AuthService.shared
+    let authManager = AuthService.getInstance()
     
     let imageCache = NSCache<AnyObject, AnyObject>()
     

@@ -11,19 +11,21 @@ import FirebaseDatabase
 import SwiftyJSON
 
 class UserDAO:DAO {
+    static let shared = UserDAO()
+
     private override init(){
         super.init()
     }
     
-    private static var instance:UserDAO?
-    
-    static func getInstance() -> UserDAO{
-        if self.instance == nil{
-            self.instance = UserDAO()
-        }
-        return self.instance!
-    }
-    
+//    private static var instance:UserDAO?
+//
+//    static func getInstance() -> UserDAO{
+//        if self.instance == nil{
+//            self.instance = UserDAO()
+//        }
+//        return self.instance!
+//    }
+//
     func createUser(name:String, userID:String, isAdmin:String, teamName:String, status:String){
         let newUser = User(dictionary: [
             "name":name,

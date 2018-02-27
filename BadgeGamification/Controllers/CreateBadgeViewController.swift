@@ -81,29 +81,8 @@ extension CreateBadgeViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        switch indexPath.row{
-        case 0:
-            selectedIcon = "icon1"
-            return
-        case 1:
-            selectedIcon = "icon2"
-            return
-        case 2:
-            selectedIcon = "icon3"
-            return
-        case 3:
-            selectedIcon = "icon4"
-            return
-        case 4:
-            selectedIcon = "icon5"
-            return
-        default:
-            selectedIcon = "icon6"
-            return
-        }
+        selectedIcon = "icon"+String(indexPath.row + 1)
     }
 }
 

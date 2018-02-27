@@ -13,9 +13,10 @@ class ExistantBadgesViewController: UIViewController, UITableViewDelegate, UITab
     var badges:[Badge] = []
     var teamName:String?
     
+    
     @IBOutlet weak var tableView: UITableView!
     
-    let authManager = AuthService.shared
+    let authManager = AuthService.getInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,19 +74,6 @@ class ExistantBadgesViewController: UIViewController, UITableViewDelegate, UITab
 
 extension UIViewController{
     func selectBadgeIcon(badgeIcon:String) -> UIImage{
-        switch badgeIcon{
-        case "icon1":
-            return #imageLiteral(resourceName: "icon1")
-        case "icon2":
-            return #imageLiteral(resourceName: "icon2")
-        case "icon3":
-            return #imageLiteral(resourceName: "icon3")
-        case "icon4":
-            return #imageLiteral(resourceName: "icon4")
-        case "icon5":
-            return #imageLiteral(resourceName: "icon5")
-        default:
-            return #imageLiteral(resourceName: "icon6")
-        }
+        return UIImage(named: badgeIcon)!
     }
 }

@@ -14,6 +14,7 @@ let WEAK_PASSWORD = 17026
 let EMAIL_IN_USE = 17007
 
 class AuthDatabaseManager:NSObject{
+    
     static let shared = AuthDatabaseManager()
 
     private override init(){

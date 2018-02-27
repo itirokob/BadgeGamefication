@@ -15,16 +15,16 @@ class UserService: NSObject {
         super.init()
     }
     
-    private static var instance:UserService?
+//    private static var instance:UserService?
+//
+//    static func getInstance() -> UserService{
+//        if self.instance == nil{
+//            self.instance = UserService()
+//        }
+//        return self.instance!
+//    }
     
-    static func getInstance() -> UserService{
-        if self.instance == nil{
-            self.instance = UserService()
-        }
-        return self.instance!
-    }
-    
-    let userManager = UserDAO.getInstance()
+    let userManager = UserDAO.shared
     
     func retrieveUser(userID:String, completionHandler: @escaping (User?)->()) {
         userManager.retrieveUser(userID: userID) { (user) in

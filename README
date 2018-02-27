@@ -1,0 +1,7 @@
+Modelo arquitetural: MVC
+
+Arquivos separados em Model (Services e Persistence), Views e Controllers. 
+
+Na parte de persistencia, todos os arquivos usam um mesmo DAO, de forma que a troca de tecnologia (Firebase para algum outro tipo de banco) possa ser feita facilmente apenas reimplementando as funções do DAO.swift.
+
+ViewControllers são "burras" e para tudo chamam um serviço específico.
