@@ -1,0 +1,17 @@
+Estava usando o design pattern Singleton da seguinte forma:
+
+AuthService.swift
+
+    private static var instance:AuthService?
+
+    static func getInstance() -> AuthService{
+
+        if self.instance == nil{
+            self.instance = AuthService()
+        }
+        return self.instance!
+    }
+
+Entretanto, esse código tem problemas de concorrência, uma vez que duas threads podem acessar a região crítica dentro do if. Para consertar isso, seria necessário usar semaphores, porém não é possível usá-los dentro de funções static.
+
+No final, acabei encontrando uma solução mais simples (instanciando a classe só quando eu precisasse), sem ter que usar semaphores. O que deixou a solução muito mais enxuta e simples.

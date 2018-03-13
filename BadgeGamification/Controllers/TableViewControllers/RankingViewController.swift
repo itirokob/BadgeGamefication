@@ -21,7 +21,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     let userManager = UserService.shared
     let userListManager = UserListDatabaseManager.shared
     let userBadgesManager = UserBadgeService.shared
-    let authManager = AuthService.getInstance()
+    let authManager = AuthService.shared
     
     var IDs:[String] = []
     var usersScore:[String:Int] = [:]

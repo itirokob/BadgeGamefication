@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         updateMode()
         self.hideKeyboardWhenTappedAround()
-        authService = AuthService.getInstance()
+        authService = AuthService.shared
     }
     
     override func viewWillAppear(_ animated: Bool) {

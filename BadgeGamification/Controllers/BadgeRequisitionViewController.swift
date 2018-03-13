@@ -67,7 +67,9 @@ class BadgeRequisitionViewController: UIViewController, UITextViewDelegate {
                     "badgeIcon": currBadge.badgeIcon
                 ])
 
-                reqManager.createBadgeRequisition(teamName: currBadge.teamName, newBadgeReq:newBadgeReq)
+                if let newBadgeReq = newBadgeReq{
+                    reqManager.createBadgeRequisition(teamName: currBadge.teamName, newBadgeReq:newBadgeReq)
+                }
                 
                 alert(message: "Badge requisition done! Wait for admin approval", completionHandler: { _ in
                     self.performSegue(withIdentifier: "unwindToUserBadges", sender: self)

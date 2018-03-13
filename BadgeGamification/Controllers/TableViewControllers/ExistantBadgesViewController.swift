@@ -16,7 +16,7 @@ class ExistantBadgesViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var tableView: UITableView!
     
-    let authManager = AuthService.getInstance()
+    let authManager = AuthService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

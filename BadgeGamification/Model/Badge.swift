@@ -9,34 +9,54 @@
 import UIKit
 
 class Badge: NSObject, PersistenceObject {
-    var name:String
-    var numPoints:Int
-    var descript:String
-    var id:String
+    var name:String = ""
+    var numPoints:Int = 0
+    var descript:String = ""
+    var id:String = ""
     var acquisitionDate:Date?
-    var teamName:String
-    var badgeIcon:String
-    var dictInfo:[AnyHashable:Any]
+    var teamName:String = ""
+    var badgeIcon:String = ""
+    var dictInfo:[AnyHashable:Any] = [:]
 
-    required init(dictionary: [AnyHashable: Any]){
-        self.name = dictionary["name"] as! String
-        self.numPoints = dictionary["numPoints"] as! Int
-        self.descript = dictionary["description"] as! String
-        self.teamName = dictionary["teamName"] as! String
-        self.id = dictionary["id"] as! String
-        self.badgeIcon = dictionary["badgeIcon"] as! String
-        self.dictInfo = dictionary
-        
-        if let acquisitionDate = dictionary["acquisitionDate"]{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
+    required init?(dictionary: [AnyHashable: Any]){
+        super.init()
+        if let name = dictionary["name"] as? String,
+            let numPoints = dictionary["numPoints"] as? Int,
+            let descript = dictionary["description"] as? String,
+            let teamName = dictionary["teamName"] as? String,
+            let id = dictionary["id"] as? String,
+            let badgeIcon = dictionary["badgeIcon"] as? String,
+            let acquisitionDate = dictionary["acquisitionDate"] as? String{
             
-            guard let date = dateFormatter.date(from: acquisitionDate as! String) else {
-                fatalError("ERROR: Date conversion failed due to mismatched format.")
+            self.name = name
+            self.numPoints = numPoints
+            self.descript = descript
+            self.teamName = teamName
+            self.id = id
+            self.badgeIcon = badgeIcon
+            self.dictInfo = dictionary
+            
+            if let acqDate = formatDate(date: acquisitionDate){
+                self.acquisitionDate = acqDate
+            } else {
+                self.acquisitionDate = Date()
             }
-            
-            self.acquisitionDate = date
+        } else {
+            print("Incomplete dictionary in Badge object init")
+            return nil
         }
+    }
+    
+    func formatDate(date:String) -> Date?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        if let formattedDate = dateFormatter.date(from: date){
+            return formattedDate
+        } else {
+            return nil
+        }
+        
     }
     
     init(name:String, description:String, numPoints:Int, id:String, teamName:String, badgeIcon:String){

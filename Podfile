@@ -13,5 +13,10 @@ target 'BadgeGamification' do
   pod 'Firebase/Storage'
 
   pod 'SwiftyJSON', '~> 4.0'
+  
+  
+  target 'BadgeModelTests' do
+      inherit! :search_paths
+  end
 
 end

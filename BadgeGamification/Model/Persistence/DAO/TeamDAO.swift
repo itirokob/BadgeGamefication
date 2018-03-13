@@ -23,7 +23,9 @@ class TeamDAO: DAO {
             "adminName": adminName
         ])
         
-        self.create(dump: Team.self, object: newTeam, path: "Teams", newObjectID: teamName)
+        if let newTeam = newTeam{
+            self.create(dump: Team.self, object: newTeam, path: "Teams", newObjectID: teamName)
+        }
     }
     
     func retrieveAllTeams(completionHandler: @escaping ([Team]?)->()){

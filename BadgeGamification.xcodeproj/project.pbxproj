@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB04B7802052C6CB00CF4EE1 /* BadgeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04B77F2052C6CB00CF4EE1 /* BadgeTest.swift */; };
+		CB04B7822052CE1D00CF4EE1 /* BadgeRequisitionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04B7812052CE1D00CF4EE1 /* BadgeRequisitionTest.swift */; };
+		CB04B7842052CF4C00CF4EE1 /* RegisterRequisitionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04B7832052CF4C00CF4EE1 /* RegisterRequisitionTest.swift */; };
+		CB04B7862052D0C100CF4EE1 /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04B7852052D0C100CF4EE1 /* TeamTest.swift */; };
 		CB1210202018DF24004572F8 /* RegisterReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12101F2018DF24004572F8 /* RegisterReqTableViewCell.swift */; };
 		CB219003200789C500A0095D /* UserBadgeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB219002200789C500A0095D /* UserBadgeDAO.swift */; };
 		CB21900520079CBB00A0095D /* UserBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21900420079CBB00A0095D /* UserBadgesViewController.swift */; };
@@ -26,6 +30,11 @@
 		CB36090D20051BBD00ED47A0 /* AuthDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB36090C20051BBC00ED47A0 /* AuthDatabaseManager.swift */; };
 		CB36090F20051BE900ED47A0 /* BadgeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB36090E20051BE900ED47A0 /* BadgeDAO.swift */; };
 		CB3609152005237A00ED47A0 /* CreateBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3609142005237A00ED47A0 /* CreateBadgeViewController.swift */; };
+		CB570DE12051BC5800E55CF4 /* BadgeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB570DE02051BC5800E55CF4 /* BadgeModelTests.swift */; };
+		CB570DE92052BB5C00E55CF4 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB570DE82052BB5C00E55CF4 /* UserTest.swift */; };
+		CB570DEA2052BEB200E55CF4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3608DF2003E5B700ED47A0 /* Info.plist */; };
+		CB570DED2052BEB300E55CF4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3608DF2003E5B700ED47A0 /* Info.plist */; };
+		CB570DF02052BEC400E55CF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3609012003E72100ED47A0 /* GoogleService-Info.plist */; };
 		CB7A3BB32007B53D001E63AA /* AvailableBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB22007B53D001E63AA /* AvailableBadgesViewController.swift */; };
 		CB7A3BB52007B5B5001E63AA /* AvailableBadgesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB42007B5B5001E63AA /* AvailableBadgesTableViewCell.swift */; };
 		CB7A3BB72007DFF4001E63AA /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BB62007DFF4001E63AA /* UserDAO.swift */; };
@@ -36,7 +45,6 @@
 		CB7A3BC12008D455001E63AA /* EnterOrCreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7A3BC02008D455001E63AA /* EnterOrCreateTeamViewController.swift */; };
 		CBA46C9F20052D600044CD08 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA46C9E20052D600044CD08 /* Badge.swift */; };
 		CBCE67962017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE67952017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift */; };
-		CBDDFB7920161DAE0045ED5C /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDFB7820161DAE0045ED5C /* Variables.swift */; };
 		CBDDFB7D201623A80045ED5C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDFB7C201623A80045ED5C /* DAO.swift */; };
 		CBDEB711202B562B00F14FAE /* BadgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEB710202B562B00F14FAE /* BadgeService.swift */; };
 		CBDEB713202B56DC00F14FAE /* BadgeRequisitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEB712202B56DC00F14FAE /* BadgeRequisitionService.swift */; };
@@ -57,17 +65,11 @@
 		CBFB8256202331B80005FD8C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB8255202331B80005FD8C /* AuthService.swift */; };
 		CBFB825B20236B490005FD8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB825A20236B490005FD8C /* Extensions.swift */; };
 		D9BA825E52A629FD9700C1CC /* Pods_BadgeGamification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5A850D9EF1087F070E0349 /* Pods_BadgeGamification.framework */; };
+		FF0EDC9546F3FF4DBF90FCB7 /* Pods_BadgeModelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB1842F50E478203059F165 /* Pods_BadgeModelTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CB3608E52003E5B700ED47A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB3608C82003E5B700ED47A0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CB3608CF2003E5B700ED47A0;
-			remoteInfo = BadgeGamification;
-		};
-		CB3608F02003E5B700ED47A0 /* PBXContainerItemProxy */ = {
+		CB570DE32051BC5800E55CF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB3608C82003E5B700ED47A0 /* Project object */;
 			proxyType = 1;
@@ -78,7 +80,13 @@
 
 /* Begin PBXFileReference section */
 		715732A22B34D15884539DD9 /* Pods-BadgeGamification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeGamification.release.xcconfig"; path = "Pods/Target Support Files/Pods-BadgeGamification/Pods-BadgeGamification.release.xcconfig"; sourceTree = "<group>"; };
+		877C88FFFAC0CA22E37AD886 /* Pods-BadgeModelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeModelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BadgeModelTests/Pods-BadgeModelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6ED4F024376E09BA241D38F /* Pods-BadgeModelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeModelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BadgeModelTests/Pods-BadgeModelTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE357F94812DDCD20A7AAE0F /* Pods-BadgeGamification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadgeGamification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BadgeGamification/Pods-BadgeGamification.debug.xcconfig"; sourceTree = "<group>"; };
+		CB04B77F2052C6CB00CF4EE1 /* BadgeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTest.swift; sourceTree = "<group>"; };
+		CB04B7812052CE1D00CF4EE1 /* BadgeRequisitionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequisitionTest.swift; sourceTree = "<group>"; };
+		CB04B7832052CF4C00CF4EE1 /* RegisterRequisitionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequisitionTest.swift; sourceTree = "<group>"; };
+		CB04B7852052D0C100CF4EE1 /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
 		CB12101F2018DF24004572F8 /* RegisterReqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReqTableViewCell.swift; sourceTree = "<group>"; };
 		CB219002200789C500A0095D /* UserBadgeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBadgeDAO.swift; sourceTree = "<group>"; };
 		CB21900420079CBB00A0095D /* UserBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBadgesViewController.swift; sourceTree = "<group>"; };
@@ -95,13 +103,15 @@
 		CB3608DA2003E5B700ED47A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3608DD2003E5B700ED47A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3608DF2003E5B700ED47A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB3608E42003E5B700ED47A0 /* BadgeGamificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgeGamificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB3608EF2003E5B700ED47A0 /* BadgeGamificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgeGamificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3609012003E72100ED47A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB3609032003EB3000ED47A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB36090C20051BBC00ED47A0 /* AuthDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDatabaseManager.swift; sourceTree = "<group>"; };
 		CB36090E20051BE900ED47A0 /* BadgeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDAO.swift; sourceTree = "<group>"; };
 		CB3609142005237A00ED47A0 /* CreateBadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBadgeViewController.swift; sourceTree = "<group>"; };
+		CB570DDE2051BC5800E55CF4 /* BadgeModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgeModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB570DE02051BC5800E55CF4 /* BadgeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModelTests.swift; sourceTree = "<group>"; };
+		CB570DE22051BC5800E55CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB570DE82052BB5C00E55CF4 /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		CB7A3BB22007B53D001E63AA /* AvailableBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesViewController.swift; sourceTree = "<group>"; };
 		CB7A3BB42007B5B5001E63AA /* AvailableBadgesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesTableViewCell.swift; sourceTree = "<group>"; };
 		CB7A3BB62007DFF4001E63AA /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
@@ -112,7 +122,6 @@
 		CB7A3BC02008D455001E63AA /* EnterOrCreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterOrCreateTeamViewController.swift; sourceTree = "<group>"; };
 		CBA46C9E20052D600044CD08 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		CBCE67952017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeIconCollectionViewCell.swift; sourceTree = "<group>"; };
-		CBDDFB7820161DAE0045ED5C /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		CBDDFB7C201623A80045ED5C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		CBDEB710202B562B00F14FAE /* BadgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeService.swift; sourceTree = "<group>"; };
 		CBDEB712202B56DC00F14FAE /* BadgeRequisitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequisitionService.swift; sourceTree = "<group>"; };
@@ -132,6 +141,7 @@
 		CBF88F5520164D3100E6DCB5 /* UserImageDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageDatabaseManager.swift; sourceTree = "<group>"; };
 		CBFB8255202331B80005FD8C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CBFB825A20236B490005FD8C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DFB1842F50E478203059F165 /* Pods_BadgeModelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadgeModelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5A850D9EF1087F070E0349 /* Pods_BadgeGamification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadgeGamification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,17 +154,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB3608E12003E5B700ED47A0 /* Frameworks */ = {
+		CB570DDB2051BC5800E55CF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB3608EC2003E5B700ED47A0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FF0EDC9546F3FF4DBF90FCB7 /* Pods_BadgeModelTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				FD5A850D9EF1087F070E0349 /* Pods_BadgeGamification.framework */,
+				DFB1842F50E478203059F165 /* Pods_BadgeModelTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,6 +179,8 @@
 			children = (
 				BE357F94812DDCD20A7AAE0F /* Pods-BadgeGamification.debug.xcconfig */,
 				715732A22B34D15884539DD9 /* Pods-BadgeGamification.release.xcconfig */,
+				877C88FFFAC0CA22E37AD886 /* Pods-BadgeModelTests.debug.xcconfig */,
+				B6ED4F024376E09BA241D38F /* Pods-BadgeModelTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3608D22003E5B700ED47A0 /* BadgeGamification */,
+				CB570DDF2051BC5800E55CF4 /* BadgeModelTests */,
 				CB3608D12003E5B700ED47A0 /* Products */,
 				7B30B57E42768A128EA620BF /* Pods */,
 				73BA1C75F54834824C7AA554 /* Frameworks */,
@@ -192,8 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3608D02003E5B700ED47A0 /* BadgeGamification.app */,
-				CB3608E42003E5B700ED47A0 /* BadgeGamificationTests.xctest */,
-				CB3608EF2003E5B700ED47A0 /* BadgeGamificationUITests.xctest */,
+				CB570DDE2051BC5800E55CF4 /* BadgeModelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,6 +256,20 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		CB570DDF2051BC5800E55CF4 /* BadgeModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB04B7852052D0C100CF4EE1 /* TeamTest.swift */,
+				CB04B7832052CF4C00CF4EE1 /* RegisterRequisitionTest.swift */,
+				CB04B7812052CE1D00CF4EE1 /* BadgeRequisitionTest.swift */,
+				CB04B77F2052C6CB00CF4EE1 /* BadgeTest.swift */,
+				CB570DE82052BB5C00E55CF4 /* UserTest.swift */,
+				CB570DE02051BC5800E55CF4 /* BadgeModelTests.swift */,
+				CB570DE22051BC5800E55CF4 /* Info.plist */,
+			);
+			path = BadgeModelTests;
+			sourceTree = "<group>";
+		};
 		CB9C4B5F2024EC6F00D4641A /* DAO */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,7 +293,6 @@
 				CBEB9E5F20063449002C6FE6 /* BadgeRequisition.swift */,
 				CBEB9E6E20067A2B002C6FE6 /* RegisterRequistion.swift */,
 				CB7A3BBC2008C854001E63AA /* Team.swift */,
-				CBDDFB7820161DAE0045ED5C /* Variables.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,41 +362,26 @@
 			productReference = CB3608D02003E5B700ED47A0 /* BadgeGamification.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CB3608E32003E5B700ED47A0 /* BadgeGamificationTests */ = {
+		CB570DDD2051BC5800E55CF4 /* BadgeModelTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB3608FB2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationTests" */;
+			buildConfigurationList = CB570DE72051BC5800E55CF4 /* Build configuration list for PBXNativeTarget "BadgeModelTests" */;
 			buildPhases = (
-				CB3608E02003E5B700ED47A0 /* Sources */,
-				CB3608E12003E5B700ED47A0 /* Frameworks */,
-				CB3608E22003E5B700ED47A0 /* Resources */,
+				22E1AC78C135B2D8E57D5F2B /* [CP] Check Pods Manifest.lock */,
+				CB570DDA2051BC5800E55CF4 /* Sources */,
+				CB570DDB2051BC5800E55CF4 /* Frameworks */,
+				CB570DDC2051BC5800E55CF4 /* Resources */,
+				2558C7B1BE3D650BBB5F6698 /* [CP] Embed Pods Frameworks */,
+				4815ED58774A10F83F9FD694 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB3608E62003E5B700ED47A0 /* PBXTargetDependency */,
+				CB570DE42051BC5800E55CF4 /* PBXTargetDependency */,
 			);
-			name = BadgeGamificationTests;
-			productName = BadgeGamificationTests;
-			productReference = CB3608E42003E5B700ED47A0 /* BadgeGamificationTests.xctest */;
+			name = BadgeModelTests;
+			productName = BadgeModelTests;
+			productReference = CB570DDE2051BC5800E55CF4 /* BadgeModelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CB3608EE2003E5B700ED47A0 /* BadgeGamificationUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB3608FE2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationUITests" */;
-			buildPhases = (
-				CB3608EB2003E5B700ED47A0 /* Sources */,
-				CB3608EC2003E5B700ED47A0 /* Frameworks */,
-				CB3608ED2003E5B700ED47A0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CB3608F12003E5B700ED47A0 /* PBXTargetDependency */,
-			);
-			name = BadgeGamificationUITests;
-			productName = BadgeGamificationUITests;
-			productReference = CB3608EF2003E5B700ED47A0 /* BadgeGamificationUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -397,12 +402,7 @@
 							};
 						};
 					};
-					CB3608E32003E5B700ED47A0 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = CB3608CF2003E5B700ED47A0;
-					};
-					CB3608EE2003E5B700ED47A0 = {
+					CB570DDD2051BC5800E55CF4 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CB3608CF2003E5B700ED47A0;
@@ -423,8 +423,7 @@
 			projectRoot = "";
 			targets = (
 				CB3608CF2003E5B700ED47A0 /* BadgeGamification */,
-				CB3608E32003E5B700ED47A0 /* BadgeGamificationTests */,
-				CB3608EE2003E5B700ED47A0 /* BadgeGamificationUITests */,
+				CB570DDD2051BC5800E55CF4 /* BadgeModelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -437,21 +436,17 @@
 				CB3608DE2003E5B700ED47A0 /* LaunchScreen.storyboard in Resources */,
 				CB3609022003E72100ED47A0 /* GoogleService-Info.plist in Resources */,
 				CB3608DB2003E5B700ED47A0 /* Assets.xcassets in Resources */,
+				CB570DEA2052BEB200E55CF4 /* Info.plist in Resources */,
 				CB3608D92003E5B700ED47A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB3608E22003E5B700ED47A0 /* Resources */ = {
+		CB570DDC2051BC5800E55CF4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB3608ED2003E5B700ED47A0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				CB570DED2052BEB300E55CF4 /* Info.plist in Resources */,
+				CB570DF02052BEC400E55CF4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +466,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BadgeGamification/Pods-BadgeGamification-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22E1AC78C135B2D8E57D5F2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BadgeModelTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2558C7B1BE3D650BBB5F6698 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BadgeModelTests/Pods-BadgeModelTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		269FDBADA41E3217F91F9F38 /* [CP] Embed Pods Frameworks */ = {
@@ -497,6 +525,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BadgeGamification/Pods-BadgeGamification-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4815ED58774A10F83F9FD694 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BadgeModelTests/Pods-BadgeModelTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E4FA776368F02D8091CFAF81 /* [CP] Check Pods Manifest.lock */ = {
@@ -537,7 +580,6 @@
 				CBA46C9F20052D600044CD08 /* Badge.swift in Sources */,
 				CBEB9E63200636DA002C6FE6 /* BadgeRequisitionViewController.swift in Sources */,
 				CBCE67962017AAA2004F9A81 /* BadgeIconCollectionViewCell.swift in Sources */,
-				CBDDFB7920161DAE0045ED5C /* Variables.swift in Sources */,
 				CB7A3BB52007B5B5001E63AA /* AvailableBadgesTableViewCell.swift in Sources */,
 				CBDEB715202B578200F14FAE /* RegisterRequisitionService.swift in Sources */,
 				CB7A3BB32007B53D001E63AA /* AvailableBadgesViewController.swift in Sources */,
@@ -572,32 +614,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB3608E02003E5B700ED47A0 /* Sources */ = {
+		CB570DDA2051BC5800E55CF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB3608EB2003E5B700ED47A0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				CB04B7822052CE1D00CF4EE1 /* BadgeRequisitionTest.swift in Sources */,
+				CB04B7802052C6CB00CF4EE1 /* BadgeTest.swift in Sources */,
+				CB04B7862052D0C100CF4EE1 /* TeamTest.swift in Sources */,
+				CB570DE92052BB5C00E55CF4 /* UserTest.swift in Sources */,
+				CB04B7842052CF4C00CF4EE1 /* RegisterRequisitionTest.swift in Sources */,
+				CB570DE12051BC5800E55CF4 /* BadgeModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CB3608E62003E5B700ED47A0 /* PBXTargetDependency */ = {
+		CB570DE42051BC5800E55CF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB3608CF2003E5B700ED47A0 /* BadgeGamification */;
-			targetProxy = CB3608E52003E5B700ED47A0 /* PBXContainerItemProxy */;
-		};
-		CB3608F12003E5B700ED47A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CB3608CF2003E5B700ED47A0 /* BadgeGamification */;
-			targetProxy = CB3608F02003E5B700ED47A0 /* PBXContainerItemProxy */;
+			targetProxy = CB570DE32051BC5800E55CF4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -760,16 +796,16 @@
 			};
 			name = Release;
 		};
-		CB3608FC2003E5B700ED47A0 /* Debug */ = {
+		CB570DE52051BC5800E55CF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 877C88FFFAC0CA22E37AD886 /* Pods-BadgeModelTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJ5VL7QF9C;
-				INFOPLIST_FILE = BadgeGamificationTests/Info.plist;
+				INFOPLIST_FILE = BadgeModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -777,52 +813,20 @@
 			};
 			name = Debug;
 		};
-		CB3608FD2003E5B700ED47A0 /* Release */ = {
+		CB570DE62051BC5800E55CF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6ED4F024376E09BA241D38F /* Pods-BadgeModelTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJ5VL7QF9C;
-				INFOPLIST_FILE = BadgeGamificationTests/Info.plist;
+				INFOPLIST_FILE = BadgeModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeModelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BadgeGamification.app/BadgeGamification";
-			};
-			name = Release;
-		};
-		CB3608FF2003E5B700ED47A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GJ5VL7QF9C;
-				INFOPLIST_FILE = BadgeGamificationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BadgeGamification;
-			};
-			name = Debug;
-		};
-		CB3609002003E5B700ED47A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GJ5VL7QF9C;
-				INFOPLIST_FILE = BadgeGamificationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BiancaItiroko.BadgeGamificationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BadgeGamification;
 			};
 			name = Release;
 		};
@@ -847,20 +851,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB3608FB2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationTests" */ = {
+		CB570DE72051BC5800E55CF4 /* Build configuration list for PBXNativeTarget "BadgeModelTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CB3608FC2003E5B700ED47A0 /* Debug */,
-				CB3608FD2003E5B700ED47A0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB3608FE2003E5B700ED47A0 /* Build configuration list for PBXNativeTarget "BadgeGamificationUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB3608FF2003E5B700ED47A0 /* Debug */,
-				CB3609002003E5B700ED47A0 /* Release */,
+				CB570DE52051BC5800E55CF4 /* Debug */,
+				CB570DE62051BC5800E55CF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

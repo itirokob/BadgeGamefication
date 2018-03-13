@@ -54,7 +54,9 @@ class CreateBadgeViewController: UIViewController {
                 "badgeIcon" : selectedIcon
                 ])
             
-            badgeManager.createBadge(badge: newBadge, teamName: self.teamName!)
+            if let newBadge = newBadge{
+                badgeManager.createBadge(badge: newBadge, teamName: self.teamName!)
+            }
             
             performSegue(withIdentifier: "unwindToExistantBadges", sender: self)
         }

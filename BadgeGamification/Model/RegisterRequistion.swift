@@ -9,12 +9,12 @@
 import UIKit
 
 class RegisterRequistion: NSObject, PersistenceObject{
-    var userEmail:String
-    var id:String
-    var status:String
-    var teamName:String
-    var userID:String
-    var dictInfo:[AnyHashable:Any]
+    var userEmail:String = ""
+    var id:String = ""
+    var status:String = ""
+    var teamName:String = ""
+    var userID:String = ""
+    var dictInfo:[AnyHashable:Any] = [:]
     
     init(userEmail:String, id:String, status:String, teamName:String, userID:String){
         self.userEmail = userEmail
@@ -31,14 +31,23 @@ class RegisterRequistion: NSObject, PersistenceObject{
         ]
     }
     
-    required init(dictionary: [AnyHashable: Any]){
-        self.userEmail = dictionary["userEmail"] as! String
-        self.status = dictionary["status"] as! String
-        self.id = dictionary["id"] as! String
-        self.teamName = dictionary["teamName"] as! String
-        self.userID = dictionary["userID"] as! String
-        
-        self.dictInfo = dictionary
+    required init?(dictionary: [AnyHashable: Any]){
+        if let userEmail = dictionary["userEmail"] as? String,
+            let status = dictionary["status"] as? String,
+            let id = dictionary["id"] as? String,
+            let teamName = dictionary["teamName"] as? String,
+            let userID = dictionary["userID"] as? String {
+            
+            self.userEmail = userEmail
+            self.status = status
+            self.id = id
+            self.teamName = teamName
+            self.userID = userID
+            self.dictInfo = dictionary
+        } else {
+            print("Incomplete dictionary in RegisterRequisition object init")
+            return nil
+        }
     }
     
     func getDictInfo() -> [AnyHashable:Any]{

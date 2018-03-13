@@ -24,7 +24,7 @@ class UserBadgesViewController: UIViewController, UITableViewDelegate, UITableVi
     let userBadgesManager = UserBadgeService.shared
     let userManager = UserService.shared
     let userImageManager = UserImageDatabaseManager.shared
-    let authManager = AuthService.getInstance()
+    let authManager = AuthService.shared
     
     let imageCache = NSCache<AnyObject, AnyObject>()
     

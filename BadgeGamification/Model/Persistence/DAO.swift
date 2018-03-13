@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 protocol PersistenceObject {
-    init(dictionary: [AnyHashable:Any])
+    init?(dictionary: [AnyHashable:Any])
     func getDictInfo() ->[AnyHashable:Any]
 }
 
@@ -33,7 +33,7 @@ class DAO: NSObject {
                     
                     let newObj = T(dictionary: objectDict!)
                     
-                    allObjects.append(newObj)
+                    allObjects.append(newObj!)
                 }
                 
                 completionHandler(allObjects)

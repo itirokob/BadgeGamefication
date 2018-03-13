@@ -10,10 +10,10 @@ import UIKit
 
 class Team: NSObject, PersistenceObject {
     
-    var teamName:String
-    var adminID:String
-    var adminName:String
-    var dictInfo:[AnyHashable:Any]
+    var teamName:String = ""
+    var adminID:String = ""
+    var adminName:String = ""
+    var dictInfo:[AnyHashable:Any] = [:]
     
     init(teamName:String, adminID:String, adminName:String){
         self.teamName = teamName
@@ -27,13 +27,21 @@ class Team: NSObject, PersistenceObject {
         ]
     }
     
-    required init(dictionary: [AnyHashable: Any]){
-        self.teamName = dictionary["teamName"] as! String
-        self.adminID = dictionary["adminID"] as! String
-        self.adminName = dictionary["adminName"] as! String
-        
-        self.dictInfo = dictionary
+    required init?(dictionary: [AnyHashable: Any]){
+        if let teamName = dictionary["teamName"] as? String,
+            let adminID = dictionary["adminID"] as? String,
+            let adminName = dictionary["adminName"] as? String{
+            
+            self.teamName = teamName
+            self.adminID = adminID
+            self.adminName = adminName
+            
+            self.dictInfo = dictionary
+        } else {
+            return nil
+        }
     }
+    
     func getDictInfo() -> [AnyHashable:Any]{
         return self.dictInfo
     }

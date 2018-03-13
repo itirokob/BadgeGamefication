@@ -7,7 +7,30 @@
 		<key>BadgeGamification.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>CB3608CF2003E5B700ED47A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB3608E32003E5B700ED47A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB3608EE2003E5B700ED47A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB570DDD2051BC5800E55CF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

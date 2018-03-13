@@ -38,7 +38,7 @@ class UserDAO:DAO {
         
         let path = "Users"
         
-        self.create(dump: User.self, object: newUser, path: path, newObjectID: userID)
+        self.create(dump: User.self, object: newUser!, path: path, newObjectID: userID)
     }
     
     func retrieveUser(userID:String, completionHandler: @escaping (User?)->()){

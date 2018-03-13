@@ -18,7 +18,7 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
     let userBadgesManager = UserBadgeService.shared
     let userManager = UserService.shared
     let userListsManager = UserListDatabaseManager.shared
-    let authManager = AuthService.getInstance()
+    let authManager = AuthService.shared
     
     var requisitions:[BadgeRequisition] = []
     var registerRequisitions:[RegisterRequistion] = []
@@ -95,7 +95,7 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
             cell.explanation.isHidden = false
             cell.badgeOrEmployeeImage.isHidden = false
             
-            cell.badgeName.text = req.badge.name
+            cell.badgeName.text = req.badge?.name
             cell.employeeEmail.text = req.userEmail
             
             cell.explanation.text = req.explanation
@@ -104,7 +104,7 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
             
             cell.approveButton.tag = indexPath.row
             cell.denyButton.tag = indexPath.row
-            cell.badgeOrEmployeeImage.image = self.selectBadgeIcon(badgeIcon: req.badge.badgeIcon)
+            cell.badgeOrEmployeeImage.image = self.selectBadgeIcon(badgeIcon: (req.badge?.badgeIcon)!)
             
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
@@ -178,7 +178,7 @@ class RequisitionsViewController: UIViewController, UITableViewDelegate, UITable
         let req = requisitions[sender.tag]
         
         self.updateReqStatus(userID: req.userID, id: req.id, status: "A", indexPath: sender.tag)
-        userBadgesManager.addBadgeToUser(teamName: teamName!, userID: req.userID, badge: req.badge, acquisitionDateString: dateToString(format: "dd-MM-yyyy"))
+        userBadgesManager.addBadgeToUser(teamName: teamName!, userID: req.userID, badge: req.badge!, acquisitionDateString: dateToString(format: "dd-MM-yyyy"))
 
     }
     

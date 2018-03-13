@@ -53,7 +53,10 @@ class AllTeamsViewController: UIViewController, UITableViewDelegate, UITableView
             "userID": userID!,
             "status": "PA" //Pendent Approval
         ])
-        registerReqDatabaseManager.createRegisterRequisition(teamName: team.teamName, newRegisterReq:newRegisterReq)
+        
+        if let newRegisterReq = newRegisterReq{
+            registerReqDatabaseManager.createRegisterRequisition(teamName: team.teamName, newRegisterReq:newRegisterReq)
+        }
         createUser(teamName: team.teamName)
         
         self.alert(message: "Requisition done! Wait for admin approval"){_ in
